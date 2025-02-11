@@ -1,4 +1,4 @@
-# Polyrating
+# Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation
 
 This repository contains a general-purpose library for generating ratings using well-known and new rating systems, such as Elo, Glicko, TrueSkill, and Polyrating. Specifically, it currently serves the following purposes:
 - It contains the code to reproduce the results from our paper *Polyrating: A Multivariate Rating System for Language Model Evaluation*. 
