@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.objects.rating_history API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.objects.rating_history</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.objects.rating_history.RatingHistory"><code class="flex name class">
+<span>class <span class="ident">RatingHistory</span></span>
+<span>(</span><span>rating: <a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a> = None, rating_history: List[<a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a>] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a rating history.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>rating (Rating): The rating of the player.</li>
+<li>rating_history (list): The list of rating history for the player.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (Rating, optional): The rating of the player.</li>
+<li>rating_history (list, optional): The list of rating history for the player. Each element is a tuple consisting of the rating at that time and the date. Defaults to an empty list.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RatingHistory(BaseClass):
+    def __init__(self, rating : Rating = None, rating_history : List[Rating] = None) -&gt; &#39;RatingHistory&#39;:
+        &#34;&#34;&#34;
+        Represents a rating history.
+
+        Attributes:
+            - rating (Rating): The rating of the player.
+            - rating_history (list): The list of rating history for the player.
+
+        Args:
+            - rating (Rating, optional): The rating of the player.
+            - rating_history (list, optional): The list of rating history for the player. Each element is a tuple consisting of the rating at that time and the date. Defaults to an empty list.
+        &#34;&#34;&#34;
+        if rating is None:
+            rating = Rating()
+        if rating_history is None:
+            rating_history = []
+        super().__init__(rating=rating, rating_history=rating_history)
+        
+    def generate_settings(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Generates settings for the RatingHistory object.
+
+        Returns:
+            - dict: The generated settings.
+        &#34;&#34;&#34;
+        settings = super().generate_settings()
+        settings[&#39;rating_history&#39;] = [(rating.generate_settings(), date.strftime(&#34;%d/%m/%Y - %H:%M:%S&#34;)) for rating, date in self.rating_history]
+        return settings
+    
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;RatingHistory&#39;:
+        &#34;&#34;&#34;
+        Loads a RatingHistory object from settings.
+
+        Args:
+            - settings (dict): The settings to load from.
+
+        Returns:
+            - RatingHistory: The loaded RatingHistory object.
+        &#34;&#34;&#34;
+        settings = super().get_input_parameters(settings)
+        settings[&#39;rating_history&#39;] = [(rating, datetime.strptime(date, &#34;%d/%m/%Y - %H:%M:%S&#34;)) for rating, date in settings[&#39;rating_history&#39;]]
+        return cls(**settings)
+
+    def get_rating(self) -&gt; Rating:
+        &#34;&#34;&#34;
+        Returns the current rating of the RatingHistory.
+
+        Returns:
+            - float: The current rating of the RatingHistory.
+        &#34;&#34;&#34;
+        return self.rating
+    
+    def clear_rating_history(self):
+        &#34;&#34;&#34;
+        Clears the rating history of the RatingHistory.
+        &#34;&#34;&#34;
+        self.rating_history = []
+
+    def get_rating_history(self) -&gt; List[Rating]:
+        &#34;&#34;&#34;
+        Returns the rating history of the RatingHistory.
+
+        Returns:
+            - list: the rating history.
+        &#34;&#34;&#34;
+        return self.rating_history
+    
+    def set_rating_history(self, rating_history : List[Rating]):
+        &#34;&#34;&#34;
+        Sets the rating history of the RatingHistory.
+
+        Args:
+            - rating_history (list): A list of rating values representing the RatingHistory&#39;s rating history.
+        &#34;&#34;&#34;
+        self.rating_history = rating_history
+
+    def store_rating(self, date : datetime):
+        &#34;&#34;&#34;
+        Stores the current rating, deviation, volatility, and date in the rating history.
+
+        Args:
+            - date (str): The date when the rating was recorded.
+        &#34;&#34;&#34;
+        if len(self.rating_history) == 0 or not self.rating.equal_rating_and_advantages(self.rating_history[-1][0]):
+            self.rating_history.append((self.rating.copy(), date))
+
+    def get_rating_at_date(self, date : datetime, next : bool = False) -&gt; Rating:
+        &#34;&#34;&#34;
+        Returns the rating of the rating history at a specific date.
+
+        Args:
+            - date (datetime): The date to get the rating for.
+            - next (bool, optional): If True, returns the rating at the next date, otherwise the previous date. Defaults to False.
+
+        Returns:
+            - float: The rating of the rating history at the specified date. If no rating is found for the date, returns the current rating.
+        &#34;&#34;&#34;
+        for i, rating in enumerate(self.rating_history):
+            if rating[-1] &gt;= date:
+                if next:
+                    return rating[0]
+                elif i == 0:
+                    copied_rating = rating[0].copy()
+                    copied_rating.reset()
+                    return copied_rating
+                else:
+                    return self.rating_history[i-1][0]
+        return self.rating
+    
+    def rating_boost(self) -&gt; List[Rating]:
+        &#34;&#34;&#34;
+        Calculate the maximum rating boost for the rating history. 
+        I.e. the difference between the current rating and the previous rating, divided by the deviation.
+
+        Returns:
+            - list: A list containing the maximum rating boost, the current rating, the previous rating, and the date of the rating.
+        &#34;&#34;&#34;
+        max_boost = 0
+        rating_info = None
+        for i, rating in enumerate(self.rating_history[1:]):
+            rating_diff = rating[0].rating - self.rating_history[i][0].rating
+            rating_boost = rating_diff / self.rating_history[i][0].deviation
+            if rating_boost &gt; max_boost:
+                max_boost = rating_boost
+                rating_info = [rating_boost, rating[0], self.rating_history[i][0], rating[1]]
+        return rating_info</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.objects.player.Player" href="player.html#rating.objects.player.Player">Player</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.objects.rating_history.RatingHistory.load_from_settings"><code class="name flex">
+<span>def <span class="ident">load_from_settings</span></span>(<span>settings: dict) ‑> <a title="rating.objects.rating_history.RatingHistory" href="#rating.objects.rating_history.RatingHistory">RatingHistory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads a RatingHistory object from settings.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>settings (dict): The settings to load from.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>RatingHistory: The loaded RatingHistory object.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.rating_history.RatingHistory.clear_rating_history"><code class="name flex">
+<span>def <span class="ident">clear_rating_history</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clears the rating history of the RatingHistory.</p></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.generate_settings"><code class="name flex">
+<span>def <span class="ident">generate_settings</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates settings for the RatingHistory object.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>dict: The generated settings.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.get_rating"><code class="name flex">
+<span>def <span class="ident">get_rating</span></span>(<span>self) ‑> <a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the current rating of the RatingHistory.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The current rating of the RatingHistory.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.get_rating_at_date"><code class="name flex">
+<span>def <span class="ident">get_rating_at_date</span></span>(<span>self, date: datetime.datetime, next: bool = False) ‑> <a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the rating of the rating history at a specific date.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>date (datetime): The date to get the rating for.</li>
+<li>next (bool, optional): If True, returns the rating at the next date, otherwise the previous date. Defaults to False.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The rating of the rating history at the specified date. If no rating is found for the date, returns the current rating.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.get_rating_history"><code class="name flex">
+<span>def <span class="ident">get_rating_history</span></span>(<span>self) ‑> List[<a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the rating history of the RatingHistory.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>list: the rating history.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.rating_boost"><code class="name flex">
+<span>def <span class="ident">rating_boost</span></span>(<span>self) ‑> List[<a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the maximum rating boost for the rating history.
+I.e. the difference between the current rating and the previous rating, divided by the deviation.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>list: A list containing the maximum rating boost, the current rating, the previous rating, and the date of the rating.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.set_rating_history"><code class="name flex">
+<span>def <span class="ident">set_rating_history</span></span>(<span>self, rating_history: List[<a title="rating.objects.rating.Rating" href="rating.html#rating.objects.rating.Rating">Rating</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the rating history of the RatingHistory.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating_history (list): A list of rating values representing the RatingHistory's rating history.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_history.RatingHistory.store_rating"><code class="name flex">
+<span>def <span class="ident">store_rating</span></span>(<span>self, date: datetime.datetime)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stores the current rating, deviation, volatility, and date in the rating history.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>date (str): The date when the rating was recorded.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.objects" href="index.html">rating.objects</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.objects.rating_history.RatingHistory" href="#rating.objects.rating_history.RatingHistory">RatingHistory</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating_history.RatingHistory.clear_rating_history" href="#rating.objects.rating_history.RatingHistory.clear_rating_history">clear_rating_history</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.generate_settings" href="#rating.objects.rating_history.RatingHistory.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.get_rating" href="#rating.objects.rating_history.RatingHistory.get_rating">get_rating</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.get_rating_at_date" href="#rating.objects.rating_history.RatingHistory.get_rating_at_date">get_rating_at_date</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.get_rating_history" href="#rating.objects.rating_history.RatingHistory.get_rating_history">get_rating_history</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.load_from_settings" href="#rating.objects.rating_history.RatingHistory.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.rating_boost" href="#rating.objects.rating_history.RatingHistory.rating_boost">rating_boost</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.set_rating_history" href="#rating.objects.rating_history.RatingHistory.set_rating_history">set_rating_history</a></code></li>
+<li><code><a title="rating.objects.rating_history.RatingHistory.store_rating" href="#rating.objects.rating_history.RatingHistory.store_rating">store_rating</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.objects.rating_period API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.objects.rating_period</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.objects.rating_period.RatingPeriod"><code class="flex name class">
+<span>class <span class="ident">RatingPeriod</span></span>
+<span>(</span><span>rating_periods: List[datetime.datetime] = None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a rating period for chess ratings.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>rating_periods (list): List of datetime objects representing the rating periods.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating_periods (list, optional): List of datetime objects representing the rating periods.</li>
+<li>**kwargs: Additional keyword arguments to be passed to the base class constructor.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RatingPeriod(BaseClass):
+    def __init__(self, rating_periods : List[datetime] = None, **kwargs) -&gt; &#39;RatingPeriod&#39;:
+        &#34;&#34;&#34;
+        Represents a rating period for chess ratings.
+
+        Attributes:
+            - rating_periods (list): List of datetime objects representing the rating periods.
+
+        Args:
+            - rating_periods (list, optional): List of datetime objects representing the rating periods.
+            - **kwargs: Additional keyword arguments to be passed to the base class constructor.
+        &#34;&#34;&#34;
+        if rating_periods is None:
+            rating_periods = []
+        super().__init__(rating_periods=rating_periods, **kwargs)
+
+    def trigger_new_period(self, datetime : datetime = datetime.now()) -&gt; bool:
+        &#34;&#34;&#34;
+        Triggers a new rating period.
+
+        Args:
+            - datetime (datetime, optional): The datetime object representing the new rating period.
+        &#34;&#34;&#34;
+        if len(self.rating_periods) == 0 or datetime &gt; self.rating_periods[-1]:
+            self.rating_periods.append(datetime)
+        elif datetime not in self.rating_periods:
+            self.rating_periods.append(datetime)
+            self.rating_periods.sort()
+        
+    def generate_settings(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Generates settings for the RatingPeriod object.
+
+        Returns:
+            - dict: The generated settings.
+        &#34;&#34;&#34;
+        settings = super().generate_settings()
+        settings[&#39;rating_periods&#39;] = [period.strftime(&#34;%Y/%m/%d - %H:%M:%S&#34;) for period in self.rating_periods]
+        return settings
+    
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;RatingPeriod&#39;:
+        &#34;&#34;&#34;
+        Loads a RatingPeriod object from settings.
+
+        Args:
+            - settings (dict): The settings to load from.
+
+        Returns:
+            - RatingPeriod: The loaded RatingPeriod object.
+        &#34;&#34;&#34;
+        settings = super().get_input_parameters(settings)
+        settings[&#39;rating_periods&#39;] = [datetime.strptime(period, &#34;%Y/%m/%d - %H:%M:%S&#34;) for period in settings[&#39;rating_periods&#39;]]
+        return cls(**settings)
+        
+    def __len__(self) -&gt; int:
+        &#34;&#34;&#34;
+        Returns the number of rating periods.
+
+        Returns:
+            - int: The number of rating periods.
+        &#34;&#34;&#34;
+        return len(self.rating_periods)
+    
+    def __getitem__(self, index : int) -&gt; datetime:
+        &#34;&#34;&#34;
+        Returns the rating period at the specified index.
+
+        Args:
+            - index (int): The index of the rating period.
+
+        Returns:
+            - datetime: The rating period at the specified index.
+        &#34;&#34;&#34;
+        return self.rating_periods[index]
+    
+    def __iter__(self) -&gt; Generator[datetime, None, None]:
+        &#34;&#34;&#34;
+        Returns an iterator for the rating periods.
+
+        Returns:
+            - iterator: An iterator for the rating periods.
+        &#34;&#34;&#34;
+        return iter(self.rating_periods)
+
+    def get_last_period(self) -&gt; datetime:
+        &#34;&#34;&#34;
+        Returns the last rating period.
+
+        Returns:
+            - datetime: The last rating period.
+        &#34;&#34;&#34;
+        return self.rating_periods[-1]
+
+    def n_new_rating_periods(self, last_date : datetime = None) -&gt; int:
+        &#34;&#34;&#34;
+        Returns the number of new rating periods.
+
+        Args:
+            - last_date (datetime, optional): The last date to compare against.
+
+        Returns:
+            - int: The number of new rating periods.
+        &#34;&#34;&#34;
+        if last_date is None:
+            return len(self.rating_periods)
+        return len([p for p in self.rating_periods if p &gt; last_date])
+    
+    def get_period_of_date(self, date : datetime, next : bool = True) -&gt; datetime:
+        &#34;&#34;&#34;
+        Returns the rating period of a given date.
+
+        Args:
+            - date (datetime): The date to find the rating period for.
+            - next (bool, optional): If True, returns the rating period after the given date. If False, returns the rating period before the given date.
+
+        Returns:
+            - datetime: The rating period of the given date.
+        &#34;&#34;&#34;
+        for i in range(len(self.rating_periods)):
+            if date &lt; self.rating_periods[i]:
+                if i &gt; 0:
+                    return self.rating_periods[i] if next else self.rating_periods[i-1]
+                return self.rating_periods[i]
+        return self.rating_periods[-1]
+    
+    def iterate_periods(self, last_date : datetime = None) -&gt; Generator[datetime, None, None]:
+        &#34;&#34;&#34;
+        Iterates over the rating periods.
+
+        Args:
+            - last_date (datetime, optional): The last date to start iterating from.
+
+        Yields:
+            - list: A list of rating periods.
+        &#34;&#34;&#34;
+        for i in range(len(self.rating_periods)):
+            if last_date is None or self.rating_periods[i] &gt; last_date:
+                yield self.rating_periods[:i+1]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.objects.rating_period.RatingPeriod.load_from_settings"><code class="name flex">
+<span>def <span class="ident">load_from_settings</span></span>(<span>settings: dict) ‑> <a title="rating.objects.rating_period.RatingPeriod" href="#rating.objects.rating_period.RatingPeriod">RatingPeriod</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads a RatingPeriod object from settings.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>settings (dict): The settings to load from.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>RatingPeriod: The loaded RatingPeriod object.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.rating_period.RatingPeriod.generate_settings"><code class="name flex">
+<span>def <span class="ident">generate_settings</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates settings for the RatingPeriod object.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>dict: The generated settings.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriod.get_last_period"><code class="name flex">
+<span>def <span class="ident">get_last_period</span></span>(<span>self) ‑> datetime.datetime</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the last rating period.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>datetime: The last rating period.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriod.get_period_of_date"><code class="name flex">
+<span>def <span class="ident">get_period_of_date</span></span>(<span>self, date: datetime.datetime, next: bool = True) ‑> datetime.datetime</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the rating period of a given date.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>date (datetime): The date to find the rating period for.</li>
+<li>next (bool, optional): If True, returns the rating period after the given date. If False, returns the rating period before the given date.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>datetime: The rating period of the given date.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriod.iterate_periods"><code class="name flex">
+<span>def <span class="ident">iterate_periods</span></span>(<span>self, last_date: datetime.datetime = None) ‑> Generator[datetime.datetime, None, None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Iterates over the rating periods.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>last_date (datetime, optional): The last date to start iterating from.</li>
+</ul>
+<h2 id="yields">Yields</h2>
+<ul>
+<li>list: A list of rating periods.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriod.n_new_rating_periods"><code class="name flex">
+<span>def <span class="ident">n_new_rating_periods</span></span>(<span>self, last_date: datetime.datetime = None) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the number of new rating periods.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>last_date (datetime, optional): The last date to compare against.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>int: The number of new rating periods.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriod.trigger_new_period"><code class="name flex">
+<span>def <span class="ident">trigger_new_period</span></span>(<span>self, datetime: datetime.datetime = datetime.datetime(2024, 9, 1, 13, 11, 48, 700240)) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Triggers a new rating period.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>datetime (datetime, optional): The datetime object representing the new rating period.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriodEnum"><code class="flex name class">
+<span>class <span class="ident">RatingPeriodEnum</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RatingPeriodEnum:
+    TOURNAMENT = 0 # rating period is determined by tournaments: a new rating period is triggered when a new tournament is created
+    TIMEDELTA = 1 # rating period is determined by a timedelta: a new rating period is triggered after a certain amount of time has passed
+    MANUAL = 2 # rating period is determined manually: a new rating period is triggered manually</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="rating.objects.rating_period.RatingPeriodEnum.MANUAL"><code class="name">var <span class="ident">MANUAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriodEnum.TIMEDELTA"><code class="name">var <span class="ident">TIMEDELTA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="rating.objects.rating_period.RatingPeriodEnum.TOURNAMENT"><code class="name">var <span class="ident">TOURNAMENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.objects" href="index.html">rating.objects</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.objects.rating_period.RatingPeriod" href="#rating.objects.rating_period.RatingPeriod">RatingPeriod</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating_period.RatingPeriod.generate_settings" href="#rating.objects.rating_period.RatingPeriod.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.get_last_period" href="#rating.objects.rating_period.RatingPeriod.get_last_period">get_last_period</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.get_period_of_date" href="#rating.objects.rating_period.RatingPeriod.get_period_of_date">get_period_of_date</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.iterate_periods" href="#rating.objects.rating_period.RatingPeriod.iterate_periods">iterate_periods</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.load_from_settings" href="#rating.objects.rating_period.RatingPeriod.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.n_new_rating_periods" href="#rating.objects.rating_period.RatingPeriod.n_new_rating_periods">n_new_rating_periods</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriod.trigger_new_period" href="#rating.objects.rating_period.RatingPeriod.trigger_new_period">trigger_new_period</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.objects.rating_period.RatingPeriodEnum" href="#rating.objects.rating_period.RatingPeriodEnum">RatingPeriodEnum</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating_period.RatingPeriodEnum.MANUAL" href="#rating.objects.rating_period.RatingPeriodEnum.MANUAL">MANUAL</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriodEnum.TIMEDELTA" href="#rating.objects.rating_period.RatingPeriodEnum.TIMEDELTA">TIMEDELTA</a></code></li>
+<li><code><a title="rating.objects.rating_period.RatingPeriodEnum.TOURNAMENT" href="#rating.objects.rating_period.RatingPeriodEnum.TOURNAMENT">TOURNAMENT</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

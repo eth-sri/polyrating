@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rating"
+version = "1.0.0"
+authors = [
+  { name="Jasper Dekoninck", email="jasper.dekoninck@inf.ethz.ch" },
+]
+description = "Rating Computation"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache 2.0 License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "numpy >= 1.26.4",
+    "pandas >= 2.2.1",
+    "matplotlib >= 3.8.3",
+    "seaborn >= 0.13.2",
+    "loguru >= 0.7.2",
+    "hyperopt >= 0.2.7",
+    "scipy >= 1.12.0",
+    "sortedcontainers >= 2.4.0",
+    "trueskillthroughtime >= 0.03"
+]

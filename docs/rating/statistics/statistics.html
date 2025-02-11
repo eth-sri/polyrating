@@ -1,0 +1,1661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.statistics.statistics API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.statistics.statistics</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.statistics.statistics.AnonymousLeaderboard"><code class="flex name class">
+<span>class <span class="ident">AnonymousLeaderboard</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a restricted leaderboard for chess players.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AnonymousLeaderboard(Statistic):
+    &#34;&#34;&#34;
+    Represents a restricted leaderboard for chess players.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute_leaderboard(player_database : PlayerDatabase, game_database : GameDatabase,
+                            tournament_database : TournamentDatabase = None, anonymous_date=datetime(2024, 4, 28), 
+                            anon_file=&#39;anonymous.txt&#39;, not_anom_file=&#39;not_anonymous.txt&#39;) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the leaderboard based on the provided player, game, and tournament databases.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - game_database (GameDatabase): The database containing game information.
+            - tournament_database (TournamentDatabase): The database containing tournament information.
+            - anonymous_date (datetime, optional): The date before which players are only added anonymously. Defaults to datetime(2024, 4, 28).
+            - anon_file (str, optional): The file containing the names of players wishing to remain anonymous. Defaults to &#39;anonymous.txt&#39;.
+            - not_anom_file (str, optional): The file containing the names of players not wishing to remain anonymous. Defaults to &#39;not_anonymous.txt&#39;.
+
+        Returns:
+            - pandas.DataFrame: The computed leaderboard as a pandas DataFrame.
+        &#34;&#34;&#34;
+        anon_names = []
+        with open(os.path.join(&#39;data&#39;, anon_file), &#39;r&#39;) as f:
+            for line in f:
+                anon_names.append(line.strip())
+        not_anon_names = []
+        with open(os.path.join(&#39;data&#39;, not_anom_file), &#39;r&#39;) as f:
+            for line in f:
+                not_anon_names.append(line.strip())
+        leaderboard = []
+        for player in player_database:
+            wins = player.get_number_of_wins(game_database.get_games_per_player(player.id))
+            losses = player.get_number_of_losses(game_database.get_games_per_player(player.id))
+            draws = player.get_number_of_draws(game_database.get_games_per_player(player.id))
+            rating = player.get_rating()
+            last_game_date = [game.get_date() for game in game_database.get_games_per_player(player.id, allow_forfeit=True)]
+            if len(last_game_date) == 0:
+                continue
+            last_game_date = max(last_game_date)
+            condition_met = last_game_date &gt;= datetime.now() - timedelta(days=300)
+            is_anon = (last_game_date &lt; anonymous_date and player.name not in not_anon_names) or player.name in anon_names
+            n_games = wins + losses + draws
+            question_mark = &#39; (?)&#39; if n_games &lt; 12 else &#39;&#39;
+            if condition_met:
+                if not is_anon:
+                    leaderboard.append((player.name, str(int(rating.rating)) + question_mark, wins, losses, draws))
+                else:
+                    leaderboard.append((&#34;Anonymous&#34;, str(int(rating.rating)), &#39;&#39;, &#39;&#39;, &#39;&#39;))
+        leaderboard.sort(key=lambda x: int(x[1].split(&#39; &#39;)[0]), reverse=True)
+        leaderboard = pd.DataFrame(leaderboard, columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Wins&#34;, &#34;Losses&#34;, &#34;Draws&#34;])
+        leaderboard[&#39;Rank&#39;] = [i + 1 for i in range(len(leaderboard))]
+        return leaderboard
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#39;anonymized_leaderboard.csv&#39;, anonymous_date=datetime(2024, 4, 28), 
+                anon_file=&#39;anonymous.txt&#39;, not_anom_file=&#39;not_anonymous.txt&#39;) -&gt; pd.DataFrame:
+        leaderboard = AnonymousLeaderboard.compute_leaderboard(player_database, game_database, tournament_database, 
+                                                               anonymous_date=anonymous_date, 
+                                                               anon_file=anon_file, not_anom_file=not_anom_file)
+        if save_folder and file_name:
+            leaderboard.to_csv(os.path.join(save_folder, file_name), index=False)
+        return leaderboard</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.AnonymousLeaderboard.compute_leaderboard"><code class="name flex">
+<span>def <span class="ident">compute_leaderboard</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, tournament_database: <a title="rating.databases.tournament_database.TournamentDatabase" href="../databases/tournament_database.html#rating.databases.tournament_database.TournamentDatabase">TournamentDatabase</a> = None, anonymous_date=datetime.datetime(2024, 4, 28, 0, 0), anon_file='anonymous.txt', not_anom_file='not_anonymous.txt') ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the leaderboard based on the provided player, game, and tournament databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>game_database (GameDatabase): The database containing game information.</li>
+<li>tournament_database (TournamentDatabase): The database containing tournament information.</li>
+<li>anonymous_date (datetime, optional): The date before which players are only added anonymously. Defaults to datetime(2024, 4, 28).</li>
+<li>anon_file (str, optional): The file containing the names of players wishing to remain anonymous. Defaults to 'anonymous.txt'.</li>
+<li>not_anom_file (str, optional): The file containing the names of players not wishing to remain anonymous. Defaults to 'not_anonymous.txt'.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: The computed leaderboard as a pandas DataFrame.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.DetailedLeaderboard"><code class="flex name class">
+<span>class <span class="ident">DetailedLeaderboard</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a detailed leaderboard for chess players.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DetailedLeaderboard(Statistic):
+    &#34;&#34;&#34;
+    Represents a detailed leaderboard for chess players.
+    &#34;&#34;&#34;
+    @staticmethod
+    def compute_leaderboard(player_database : PlayerDatabase, game_database : GameDatabase) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the leaderboard based on the provided player, game, and tournament databases.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - game_database (GameDatabase): The database containing game information.
+
+        Returns:
+            - pandas.DataFrame: The computed leaderboard as a pandas DataFrame.
+        &#34;&#34;&#34;
+        leaderboard = []
+        advantage_names = set()
+        for player in player_database:
+            advantage_names = advantage_names.union(set(player.get_rating().get_advantage_names()))
+        advantage_names = list(advantage_names)
+        all_info_names = [&#34;Name&#34;, &#34;Rating&#34;, &#34;Deviation&#34;, &#34;Wins&#34;, &#34;Losses&#34;, &#34;Draws&#34;]
+        for name in advantage_names:
+            all_info_names.append(f&#34;{name} Rating&#34;)
+            all_info_names.append(f&#34;{name} Deviation&#34;)
+        for player in player_database:
+            wins = player.get_number_of_wins(game_database.get_games_per_player(player.id))
+            losses = player.get_number_of_losses(game_database.get_games_per_player(player.id))
+            draws = player.get_number_of_draws(game_database.get_games_per_player(player.id))
+            rating = player.get_rating()
+            all_info = [player.name, rating.rating, rating.deviation, wins, losses, draws]
+            for name in advantage_names:
+                advantage_rating = rating.get_advantage(name)
+                if advantage_rating is None:
+                    all_info.append(None)
+                    all_info.append(None)
+                else:
+                    all_info.append(advantage_rating.rating)
+                    all_info.append(advantage_rating.deviation)
+            leaderboard.append(all_info)
+        leaderboard.sort(key=lambda x: x[1], reverse=True)
+        leaderboard = pd.DataFrame(leaderboard, columns=all_info_names)
+        return leaderboard
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, 
+                save_folder : str = None, file_name : str = &#39;detailed_leaderboard.csv&#39;) -&gt; pd.DataFrame:
+        leaderboard = DetailedLeaderboard.compute_leaderboard(player_database, game_database)
+        if save_folder and file_name:
+            leaderboard.to_csv(os.path.join(save_folder, file_name), index=False)
+        return leaderboard</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.DetailedLeaderboard.compute_leaderboard"><code class="name flex">
+<span>def <span class="ident">compute_leaderboard</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the leaderboard based on the provided player, game, and tournament databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>game_database (GameDatabase): The database containing game information.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: The computed leaderboard as a pandas DataFrame.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.Leaderboard"><code class="flex name class">
+<span>class <span class="ident">Leaderboard</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a restricted leaderboard for chess players.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Leaderboard(Statistic):
+    &#34;&#34;&#34;
+    Represents a restricted leaderboard for chess players.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute_leaderboard(player_database : PlayerDatabase = None, game_database : GameDatabase = None,
+                            tournament_database : TournamentDatabase = None, restricted : bool = False) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the leaderboard based on the provided player, game, and tournament databases.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - game_database (GameDatabase): The database containing game information.
+            - tournament_database (TournamentDatabase): The database containing tournament information.
+            - restricted (bool, optional): Whether to compute the restricted leaderboard. Defaults to False.
+
+        Returns:
+            - pandas.DataFrame: The computed leaderboard as a pandas DataFrame.
+        &#34;&#34;&#34;
+        leaderboard = []
+        for player in player_database:
+            wins = player.get_number_of_wins(game_database.get_games_per_player(player.id))
+            losses = player.get_number_of_losses(game_database.get_games_per_player(player.id))
+            draws = player.get_number_of_draws(game_database.get_games_per_player(player.id))
+            rating = player.get_rating()
+            last_game_date = [game.get_date() for game in game_database.get_games_per_player(player.id, allow_forfeit=True)]
+            if len(last_game_date) == 0:
+                continue
+            last_game_date = max(last_game_date)
+            condition_met = wins + losses + draws &gt;= 12 and last_game_date &gt;= datetime.now() - timedelta(days=365)
+            if not restricted or condition_met:
+                leaderboard.append((player.name, int(rating.rating), wins, losses, draws))
+        leaderboard.sort(key=lambda x: x[1], reverse=True)
+        leaderboard = pd.DataFrame(leaderboard, columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Wins&#34;, &#34;Losses&#34;, &#34;Draws&#34;])
+        return leaderboard
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, 
+                save_folder : str = None, file_name : str = &#39;leaderboard.csv&#39;) -&gt; pd.DataFrame:
+        leaderboard = Leaderboard.compute_leaderboard(player_database, game_database, tournament_database, restricted=True)
+        if save_folder and file_name:
+            leaderboard.to_csv(os.path.join(save_folder, file_name), index=False)
+        return leaderboard</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.Leaderboard.compute_leaderboard"><code class="name flex">
+<span>def <span class="ident">compute_leaderboard</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, tournament_database: <a title="rating.databases.tournament_database.TournamentDatabase" href="../databases/tournament_database.html#rating.databases.tournament_database.TournamentDatabase">TournamentDatabase</a> = None, restricted: bool = False) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the leaderboard based on the provided player, game, and tournament databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>game_database (GameDatabase): The database containing game information.</li>
+<li>tournament_database (TournamentDatabase): The database containing tournament information.</li>
+<li>restricted (bool, optional): Whether to compute the restricted leaderboard. Defaults to False.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: The computed leaderboard as a pandas DataFrame.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.MostSurprisingGames"><code class="flex name class">
+<span>class <span class="ident">MostSurprisingGames</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic for computing the most surprising games.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MostSurprisingGames(Statistic):
+    &#34;&#34;&#34;
+    A class representing the statistic for computing the most surprising games.
+    &#34;&#34;&#34;
+    @staticmethod
+    def compute_surprises(games : Generator[Game, None, None], player_database : PlayerDatabase, 
+                          rating_system : RatingSystem,
+                          n_games : int) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes how surprising the result each of the given games is.
+
+        Args:
+            - games (Generator[Game, None, None]): The game database.
+            - player_database (PlayerDatabase): The player database.
+            - rating_system (RatingSystem): The rating system used to compute the ratings.
+            - n_games (int): The number of most surprising games to compute.
+
+        Returns:
+            - pandas.DataFrame: A DataFrame containing the most surprising games.
+
+        &#34;&#34;&#34;
+        games_rating_difference = []
+        for game in games:
+            home = player_database[game.home]
+            out = player_database[game.out]
+            if game.get_date() is not None:
+                home_rating = home.get_rating_at_date(game.get_date(), next=True)
+                out_rating = out.get_rating_at_date(game.get_date(), next=True)
+            else:
+                home_rating = home.get_rating()
+                out_rating = out.get_rating()
+
+            expected_score = rating_system.compute_expected_score(
+                home, [game], player_database, game.get_date(), next=True
+            )
+
+            loss = game.get_result() * np.log(expected_score) + (1 - game.get_result()) * np.log(1 - expected_score)
+            games_rating_difference.append((home.name, int(home_rating.rating),
+                                            out.name, int(out_rating.rating),
+                                            game.result, game.get_date().strftime(&#34;%d/%m/%Y&#34;), loss, expected_score))
+        games_rating_difference.sort(key=lambda x: x[-2])
+        surprises = pd.DataFrame(games_rating_difference[:n_games], 
+                                 columns=[&#34;Home&#34;, &#34;Home Rating&#34;, &#34;Out&#34;, &#34;Out Rating&#34;,
+                                          &#34;Result&#34;, &#34;Date&#34;, &#34;Loss&#34;, &#34;Expected Score&#34;])
+        return surprises
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, 
+                save_folder : str = None, file_name : str = &#39;most_surprising_games.csv&#39;, n_games : int = 50) -&gt; pd.DataFrame:
+        surprises = MostSurprisingGames.compute_surprises(game_database.get_games_no_forfeit(), 
+                                                          player_database, rating_system,
+                                                          n_games)
+        if save_folder and file_name:
+            surprises.to_csv(os.path.join(save_folder, file_name), index=False)
+        return surprises</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.MostSurprisingGames.compute_surprises"><code class="name flex">
+<span>def <span class="ident">compute_surprises</span></span>(<span>games: Generator[<a title="rating.objects.game.Game" href="../objects/game.html#rating.objects.game.Game">Game</a>, None, None], player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a>, n_games: int) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes how surprising the result each of the given games is.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>games (Generator[Game, None, None]): The game database.</li>
+<li>player_database (PlayerDatabase): The player database.</li>
+<li>rating_system (RatingSystem): The rating system used to compute the ratings.</li>
+<li>n_games (int): The number of most surprising games to compute.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: A DataFrame containing the most surprising games.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.MostSurprisingGamesTournament"><code class="flex name class">
+<span>class <span class="ident">MostSurprisingGamesTournament</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic of the most surprising games in a tournament.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MostSurprisingGamesTournament(TournamentStatistic):
+    &#34;&#34;&#34;
+    A class representing the statistic of the most surprising games in a tournament.
+    &#34;&#34;&#34;
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, 
+                game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, save_folder=None, 
+                file_name : str = &#34;most_surprising_games.csv&#34;, n_games : int = 10) -&gt; pd.DataFrame:
+        games =  game_database.get_games_per_tournament(tournament.id)
+        surprises = MostSurprisingGames.compute_surprises(games, player_database, rating_system, 
+                                                          n_games)
+        if save_folder and file_name:
+            surprises.to_csv(os.path.join(save_folder, file_name), index=False)
+        return surprises</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.MostSurprisingPerformance"><code class="flex name class">
+<span>class <span class="ident">MostSurprisingPerformance</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic for the most surprising rating increases in a single round update.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MostSurprisingPerformance(Statistic):
+    &#34;&#34;&#34;
+    A class representing the statistic for the most surprising rating increases in a single round update.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute_surprises(player_database : PlayerDatabase, n_performances : int) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the most surprising performances based on player and tournament databases.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - n_performances (int): The number of performances to consider.
+
+        Returns:
+            - pandas.DataFrame: A DataFrame containing the most surprising performances.
+        &#34;&#34;&#34;
+        players_boosts = [(player, player.rating_boost()) for player in player_database]
+        players_boosts = [boost for boost in players_boosts if boost[1] is not None]
+        players_boosts = sorted(players_boosts, key=lambda x: x[1][0], reverse=True)
+        players_boosts = players_boosts[:n_performances]
+        players_boosts = [(player.name, int(player.get_rating().rating), 1 - norm.cdf(performance[0]),
+                           performance[2].rating, performance[1].rating, performance[3]) 
+                          for player, performance in players_boosts]
+        # to dataframe
+        players_boosts = pd.DataFrame(players_boosts, 
+                                      columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Probability&#34;, &#34;Start&#34;, &#34;End&#34;, &#34;Date&#34;])
+        return players_boosts
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;most_surprising_performances.csv&#34;, n_performances : int = 50) -&gt; pd.DataFrame:
+        players_boosts = MostSurprisingPerformance.compute_surprises(player_database, n_performances)
+        if save_folder and file_name:
+            players_boosts.to_csv(os.path.join(save_folder, file_name), index=False)
+        return players_boosts</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.MostSurprisingPerformance.compute_surprises"><code class="name flex">
+<span>def <span class="ident">compute_surprises</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, n_performances: int) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the most surprising performances based on player and tournament databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>n_performances (int): The number of performances to consider.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: A DataFrame containing the most surprising performances.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.MostSurprisingRestrictedTournamentPerformance"><code class="flex name class">
+<span>class <span class="ident">MostSurprisingRestrictedTournamentPerformance</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic for the most surprising performance in a tournament, restricted to players with at least some number of games.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MostSurprisingRestrictedTournamentPerformance(TournamentStatistic):
+    &#34;&#34;&#34;
+    A class representing the statistic for the most surprising performance in a tournament, restricted to players with at least some number of games.
+    &#34;&#34;&#34;
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;most_surprising_performances_restricted.csv&#34;, minimum_games : int = 10) -&gt; pd.DataFrame:
+        players_boosts = MostSurprisingTournamentPerformance.compute_surprises(player_database, game_database, 
+                                                                               tournament, restrict=minimum_games)
+        if save_folder:
+            players_boosts.to_csv(os.path.join(save_folder, file_name), 
+                                  index=False)
+        return players_boosts</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.MostSurprisingTournamentPerformance"><code class="flex name class">
+<span>class <span class="ident">MostSurprisingTournamentPerformance</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic for the most surprising performance in a tournament.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MostSurprisingTournamentPerformance(TournamentStatistic):
+    &#34;&#34;&#34;
+    A class representing the statistic for the most surprising performance in a tournament.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute_surprises(player_database : PlayerDatabase, game_database : GameDatabase, 
+                          tournament : Tournament, restrict : int = None) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the most surprising performances based on player and tournament databases.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - game_database (GameDatabase): The database containing game information.
+            - tournament (Tournament): The tournament for which to compute the most surprising performances.
+            - restrict (int): Minimum number of games to play before being included in the leaderboard.
+
+        Returns:
+            - pandas.DataFrame: A DataFrame containing the most surprising performances.
+        &#34;&#34;&#34;
+        player_boosts = []
+        for player in tournament.get_players(player_database):
+            rating_before_tournament = player.get_rating_at_date(tournament.get_date(), next=False)
+            tournament_performance = tournament.get_player_performance(player.id)
+            performance_tournament = tournament_performance[&#39;rating_performance&#39;]
+            dev = np.sqrt(rating_before_tournament.deviation ** 2 + performance_tournament.deviation ** 2)
+            games = [game for game in game_database.get_games_per_player(player.id) if game.get_date() &lt; tournament.get_date()]
+            if restrict is not None and len(games) &lt; restrict:
+                continue
+            player_boosts.append((player, (performance_tournament.rating - rating_before_tournament.rating) / dev, 
+                                  performance_tournament.rating))
+        player_boosts = sorted(player_boosts, key=lambda x: x[1], reverse=True)
+        player_boosts = [(player.name, int(player.get_rating().rating), 1 - norm.cdf(performance), tournament_perf,
+                           tournament.name, tournament.get_date().strftime(&#34;%d/%m/%Y&#34;))
+                          for player, performance, tournament_perf in player_boosts]
+        # to dataframe
+        player_boosts = pd.DataFrame(player_boosts, 
+                                      columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Probability&#34;, &#34;Tournament Performance&#34;, &#34;Tournament&#34;, &#34;Date&#34;])
+        return player_boosts
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;most_surprising_performances.csv&#34;) -&gt; pd.DataFrame:
+        players_boosts = MostSurprisingTournamentPerformance.compute_surprises(player_database, game_database, tournament)
+        if save_folder and file_name:
+            players_boosts.to_csv(os.path.join(save_folder, file_name), index=False)
+        return players_boosts</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.MostSurprisingTournamentPerformance.compute_surprises"><code class="name flex">
+<span>def <span class="ident">compute_surprises</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, tournament: <a title="rating.objects.tournament.Tournament" href="../objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a>, restrict: int = None) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the most surprising performances based on player and tournament databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>game_database (GameDatabase): The database containing game information.</li>
+<li>tournament (Tournament): The tournament for which to compute the most surprising performances.</li>
+<li>restrict (int): Minimum number of games to play before being included in the leaderboard.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: A DataFrame containing the most surprising performances.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.NumberOfGamesLeaderboard"><code class="flex name class">
+<span>class <span class="ident">NumberOfGamesLeaderboard</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a leaderboard that computes the number of games played by each player.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NumberOfGamesLeaderboard(Statistic):
+    &#34;&#34;&#34;
+    Represents a leaderboard that computes the number of games played by each player.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;number_of_games.csv&#34;) -&gt; pd.DataFrame:
+        leaderboard = []
+        for player in player_database:
+            leaderboard.append((player.name, int(player.get_rating().rating),
+                                game_database.get_n_games_per_player(player.id)))
+        leaderboard.sort(key=lambda x: x[2], reverse=True)
+        leaderboard = pd.DataFrame(leaderboard, columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Number of Games&#34;])
+        if save_folder and file_name:
+            leaderboard.to_csv(os.path.join(save_folder, file_name), index=False)
+        return leaderboard</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.RankingByMaxTournamentPerformance"><code class="flex name class">
+<span>class <span class="ident">RankingByMaxTournamentPerformance</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class that computes the ranking of players based on their maximum tournament performance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RankingByMaxTournamentPerformance(Statistic):
+    &#34;&#34;&#34;
+    A class that computes the ranking of players based on their maximum tournament performance.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def max_performances(player_database : PlayerDatabase, tournament_database : TournamentDatabase, 
+                         performance_name : str) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the maximum performance for each player.
+
+        Args:
+            - player_database (PlayerDatabase): The database of players.
+            - game_database (GameDatabase): The database of games.
+            - tournament_database (TournamentDatabase): The database of tournaments.
+            - performance_name (str): The name of the performance to compute.
+
+        Returns:
+            - pandas.DataFrame: The computed maximum performances.
+        &#34;&#34;&#34;
+        max_performances = []
+        for player in player_database:
+            player_performances_ = tournament_database.get_player_performances(player.id)
+            # only count performances were player played all games
+            player_performances = []
+            for performance in player_performances_:
+                if performance[&#39;n_games&#39;] == tournament_database[performance[&#39;tournament&#39;]].rounds:
+                    player_performances.append(performance)
+            
+            if len(player_performances) &gt; 0:
+                # get the maximum performance and the tournament
+                max_performance = max(player_performances, key=lambda x: x[performance_name].rating)
+                max_ = max_performance[performance_name].rating
+                tournament = tournament_database[max_performance[&#39;tournament&#39;]]
+                max_performances.append((player.name, int(player.get_rating().rating),
+                                         int(max_), 
+                                         tournament.name, tournament.get_date().strftime(&#34;%d/%m/%Y&#34;)))
+        max_performances.sort(key=lambda x: x[2], reverse=True)
+        max_performances = pd.DataFrame(max_performances, 
+                                        columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Max Performance&#34;, &#34;Tournament&#34;, &#34;Date&#34;])
+        return max_performances
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None,
+                file_name : str = &#34;max_performances.csv&#34;) -&gt; pd.DataFrame:
+        max_performances = RankingByMaxTournamentPerformance.max_performances(player_database, 
+                                                                              tournament_database, 
+                                                                              &#34;rating_performance&#34;)
+        if save_folder and file_name:
+            max_performances.to_csv(os.path.join(save_folder, file_name), 
+                                    index=False)
+        return max_performances</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.RankingByMaxTournamentPerformance.max_performances"><code class="name flex">
+<span>def <span class="ident">max_performances</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, tournament_database: <a title="rating.databases.tournament_database.TournamentDatabase" href="../databases/tournament_database.html#rating.databases.tournament_database.TournamentDatabase">TournamentDatabase</a>, performance_name: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the maximum performance for each player.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database of players.</li>
+<li>game_database (GameDatabase): The database of games.</li>
+<li>tournament_database (TournamentDatabase): The database of tournaments.</li>
+<li>performance_name (str): The name of the performance to compute.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: The computed maximum performances.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.RatingDistribution"><code class="flex name class">
+<span>class <span class="ident">RatingDistribution</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the rating distribution statistic.</p>
+<p>This statistic computes and visualizes the distribution of ratings for a given set of players.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RatingDistribution(Statistic):
+    &#34;&#34;&#34;
+    A class representing the rating distribution statistic.
+
+    This statistic computes and visualizes the distribution of ratings for a given set of players.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def create_figure(ratings : List[float], save_path : str) -&gt; tuple:
+        &#34;&#34;&#34;
+        Create a figure of the rating distribution.
+
+        Args:
+            - ratings (list): A list of ratings.
+            - save_path (str): The path to save the figure.
+        
+        Returns:
+            - tuple: A tuple containing the figure and axis objects.
+        &#34;&#34;&#34;
+        fig, ax = plt.subplots()
+        ax = sns.histplot(ratings, color=Statistic.default_color, kde=False, 
+                          shrink=0.95, alpha=0.7, linewidth=0)
+        ax.set_title(&#34;Rating Distribution&#34;, fontsize=14)
+        ax.set_xlabel(&#34;Rating&#34;, fontsize=12)
+        ax.set_ylabel(&#34;&#34;)
+        ax.set_facecolor((0.95, 0.95, 0.95))
+        sns.despine(left=True, bottom=True)
+        fig.tight_layout()
+        if save_path:
+            fig.savefig(save_path)
+        return fig, ax
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;rating_distribution.png&#34;) -&gt; tuple:
+        ratings = [player.get_rating().rating for player in player_database if player.get_rating().rating != DEFAULT_RATING.rating]
+        save_path = None
+        if save_folder and file_name:
+            save_path = os.path.join(save_folder, file_name)
+        return RatingDistribution.create_figure(ratings, save_path)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.RatingDistribution.create_figure"><code class="name flex">
+<span>def <span class="ident">create_figure</span></span>(<span>ratings: List[float], save_path: str) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a figure of the rating distribution.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>ratings (list): A list of ratings.</li>
+<li>save_path (str): The path to save the figure.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the figure and axis objects.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.SharedRatingStatistic"><code class="flex name class">
+<span>class <span class="ident">SharedRatingStatistic</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the shared ratings statistic. This statistic returns the shared ratings of the rating system, if it has any.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SharedRatingStatistic(Statistic):
+    &#34;&#34;&#34;A class representing the shared ratings statistic. This statistic returns the shared ratings of the rating system, if it has any.&#34;&#34;&#34;
+
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;shared_ratings.csv&#34;) -&gt; pd.DataFrame:
+        shared_ratings = []
+        if hasattr(rating_system, &#34;shared_rating_histories&#34;):
+            for advantage, rating in zip(rating_system.shared_advantages, rating_system.shared_rating_histories):
+                shared_ratings.append((advantage[0], str(advantage[1]), rating.get_rating().rating, rating.get_rating().deviation))
+        shared_ratings = pd.DataFrame(shared_ratings, columns=[&#34;Name&#34;, &#34;Matching&#34;, &#34;Rating&#34;, &#34;Deviation&#34;])
+        if save_folder:
+            shared_ratings.to_csv(os.path.join(save_folder, file_name), index=False)
+        return shared_ratings</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.Statistic"><code class="flex name class">
+<span>class <span class="ident">Statistic</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a statistic calculation for chess ratings.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>default_color (str): The default color for the statistic.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Statistic:
+    &#34;&#34;&#34;
+    Represents a statistic calculation for chess ratings.
+
+    Attributes:
+        - default_color (str): The default color for the statistic.
+    &#34;&#34;&#34;
+    default_color = sns.color_palette(&#34;Greens&#34;)[4]
+    second_color = sns.color_palette(&#39;Blues&#39;)[4]
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, file_name : str = None, 
+                **kwargs) -&gt; Any:
+        &#34;&#34;&#34;
+        Computes the statistic based on the provided databases.
+
+        Args:
+            - player_database (PlayerDatabase): The player database.
+            - game_database (GameDatabase): The game database.
+            - tournament_database (TournamentDatabase): The tournament database.
+            - rating_system (RatingSystem): The rating system used to compute the statistic.
+            - save_folder (str, optional): The folder to save the computed statistic. Defaults to None.
+            - file_name (str, optional): The name of the file to save the computed statistic. Defaults to None.
+            - **kwargs: Additional keyword arguments for the computation.
+
+        Returns:
+            - Any: The computed statistic. Can take any format, depending on the computed statistic
+        &#34;&#34;&#34;
+        raise NotImplementedError</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.AnonymousLeaderboard" href="#rating.statistics.statistics.AnonymousLeaderboard">AnonymousLeaderboard</a></li>
+<li><a title="rating.statistics.statistics.DetailedLeaderboard" href="#rating.statistics.statistics.DetailedLeaderboard">DetailedLeaderboard</a></li>
+<li><a title="rating.statistics.statistics.Leaderboard" href="#rating.statistics.statistics.Leaderboard">Leaderboard</a></li>
+<li><a title="rating.statistics.statistics.MostSurprisingGames" href="#rating.statistics.statistics.MostSurprisingGames">MostSurprisingGames</a></li>
+<li><a title="rating.statistics.statistics.MostSurprisingPerformance" href="#rating.statistics.statistics.MostSurprisingPerformance">MostSurprisingPerformance</a></li>
+<li><a title="rating.statistics.statistics.NumberOfGamesLeaderboard" href="#rating.statistics.statistics.NumberOfGamesLeaderboard">NumberOfGamesLeaderboard</a></li>
+<li><a title="rating.statistics.statistics.RankingByMaxTournamentPerformance" href="#rating.statistics.statistics.RankingByMaxTournamentPerformance">RankingByMaxTournamentPerformance</a></li>
+<li><a title="rating.statistics.statistics.RatingDistribution" href="#rating.statistics.statistics.RatingDistribution">RatingDistribution</a></li>
+<li><a title="rating.statistics.statistics.SharedRatingStatistic" href="#rating.statistics.statistics.SharedRatingStatistic">SharedRatingStatistic</a></li>
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.TournamentsPerPlayer" href="#rating.statistics.statistics.TournamentsPerPlayer">TournamentsPerPlayer</a></li>
+<li><a title="rating.statistics.statistics.WinRateByHome" href="#rating.statistics.statistics.WinRateByHome">WinRateByHome</a></li>
+<li><a title="rating.statistics.statistics.WinRatingDifference" href="#rating.statistics.statistics.WinRatingDifference">WinRatingDifference</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="rating.statistics.statistics.Statistic.default_color"><code class="name">var <span class="ident">default_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="rating.statistics.statistics.Statistic.second_color"><code class="name">var <span class="ident">second_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.Statistic.compute"><code class="name flex">
+<span>def <span class="ident">compute</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, tournament_database: <a title="rating.databases.tournament_database.TournamentDatabase" href="../databases/tournament_database.html#rating.databases.tournament_database.TournamentDatabase">TournamentDatabase</a> = None, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None, save_folder: str = None, file_name: str = None, **kwargs) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the statistic based on the provided databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The player database.</li>
+<li>game_database (GameDatabase): The game database.</li>
+<li>tournament_database (TournamentDatabase): The tournament database.</li>
+<li>rating_system (RatingSystem): The rating system used to compute the statistic.</li>
+<li>save_folder (str, optional): The folder to save the computed statistic. Defaults to None.</li>
+<li>file_name (str, optional): The name of the file to save the computed statistic. Defaults to None.</li>
+<li>**kwargs: Additional keyword arguments for the computation.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Any: The computed statistic. Can take any format, depending on the computed statistic</li>
+</ul></div>
+</dd>
+</dl>
+</dd>
+<dt id="rating.statistics.statistics.TournamentRanking"><code class="flex name class">
+<span>class <span class="ident">TournamentRanking</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents the ranking statistics for a chess tournament.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TournamentRanking(TournamentStatistic):
+    &#34;&#34;&#34;
+    Represents the ranking statistics for a chess tournament.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;leaderboard.csv&#34;) -&gt; pd.DataFrame:
+        ranking = []
+        for player_stats in tournament.get_results():
+            player = player_database[player_stats[&#39;player&#39;]]
+            player_rating = player.get_rating_at_date(tournament.get_date(), next=True)
+            ranking_info = [player.name, int(player_rating.rating), player_stats[&#39;score&#39;]]
+            for tie_break_name in tournament.tie_break_names:
+                ranking_info.append(player_stats[tie_break_name])
+            ranking_info.append(int(player_stats[&#39;rating_performance&#39;].rating))
+            ranking.append(ranking_info)
+        ranking.sort(key=lambda x: tuple(x[2:]), reverse=True)
+        ranking = pd.DataFrame(ranking, columns=[&#34;Name&#34;, &#34;Rating&#34;, &#34;Score&#34;] + tournament.tie_break_names + [&#34;Performance&#34;])
+        ranking[&#39;Rank&#39;] = np.arange(1, len(ranking) + 1)
+        if save_folder and file_name:
+            ranking.to_csv(os.path.join(save_folder, file_name), index=False)
+        return ranking</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.TournamentStatistic"><code class="flex name class">
+<span>class <span class="ident">TournamentStatistic</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a statistic related to a chess tournament.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TournamentStatistic(Statistic):
+    &#34;&#34;&#34;
+    Represents a statistic related to a chess tournament.
+    &#34;&#34;&#34;
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, 
+                save_folder : str = None, file_name : str = None, 
+                **kwargs) -&gt; Any:
+        &#34;&#34;&#34;
+        Computes the statistic based on the provided player and game databases,
+        and the specified tournament.
+
+        Args:
+            - player_database (PlayerDatabase): The database containing player information.
+            - game_database (GameDatabase): The database containing game information.
+            - tournament (Tournament): The tournament for which the statistic is computed.
+            - rating_system (RatingSystem): The rating system used to compute the statistic.
+            - save_folder (str, optional): The folder where the computed statistic will be saved.
+            - file_name (str, optional): The name of the file to save the computed statistic.
+            - **kwargs: Additional keyword arguments for the computation.
+
+        Returns:
+            - Any: The computed statistic. Can take any format, depending on the computed statistic.
+        &#34;&#34;&#34;
+        raise NotImplementedError</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.MostSurprisingGamesTournament" href="#rating.statistics.statistics.MostSurprisingGamesTournament">MostSurprisingGamesTournament</a></li>
+<li><a title="rating.statistics.statistics.MostSurprisingRestrictedTournamentPerformance" href="#rating.statistics.statistics.MostSurprisingRestrictedTournamentPerformance">MostSurprisingRestrictedTournamentPerformance</a></li>
+<li><a title="rating.statistics.statistics.MostSurprisingTournamentPerformance" href="#rating.statistics.statistics.MostSurprisingTournamentPerformance">MostSurprisingTournamentPerformance</a></li>
+<li><a title="rating.statistics.statistics.TournamentRanking" href="#rating.statistics.statistics.TournamentRanking">TournamentRanking</a></li>
+<li><a title="rating.statistics.statistics.WinRateByHomeTournament" href="#rating.statistics.statistics.WinRateByHomeTournament">WinRateByHomeTournament</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.TournamentStatistic.compute"><code class="name flex">
+<span>def <span class="ident">compute</span></span>(<span>player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, tournament: <a title="rating.objects.tournament.Tournament" href="../objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a> = None, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None, save_folder: str = None, file_name: str = None, **kwargs) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the statistic based on the provided player and game databases,
+and the specified tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The database containing player information.</li>
+<li>game_database (GameDatabase): The database containing game information.</li>
+<li>tournament (Tournament): The tournament for which the statistic is computed.</li>
+<li>rating_system (RatingSystem): The rating system used to compute the statistic.</li>
+<li>save_folder (str, optional): The folder where the computed statistic will be saved.</li>
+<li>file_name (str, optional): The name of the file to save the computed statistic.</li>
+<li>**kwargs: Additional keyword arguments for the computation.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Any: The computed statistic. Can take any format, depending on the computed statistic.</li>
+</ul></div>
+</dd>
+</dl>
+</dd>
+<dt id="rating.statistics.statistics.TournamentsPerPlayer"><code class="flex name class">
+<span>class <span class="ident">TournamentsPerPlayer</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the statistic of the number of tournaments per player.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TournamentsPerPlayer(Statistic):
+    &#34;&#34;&#34;
+    A class representing the statistic of the number of tournaments per player.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def create_figure(tournaments : List[int], save_path : str):
+        &#34;&#34;&#34;
+        Create a figure showing the histogram of the number of tournaments per player.
+
+        Args:
+            - tournaments (list): A list of integers representing the number of tournaments for each player.
+            - save_path (str): The path to save the figure.
+        &#34;&#34;&#34;
+        fig, ax = plt.subplots()
+        ax = sns.histplot(tournaments, color=Statistic.default_color, discrete=True, 
+                          shrink=0.95, alpha=0.7, linewidth=0)
+        ax.set_title(&#34;Number of Tournaments per Player&#34;, fontsize=14)
+        ax.set_xlabel(&#34;Number of Tournaments&#34;, fontsize=12)
+        ax.set_ylabel(&#34;&#34;)
+        ax.set_facecolor((0.95, 0.95, 0.95))
+        sns.despine(left=True, bottom=True)
+        fig.tight_layout()
+        if save_path:
+            fig.savefig(save_path)
+        return fig, ax
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;tournaments_per_player.png&#34;) -&gt; tuple:
+        tournaments = [len(tournament_database.get_player_performances(player.id)) for player in player_database]
+        save_path = None
+        if save_folder and file_name:
+            save_path = os.path.join(save_folder, file_name)
+        return TournamentsPerPlayer.create_figure(tournaments, save_path)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.TournamentsPerPlayer.create_figure"><code class="name flex">
+<span>def <span class="ident">create_figure</span></span>(<span>tournaments: List[int], save_path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a figure showing the histogram of the number of tournaments per player.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>tournaments (list): A list of integers representing the number of tournaments for each player.</li>
+<li>save_path (str): The path to save the figure.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.WinRateByHome"><code class="flex name class">
+<span>class <span class="ident">WinRateByHome</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the win rate by home statistic.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WinRateByHome(Statistic):
+    &#34;&#34;&#34;
+    A class representing the win rate by home statistic.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def create_figure(wins : List[int], save_path : str) -&gt; tuple:
+        &#34;&#34;&#34;
+        Creates a bar plot figure showing the win rate by home.
+
+        Args:
+            - wins (list): A list containing the number of wins for both home and out.
+            - save_path (str): The path to save the figure.
+        
+        Returns:
+            - tuple: A tuple containing the figure and axis objects.
+        &#34;&#34;&#34;
+        fig, ax = plt.subplots()
+
+        ax = sns.barplot(x=[&#34;Home&#34;, &#34;Out&#34;, &#34;Draw&#34;], y=wins, color=Statistic.default_color, alpha=0.7)
+        ax.set_title(&#34;Win Rate by Color&#34;, fontsize=14)
+        ax.set_xticks([0, 1, 2])
+        ax.set_xticklabels([&#34;Home&#34;, &#34;Out&#34;, &#34;Draw&#34;], fontsize=12)
+        ax.set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5])
+        ax.set_yticklabels([&#34;0%&#34;, &#34;10%&#34;, &#34;20%&#34;, &#34;30%&#34;, &#34;40%&#34;, &#34;50%&#34;], fontsize=12)
+        sns.despine(left=True, bottom=True)
+        ax.set_facecolor((0.95, 0.95, 0.95))
+        fig.tight_layout()
+        if save_path:
+            fig.savefig(save_path)
+        return fig, ax
+
+    @staticmethod
+    def compute_wins(games : Generator[Game, None, None]) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Computes the number of wins for each color.
+
+        Args:
+            - games (Generator[Game, None, None]): The database containing game information.
+
+        Returns:
+            - wins (numpy.ndarray): An array containing the number of wins for each color.
+        &#34;&#34;&#34;
+        wins = [0, 0, 0]
+        for game in games:
+            if game.get_result() == 1:
+                wins[0] += 1
+            elif game.get_result() == 0:
+                wins[1] += 1
+            else:
+                wins[2] += 1
+        wins = np.array(wins)
+        wins = wins / np.sum(wins)
+        return wins
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, 
+                save_folder : str = None, file_name : str = &#34;win_rate_by_color.png&#34;) -&gt; tuple:
+        wins = WinRateByHome.compute_wins(game_database.get_games_no_forfeit())
+        save_path = None
+        if save_folder and file_name:
+            save_path = os.path.join(save_folder, file_name)
+        return WinRateByHome.create_figure(wins, save_path)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.WinRateByHome.compute_wins"><code class="name flex">
+<span>def <span class="ident">compute_wins</span></span>(<span>games: Generator[<a title="rating.objects.game.Game" href="../objects/game.html#rating.objects.game.Game">Game</a>, None, None]) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the number of wins for each color.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>games (Generator[Game, None, None]): The database containing game information.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>wins (numpy.ndarray): An array containing the number of wins for each color.</li>
+</ul></div>
+</dd>
+<dt id="rating.statistics.statistics.WinRateByHome.create_figure"><code class="name flex">
+<span>def <span class="ident">create_figure</span></span>(<span>wins: List[int], save_path: str) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a bar plot figure showing the win rate by home.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>wins (list): A list containing the number of wins for both home and out.</li>
+<li>save_path (str): The path to save the figure.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the figure and axis objects.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.WinRateByHomeTournament"><code class="flex name class">
+<span>class <span class="ident">WinRateByHomeTournament</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class representing the win rate by color for a tournament.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WinRateByHomeTournament(TournamentStatistic):
+    &#34;&#34;&#34;
+    A class representing the win rate by color for a tournament.
+    &#34;&#34;&#34;
+
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament : Tournament = None, rating_system: RatingSystem = None, 
+                save_folder=None, file_name : str = &#34;win_rate_by_color.png&#34;) -&gt; tuple:
+        games = game_database.get_games_per_tournament(tournament.id)
+        wins = WinRateByHome.compute_wins(games)
+        save_path = None
+        if save_folder and file_name:
+            save_path = os.path.join(save_folder, file_name)
+        return WinRateByHome.create_figure(wins, save_path)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></li>
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.statistics.statistics.WinRatingDifference"><code class="flex name class">
+<span>class <span class="ident">WinRatingDifference</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class that computes and visualizes win chances based on rating difference between players.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WinRatingDifference(Statistic):
+    &#34;&#34;&#34;
+    A class that computes and visualizes win chances based on rating difference between players.
+    &#34;&#34;&#34;
+    @staticmethod
+    def compute_rating_differences(game_database : GameDatabase, 
+                                   player_database : PlayerDatabase) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the rating differences and results for each game.
+
+        Args:
+            - game_database (GameDatabase): Game database object.
+            - player_database (PlayerDatabase): Player database object.
+
+        Returns:
+            - pandas.DataFrame: DataFrame containing the rating differences and results.
+        &#34;&#34;&#34;
+        win_chances_home = []
+        win_chances_out = []
+        for game in game_database.get_games_no_forfeit():
+            home = player_database[game.home]
+            out = player_database[game.out]
+            rating_difference = home.get_rating().rating - out.get_rating().rating
+            win_chances_home.append((rating_difference, game.get_result()))
+            win_chances_out.append((-rating_difference, 1 - game.get_result()))
+        win_chances_home = pd.DataFrame(win_chances_home, 
+                                         columns=[&#34;Rating Difference&#34;, &#34;Win Chance&#34;])
+        win_chances_out = pd.DataFrame(win_chances_out, 
+                                         columns=[&#34;Rating Difference&#34;, &#34;Win Chance&#34;])
+        win_chances = pd.concat([win_chances_home, win_chances_out])
+        return win_chances
+    
+    @staticmethod
+    def create_figure(win_chances : pd.DataFrame, save_path : str, rating_system : RatingSystem, mean_deviation : float, 
+                      mean_rating : float, max_rating : float, min_rating : float) -&gt; tuple:
+        &#34;&#34;&#34;
+        Creates a line plot of win chances by rating difference.
+
+        Args:
+            - win_chances (pandas.DataFrame): DataFrame containing the rating differences and win chances.
+            - save_path (str): Path to save the figure.
+            - rating_system (RatingSystem): Rating System used in the computation of the ratings
+            - mean_deviation (float): mean deviation across all players
+
+        Returns:
+            - tuple: A tuple containing the figure and axis objects.
+        &#34;&#34;&#34;
+        # plot the mean score in each bin
+        bins = np.linspace(min_rating - mean_rating, max_rating - mean_rating, 20)
+        win_chances[&#34;Rating Difference&#34;] = pd.cut(win_chances[&#34;Rating Difference&#34;], bins)
+        # set rating difference to the middle of the bin
+        win_chances[&#34;Rating Difference&#34;] = win_chances[&#34;Rating Difference&#34;].apply(lambda x: x.mid)
+
+        fig, ax = plt.subplots()
+        # use groupby to get the mean and std of each bin
+        win_chances = win_chances.groupby(&#34;Rating Difference&#34;, observed=False).mean()
+        win_chances = win_chances.reset_index()
+        ax = sns.lineplot(data=win_chances, x=&#34;Rating Difference&#34;, y=&#34;Win Chance&#34;, 
+                          color=Statistic.default_color, label=&#34;Observed&#34;, ax=ax)
+        x_theory = np.linspace(min_rating - mean_rating, max_rating - mean_rating, 500)
+        x_ratings = [(Rating(mean_rating, mean_deviation), Rating(mean_rating - x, mean_deviation)) for x in x_theory]
+        y_theory = [0.5 *(rating_system.compute_expected_score_rating(x1, x2, True) + rating_system.compute_expected_score_rating(x1, x2, False)) for (x1, x2) in x_ratings]
+        sns.lineplot(x=x_theory, y=y_theory, label=&#39;Theoretical&#39;, ax=ax)
+        xlim = min(mean_rating - min_rating, max_rating - mean_rating)
+        ax.set_xlim(-xlim,xlim)
+        ax.set_title(&#34;Win Chances by Rating Difference&#34;, fontsize=14)
+        # remove y label
+        ax.set_ylabel(&#34;&#34;)
+        ax.set_xlabel(&#34;Rating Difference&#34;, fontsize=12)
+        # set y ticks from 0 to 1
+        ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1])
+        ax.set_yticklabels([&#34;0%&#34;, &#34;20%&#34;, &#34;40%&#34;, &#34;60%&#34;, &#34;80%&#34;, &#34;100%&#34;], fontsize=12)
+        # remove axis lines
+        sns.despine(left=True, bottom=True)
+        ax.set_facecolor((0.95, 0.95, 0.95))
+        fig.tight_layout()
+        if save_path:
+            fig.savefig(save_path)
+        return fig, ax
+    
+    @staticmethod
+    def compute(player_database : PlayerDatabase = None, game_database : GameDatabase = None, 
+                tournament_database : TournamentDatabase = None, rating_system: RatingSystem = None, save_folder : str = None, 
+                file_name : str = &#34;win_rating_difference.png&#34;) -&gt; tuple:
+        mean_deviation = np.sqrt(np.mean([player.get_rating().deviation ** 2 for player in player_database if player.get_rating().rating != DEFAULT_RATING.rating]))
+        max_rating = max([player.get_rating().rating for player in player_database if player.get_rating().rating != DEFAULT_RATING.rating])
+        min_rating = min([player.get_rating().rating for player in player_database if player.get_rating().rating != DEFAULT_RATING.rating])
+        mean_rating = np.mean([player.get_rating().rating for player in player_database if player.get_rating().rating != DEFAULT_RATING.rating])
+        win_chances = WinRatingDifference.compute_rating_differences(game_database, player_database)
+        save_path = None
+        if save_folder and file_name:
+            save_path = os.path.join(save_folder, file_name)
+        return WinRatingDifference.create_figure(win_chances, save_path, rating_system, mean_deviation, mean_rating, max_rating, min_rating)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.statistics.statistics.WinRatingDifference.compute_rating_differences"><code class="name flex">
+<span>def <span class="ident">compute_rating_differences</span></span>(<span>game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the rating differences and results for each game.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_database (GameDatabase): Game database object.</li>
+<li>player_database (PlayerDatabase): Player database object.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: DataFrame containing the rating differences and results.</li>
+</ul></div>
+</dd>
+<dt id="rating.statistics.statistics.WinRatingDifference.create_figure"><code class="name flex">
+<span>def <span class="ident">create_figure</span></span>(<span>win_chances: pandas.core.frame.DataFrame, save_path: str, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a>, mean_deviation: float, mean_rating: float, max_rating: float, min_rating: float) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a line plot of win chances by rating difference.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>win_chances (pandas.DataFrame): DataFrame containing the rating differences and win chances.</li>
+<li>save_path (str): Path to save the figure.</li>
+<li>rating_system (RatingSystem): Rating System used in the computation of the ratings</li>
+<li>mean_deviation (float): mean deviation across all players</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the figure and axis objects.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.statistics" href="index.html">rating.statistics</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.statistics.statistics.AnonymousLeaderboard" href="#rating.statistics.statistics.AnonymousLeaderboard">AnonymousLeaderboard</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.AnonymousLeaderboard.compute_leaderboard" href="#rating.statistics.statistics.AnonymousLeaderboard.compute_leaderboard">compute_leaderboard</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.DetailedLeaderboard" href="#rating.statistics.statistics.DetailedLeaderboard">DetailedLeaderboard</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.DetailedLeaderboard.compute_leaderboard" href="#rating.statistics.statistics.DetailedLeaderboard.compute_leaderboard">compute_leaderboard</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.Leaderboard" href="#rating.statistics.statistics.Leaderboard">Leaderboard</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.Leaderboard.compute_leaderboard" href="#rating.statistics.statistics.Leaderboard.compute_leaderboard">compute_leaderboard</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.MostSurprisingGames" href="#rating.statistics.statistics.MostSurprisingGames">MostSurprisingGames</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.MostSurprisingGames.compute_surprises" href="#rating.statistics.statistics.MostSurprisingGames.compute_surprises">compute_surprises</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.MostSurprisingGamesTournament" href="#rating.statistics.statistics.MostSurprisingGamesTournament">MostSurprisingGamesTournament</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.MostSurprisingPerformance" href="#rating.statistics.statistics.MostSurprisingPerformance">MostSurprisingPerformance</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.MostSurprisingPerformance.compute_surprises" href="#rating.statistics.statistics.MostSurprisingPerformance.compute_surprises">compute_surprises</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.MostSurprisingRestrictedTournamentPerformance" href="#rating.statistics.statistics.MostSurprisingRestrictedTournamentPerformance">MostSurprisingRestrictedTournamentPerformance</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.MostSurprisingTournamentPerformance" href="#rating.statistics.statistics.MostSurprisingTournamentPerformance">MostSurprisingTournamentPerformance</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.MostSurprisingTournamentPerformance.compute_surprises" href="#rating.statistics.statistics.MostSurprisingTournamentPerformance.compute_surprises">compute_surprises</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.NumberOfGamesLeaderboard" href="#rating.statistics.statistics.NumberOfGamesLeaderboard">NumberOfGamesLeaderboard</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.RankingByMaxTournamentPerformance" href="#rating.statistics.statistics.RankingByMaxTournamentPerformance">RankingByMaxTournamentPerformance</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.RankingByMaxTournamentPerformance.max_performances" href="#rating.statistics.statistics.RankingByMaxTournamentPerformance.max_performances">max_performances</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.RatingDistribution" href="#rating.statistics.statistics.RatingDistribution">RatingDistribution</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.RatingDistribution.create_figure" href="#rating.statistics.statistics.RatingDistribution.create_figure">create_figure</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.SharedRatingStatistic" href="#rating.statistics.statistics.SharedRatingStatistic">SharedRatingStatistic</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.Statistic" href="#rating.statistics.statistics.Statistic">Statistic</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.Statistic.compute" href="#rating.statistics.statistics.Statistic.compute">compute</a></code></li>
+<li><code><a title="rating.statistics.statistics.Statistic.default_color" href="#rating.statistics.statistics.Statistic.default_color">default_color</a></code></li>
+<li><code><a title="rating.statistics.statistics.Statistic.second_color" href="#rating.statistics.statistics.Statistic.second_color">second_color</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.TournamentRanking" href="#rating.statistics.statistics.TournamentRanking">TournamentRanking</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.TournamentStatistic" href="#rating.statistics.statistics.TournamentStatistic">TournamentStatistic</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.TournamentStatistic.compute" href="#rating.statistics.statistics.TournamentStatistic.compute">compute</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.TournamentsPerPlayer" href="#rating.statistics.statistics.TournamentsPerPlayer">TournamentsPerPlayer</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.TournamentsPerPlayer.create_figure" href="#rating.statistics.statistics.TournamentsPerPlayer.create_figure">create_figure</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.WinRateByHome" href="#rating.statistics.statistics.WinRateByHome">WinRateByHome</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.WinRateByHome.compute_wins" href="#rating.statistics.statistics.WinRateByHome.compute_wins">compute_wins</a></code></li>
+<li><code><a title="rating.statistics.statistics.WinRateByHome.create_figure" href="#rating.statistics.statistics.WinRateByHome.create_figure">create_figure</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.WinRateByHomeTournament" href="#rating.statistics.statistics.WinRateByHomeTournament">WinRateByHomeTournament</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.statistics.statistics.WinRatingDifference" href="#rating.statistics.statistics.WinRatingDifference">WinRatingDifference</a></code></h4>
+<ul class="">
+<li><code><a title="rating.statistics.statistics.WinRatingDifference.compute_rating_differences" href="#rating.statistics.statistics.WinRatingDifference.compute_rating_differences">compute_rating_differences</a></code></li>
+<li><code><a title="rating.statistics.statistics.WinRatingDifference.create_figure" href="#rating.statistics.statistics.WinRatingDifference.create_figure">create_figure</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

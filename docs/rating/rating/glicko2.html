@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.rating.glicko2 API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.rating.glicko2</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.rating.glicko2.Glicko2"><code class="flex name class">
+<span>class <span class="ident">Glicko2</span></span>
+<span>(</span><span>tau: float = 0.7, conversion_constant: float = 173.7178, max_exp_value=10, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Glicko2 rating system implementation.</p>
+<p>This class extends the base Glicko class and provides methods for converting ratings, updating player ratings based on match results,
+and calculating various values used in the Glicko2 rating system.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>tau (float): The system constant.</li>
+<li>conversion_constant (float): The conversion constant used to convert ratings.</li>
+<li>max_exp_value (int): The maximum value for the exponent in the expected score formula. Prevents overflow errors.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>tau (float, optional): The system constant. Defaults to 0.7.</li>
+<li>conversion_constant (float, optional): The conversion constant used to convert ratings. Defaults to 173.7178.</li>
+<li>
+<dl>
+<dt>max_exp_value (int, optional): The maximum value for the exponent in the expected score formula. Prevents overflow errors. Defaults to 10.</dt>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional keyword arguments to be passed to the base class.</dd>
+</dl>
+</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Glicko2(Glicko):
+    def __init__(self, tau : float = 0.7, conversion_constant : float = 173.7178, 
+                 max_exp_value=10, **kwargs) -&gt; &#39;Glicko2&#39;:
+        &#34;&#34;&#34;
+        Glicko2 rating system implementation.
+
+        This class extends the base Glicko class and provides methods for converting ratings, updating player ratings based on match results,
+        and calculating various values used in the Glicko2 rating system.
+
+        Attributes:
+            - tau (float): The system constant.
+            - conversion_constant (float): The conversion constant used to convert ratings.
+            - max_exp_value (int): The maximum value for the exponent in the expected score formula. Prevents overflow errors.
+
+        Args:
+            - tau (float, optional): The system constant. Defaults to 0.7.
+            - conversion_constant (float, optional): The conversion constant used to convert ratings. Defaults to 173.7178.
+            - max_exp_value (int, optional): The maximum value for the exponent in the expected score formula. Prevents overflow errors. Defaults to 10.
+            **kwargs: Additional keyword arguments to be passed to the base class.
+
+        &#34;&#34;&#34;
+        super().__init__(tau=tau, conversion_constant=conversion_constant, 
+                         max_exp_value=max_exp_value, **kwargs)
+
+    def convert_rating(self, rating : float, deviation : float, volatility : float, 
+                       default_rating : DefaultRating) -&gt; tuple:
+        &#34;&#34;&#34;
+        Converts a rating to a standardized value.
+
+        Args:
+            - rating (float): The rating to be converted.
+            - deviation (float): The rating deviation.
+            - volatility (float): The volatility of the rating.
+            - default_rating (DefaultRating): The default rating value.
+
+        Returns:
+            - tuple: A tuple containing the converted rating, deviation, and volatility.
+
+        &#34;&#34;&#34;
+        new_rating = (rating - default_rating.rating) / self.conversion_constant
+        new_deviation = deviation / self.conversion_constant
+        return new_rating, new_deviation, volatility
+    
+    def inverse_convert_rating(self, rating : float, deviation : float, 
+                               volatility : float, default_rating : DefaultRating) -&gt; tuple:
+        &#34;&#34;&#34;
+        Converts a rating back to its original value.
+
+        Args:
+            - rating (float): The converted rating.
+            - deviation (float): The converted deviation.
+            - volatility (float): The volatility of the rating.
+            - default_rating (DefaultRating): The default rating value.
+
+        Returns:
+            - tuple: A tuple containing the original rating, deviation, and volatility.
+        &#34;&#34;&#34;
+        new_rating = rating * self.conversion_constant + default_rating.rating
+        new_deviation = deviation * self.conversion_constant
+        return new_rating, new_deviation, volatility
+
+    def update_player(self, player : Player, opponents : List[Player], scores : List[float]) -&gt; Rating:
+        &#34;&#34;&#34;
+        Returns the updated rating, deviation, and volatility of a player based on the results of their matches.
+
+        Args:
+            - player (Player): The player whose rating, deviation, and volatility are being updated.
+            - opponents (list): A list of opponents the player has played against.
+            - scores (list): A list of scores corresponding to the matches against the opponents.
+
+        Returns:
+            - tuple: A tuple containing the updated rating, deviation, and volatility of the player.
+        &#34;&#34;&#34;
+        rating_opponents = [self.convert_rating(opponent.get_rating().rating, 
+                                                opponent.get_rating().deviation,
+                                                opponent.get_rating().volatility,
+                                                opponent.get_rating().default_rating) for opponent in opponents]
+        converted_rating = self.convert_rating(player.get_rating().rating, 
+                                               player.get_rating().deviation,
+                                               player.get_rating().volatility,
+                                               player.get_rating().default_rating)
+        if len(opponents) &gt; 0:
+            delta = self.delta(converted_rating[0], rating_opponents, scores)
+            v = self.v(converted_rating[0], rating_opponents)
+            new_sigma = self.solve_for_x(delta, v, converted_rating[1], converted_rating[2])
+            denom = (converted_rating[1] ** 2 + new_sigma ** 2)
+            new_phi = 1 / np.sqrt(1 / denom + 1 / v)
+            sum_new_rating = delta / v
+            new_rating = converted_rating[0] + new_phi ** 2 * sum_new_rating
+        else:
+            new_sigma = converted_rating[2]
+            new_phi = np.sqrt((converted_rating[1] ** 2 + new_sigma ** 2))
+            new_rating = converted_rating[0]
+        
+        new_rating = self.inverse_convert_rating(new_rating, new_phi, new_sigma, 
+                                                 player.get_rating().default_rating)
+        return new_rating
+
+    def v(self, mu : float, rating_opponents : List[tuple]) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the estimated variance of the player&#39;s rating.
+
+        Args:
+            - mu (float): The player&#39;s rating.
+            - rating_opponents (list): List of opponents&#39; ratings.
+
+        Returns:
+            - float: The estimated variance of the player&#39;s rating.
+        &#34;&#34;&#34;
+        result = 0
+        for rating in rating_opponents:
+            E = self.E(mu, rating[0], rating[1])
+            g = self.g(rating[1])
+            result += g ** 2 * E * (1 - E)
+        
+        return (result) ** -1
+    
+    def delta(self, mu : float, rating_opponents : List[tuple], scores : List[float]) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the delta value for the Glicko rating system.
+
+        Args:
+            - mu (float): The player&#39;s rating.
+            - rating_opponents (list): List of opponents&#39; ratings.
+            - scores (list): List of scores (0 for a loss, 0.5 for a draw, 1 for a win).
+
+        Returns:
+            - float: The calculated delta value.
+
+        &#34;&#34;&#34;
+        result = 0
+        for rating, s in zip(rating_opponents, scores):
+            g = self.g(rating[1])
+            E = self.E(mu, rating[0], rating[1])
+            result += g * (s - E)
+        return self.v(mu, rating_opponents) * result
+
+    def g(self, phi : float) -&gt; float:
+        &#34;&#34;&#34;
+        Calculate the g factor for the Glicko rating system.
+
+        Args:
+            - phi (float): The rating deviation.
+
+        Returns:
+            - float: The g factor.
+        &#34;&#34;&#34;
+        return 1 / np.sqrt(1 + 3 * phi ** 2 / np.pi ** 2)
+    
+    def E(self, mu : float, mu_j : float, phi_j : float) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the expected outcome of a match between two players.
+
+        Args:
+            - mu (float): The rating of the player.
+            - mu_j (float): The rating of the opponent player.
+            - phi_j (float): The rating deviation of the opponent player.
+
+        Returns:
+            - float: The expected outcome of the match between the two players.
+        &#34;&#34;&#34;
+        exponent = -self.g(phi_j) * (mu - mu_j)
+        exponent = np.clip(exponent, -self.max_exp_value, self.max_exp_value)
+        return 1 / (1 + np.exp(exponent))
+    
+    def f(self, x : float, delta : float, v : float, phi : float, sigma : float) -&gt; float:
+        &#34;&#34;&#34;
+        Calculate the value of the function f.
+
+        Args:
+            - x: The input value.
+            - delta: The delta value.
+            - v: The v value.
+            - phi: The phi value.
+            - sigma: The sigma value.
+
+        Returns:
+            - result: The calculated result of the function f.
+        &#34;&#34;&#34;
+        e_x = np.exp(x)
+        result = (e_x * (delta ** 2 - phi ** 2 - v - e_x) / (2 * (phi ** 2 + v + e_x) ** 2) - (x - np.log(sigma ** 2)) / self.tau ** 2)
+        return result
+    
+    def solve_for_x(self, delta : float, v : float, phi : float, sigma : float, epsilon : float = 1e-6) -&gt; float:
+        &#34;&#34;&#34;
+        Find the 0 of the function f using the algorithm proposed by the Glicko2 system.
+
+        Args:
+            - delta (float): The difference between the actual outcome and the expected outcome.
+            - v (float): The variance of the actual outcome.
+            - phi (float): The rating deviation of the player.
+            - sigma (float): The system constant.
+            - epsilon (float, optional): The desired level of precision for the solution. Defaults to 1e-6.
+
+        Returns:
+            - x (float): The value of x calculated using the Glicko algorithm.
+        &#34;&#34;&#34;
+        A = np.log(sigma ** 2)
+        if delta ** 2 &gt; phi ** 2 + v:
+            B = np.log(delta ** 2 - phi ** 2 - v)
+        else:
+            k = 1
+            while self.f(-phi * k + A, delta, v, phi, sigma) &lt; 0:
+                k += 1
+            B = - phi * k + A
+        
+        f_a = self.f(A, delta, v, phi, sigma)
+        f_b = self.f(B, delta, v, phi, sigma)
+        while np.abs(B - A) &gt; epsilon:
+            C = A + (A - B) * f_a / (f_b - f_a)
+            f_c = self.f(C, delta, v, phi, sigma)
+            if f_c * f_b &lt; 0:
+                A = B
+                f_a = f_b
+            else:
+                f_a = f_a / 2
+            B = C
+            f_b = f_c
+        return np.exp(A / 2)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.rating.glicko.Glicko" href="glicko.html#rating.rating.glicko.Glicko">Glicko</a></li>
+<li><a title="rating.rating.rating_system.RatingSystem" href="rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.rating.glicko2.Glicko2.E"><code class="name flex">
+<span>def <span class="ident">E</span></span>(<span>self, mu: float, mu_j: float, phi_j: float) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the expected outcome of a match between two players.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>mu (float): The rating of the player.</li>
+<li>mu_j (float): The rating of the opponent player.</li>
+<li>phi_j (float): The rating deviation of the opponent player.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The expected outcome of the match between the two players.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.convert_rating"><code class="name flex">
+<span>def <span class="ident">convert_rating</span></span>(<span>self, rating: float, deviation: float, volatility: float, default_rating: <a title="rating.objects.rating.DefaultRating" href="../objects/rating.html#rating.objects.rating.DefaultRating">DefaultRating</a>) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts a rating to a standardized value.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The rating to be converted.</li>
+<li>deviation (float): The rating deviation.</li>
+<li>volatility (float): The volatility of the rating.</li>
+<li>default_rating (DefaultRating): The default rating value.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the converted rating, deviation, and volatility.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.delta"><code class="name flex">
+<span>def <span class="ident">delta</span></span>(<span>self, mu: float, rating_opponents: List[tuple], scores: List[float]) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the delta value for the Glicko rating system.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>mu (float): The player's rating.</li>
+<li>rating_opponents (list): List of opponents' ratings.</li>
+<li>scores (list): List of scores (0 for a loss, 0.5 for a draw, 1 for a win).</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The calculated delta value.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.f"><code class="name flex">
+<span>def <span class="ident">f</span></span>(<span>self, x: float, delta: float, v: float, phi: float, sigma: float) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the value of the function f.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>x: The input value.</li>
+<li>delta: The delta value.</li>
+<li>v: The v value.</li>
+<li>phi: The phi value.</li>
+<li>sigma: The sigma value.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>result: The calculated result of the function f.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.g"><code class="name flex">
+<span>def <span class="ident">g</span></span>(<span>self, phi: float) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the g factor for the Glicko rating system.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>phi (float): The rating deviation.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The g factor.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.inverse_convert_rating"><code class="name flex">
+<span>def <span class="ident">inverse_convert_rating</span></span>(<span>self, rating: float, deviation: float, volatility: float, default_rating: <a title="rating.objects.rating.DefaultRating" href="../objects/rating.html#rating.objects.rating.DefaultRating">DefaultRating</a>) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts a rating back to its original value.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The converted rating.</li>
+<li>deviation (float): The converted deviation.</li>
+<li>volatility (float): The volatility of the rating.</li>
+<li>default_rating (DefaultRating): The default rating value.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the original rating, deviation, and volatility.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.solve_for_x"><code class="name flex">
+<span>def <span class="ident">solve_for_x</span></span>(<span>self, delta: float, v: float, phi: float, sigma: float, epsilon: float = 1e-06) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find the 0 of the function f using the algorithm proposed by the Glicko2 system.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>delta (float): The difference between the actual outcome and the expected outcome.</li>
+<li>v (float): The variance of the actual outcome.</li>
+<li>phi (float): The rating deviation of the player.</li>
+<li>sigma (float): The system constant.</li>
+<li>epsilon (float, optional): The desired level of precision for the solution. Defaults to 1e-6.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>x (float): The value of x calculated using the Glicko algorithm.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.update_player"><code class="name flex">
+<span>def <span class="ident">update_player</span></span>(<span>self, player: <a title="rating.objects.player.Player" href="../objects/player.html#rating.objects.player.Player">Player</a>, opponents: List[<a title="rating.objects.player.Player" href="../objects/player.html#rating.objects.player.Player">Player</a>], scores: List[float]) ‑> <a title="rating.objects.rating.Rating" href="../objects/rating.html#rating.objects.rating.Rating">Rating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the updated rating, deviation, and volatility of a player based on the results of their matches.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player (Player): The player whose rating, deviation, and volatility are being updated.</li>
+<li>opponents (list): A list of opponents the player has played against.</li>
+<li>scores (list): A list of scores corresponding to the matches against the opponents.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>tuple: A tuple containing the updated rating, deviation, and volatility of the player.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.glicko2.Glicko2.v"><code class="name flex">
+<span>def <span class="ident">v</span></span>(<span>self, mu: float, rating_opponents: List[tuple]) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the estimated variance of the player's rating.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>mu (float): The player's rating.</li>
+<li>rating_opponents (list): List of opponents' ratings.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The estimated variance of the player's rating.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.rating.glicko.Glicko" href="glicko.html#rating.rating.glicko.Glicko">Glicko</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.rating.glicko.Glicko.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.compute_expected_score" href="rating_system.html#rating.rating.rating_system.RatingSystem.compute_expected_score">compute_expected_score</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.compute_expected_score_rating" href="rating_system.html#rating.rating.rating_system.RatingSystem.compute_expected_score_rating">compute_expected_score_rating</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.compute_tournament_performance" href="rating_system.html#rating.rating.rating_system.RatingSystem.compute_tournament_performance">compute_tournament_performance</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.d_squared" href="glicko.html#rating.rating.glicko.Glicko.d_squared">d_squared</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.period_update" href="rating_system.html#rating.rating.rating_system.RatingSystem.period_update">period_update</a></code></li>
+<li><code><a title="rating.rating.glicko.Glicko.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.rating" href="index.html">rating.rating</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.rating.glicko2.Glicko2" href="#rating.rating.glicko2.Glicko2">Glicko2</a></code></h4>
+<ul class="">
+<li><code><a title="rating.rating.glicko2.Glicko2.E" href="#rating.rating.glicko2.Glicko2.E">E</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.convert_rating" href="#rating.rating.glicko2.Glicko2.convert_rating">convert_rating</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.delta" href="#rating.rating.glicko2.Glicko2.delta">delta</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.f" href="#rating.rating.glicko2.Glicko2.f">f</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.g" href="#rating.rating.glicko2.Glicko2.g">g</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.inverse_convert_rating" href="#rating.rating.glicko2.Glicko2.inverse_convert_rating">inverse_convert_rating</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.solve_for_x" href="#rating.rating.glicko2.Glicko2.solve_for_x">solve_for_x</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.update_player" href="#rating.rating.glicko2.Glicko2.update_player">update_player</a></code></li>
+<li><code><a title="rating.rating.glicko2.Glicko2.v" href="#rating.rating.glicko2.Glicko2.v">v</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

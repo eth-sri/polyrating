@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.optimization API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.optimization</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.optimization.Optimizer"><code class="flex name class">
+<span>class <span class="ident">Optimizer</span></span>
+<span>(</span><span>game_database: <a title="rating.databases.game_database.GameDatabase" href="databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, rating_period: <a title="rating.objects.rating_period.RatingPeriod" href="objects/rating_period.html#rating.objects.rating_period.RatingPeriod">RatingPeriod</a>, max_evals: int = 100, exclude_default: bool = True, epsilon: float = 0.001, optimize_default_rating: bool = True, no_omega: bool = False, before: bool = True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The Optimizer class is responsible for optimizing the rating system parameters based on game data.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>game_database (GameDatabase): The database containing the game data.</li>
+<li>player_database (PlayerDatabase): The database containing the player data.</li>
+<li>rating_period (RatingPeriod): The rating period.</li>
+<li>max_evals (int): The maximum number of evaluations for the optimization process.</li>
+<li>exclude_default (bool): Flag indicating whether to exclude default ratings from counting.</li>
+<li>epsilon (float): A small value used for numerical stability in computations.</li>
+<li>optimize_default_rating (bool): Flag indicating whether to optimize the default rating.</li>
+<li>no_omega (bool): Flag indicating whether to exclude the omega parameter from optimization.</li>
+<li>games_to_not_count (list): List of game IDs to not count in the optimization process.</li>
+<li>param_history (list): List of dictionaries containing the parameter history during optimization.</li>
+<li>before (bool): Flag indicating whether to compute the accuracy before or after the games.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_database (GameDatabase): The database containing chess game data.</li>
+<li>player_database (PlayerDatabase): The database containing player data.</li>
+<li>rating_period (RatingPeriod): The rating period.</li>
+<li>max_evals (int, optional): The maximum number of evaluations for the optimization algorithm. Defaults to 100.</li>
+<li>exclude_default (bool, optional): Whether to exclude games where one player has the default rating from the optimization. Defaults to True.</li>
+<li>epsilon (float, optional): The convergence threshold for the optimization algorithm. Defaults to 1e-3.</li>
+<li>optimize_default_rating (bool, optional): Whether to optimize the default rating. Defaults to True.</li>
+<li>no_omega (bool, optional): Whether to exclude omega values from the optimization. Defaults to False.</li>
+<li>before (bool, optional): Whether to compute the accuracy before or after the games. Defaults to True.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Optimizer:
+    def __init__(self, game_database : GameDatabase, 
+                 player_database : PlayerDatabase, 
+                 rating_period : RatingPeriod, max_evals : int = 100, 
+                 exclude_default : bool = True, 
+                 epsilon : float = 1e-3, 
+                 optimize_default_rating : bool = True, 
+                 no_omega : bool = False, 
+                 before : bool = True, **kwargs) -&gt; &#39;Optimizer&#39;:
+        &#34;&#34;&#34;
+        The Optimizer class is responsible for optimizing the rating system parameters based on game data.
+
+        Attributes:
+            - game_database (GameDatabase): The database containing the game data.
+            - player_database (PlayerDatabase): The database containing the player data.
+            - rating_period (RatingPeriod): The rating period.
+            - max_evals (int): The maximum number of evaluations for the optimization process.
+            - exclude_default (bool): Flag indicating whether to exclude default ratings from counting.
+            - epsilon (float): A small value used for numerical stability in computations.
+            - optimize_default_rating (bool): Flag indicating whether to optimize the default rating.
+            - no_omega (bool): Flag indicating whether to exclude the omega parameter from optimization.
+            - games_to_not_count (list): List of game IDs to not count in the optimization process.
+            - param_history (list): List of dictionaries containing the parameter history during optimization.
+            - before (bool): Flag indicating whether to compute the accuracy before or after the games.
+
+        Args:
+            - game_database (GameDatabase): The database containing chess game data.
+            - player_database (PlayerDatabase): The database containing player data.
+            - rating_period (RatingPeriod): The rating period.
+            - max_evals (int, optional): The maximum number of evaluations for the optimization algorithm. Defaults to 100.
+            - exclude_default (bool, optional): Whether to exclude games where one player has the default rating from the optimization. Defaults to True.
+            - epsilon (float, optional): The convergence threshold for the optimization algorithm. Defaults to 1e-3.
+            - optimize_default_rating (bool, optional): Whether to optimize the default rating. Defaults to True.
+            - no_omega (bool, optional): Whether to exclude omega values from the optimization. Defaults to False.
+            - before (bool, optional): Whether to compute the accuracy before or after the games. Defaults to True.
+        &#34;&#34;&#34;
+        self.max_evals = max_evals
+        self.game_database = game_database
+        self.player_database = player_database
+        self.rating_period = rating_period
+        self.exclude_default = exclude_default
+        self.epsilon = epsilon
+        self.optimize_default_rating = optimize_default_rating
+        self.no_omega = no_omega
+        self.games_to_not_count = dict()
+        self.param_history = []
+        self.before = before
+
+        if exclude_default:
+            dates = dict()
+            for player in self.player_database:
+                dates[player.id] = [game.get_date() for game in self.game_database.get_games_per_player(player.id)]
+            for game in self.game_database.get_games_no_forfeit():
+                # check if this is the first game for one of the players
+                game_period = self.rating_period.get_period_of_date(game.get_date(), next=False) - timedelta(seconds=1)
+                home_game_dates = [date for date in dates[game.home] if date &lt;= game_period]
+                out_game_dates = [date for date in dates[game.out] if date &lt;= game_period]
+                if len(home_game_dates) == 0 or len(out_game_dates) == 0:
+                    self.games_to_not_count[game.id] = True
+                else:
+                    self.games_to_not_count[game.id] = False
+
+    def extend_database(self, target_n_games : int, target_n_players : int, target_rating_periods : int):
+        &#34;&#34;&#34;
+        Randomly samples players and games to extend the game, player, and rating period databases.
+
+        Args:
+            - target_n_games (int): The target number of games to add to the database.
+            - target_n_players (int): The target number of players to add to the database.
+            - target_rating_periods (int): The target number of rating periods to add.
+        &#34;&#34;&#34;
+        logger.info(f&#34;Extending database to {target_n_games} games, {target_n_players} players, and {target_rating_periods} rating periods.&#34;)
+        player_database = PlayerDatabase()
+        player_matching = dict()
+
+        # Create the player database
+        for i, player in enumerate(self.player_database):
+            if i &gt;= target_n_players:
+                break
+            new_player = Player(str(i), i)
+            player_database.add(new_player)
+            player_matching[player.id] = [new_player.id]
+        for i in range(target_n_players - len(self.player_database)):
+            player = self.player_database.get_random()
+            new_player = Player(str(i + len(self.player_database)), i + len(self.player_database))
+            # add player matching
+            player_matching[player.id].append(new_player.id)
+            player_database.add(new_player)
+
+        logger.info(f&#34;Player database extended to {len(player_database)} players.&#34;)
+
+        rating_periods = RatingPeriod()
+        # Create the rating period database
+        for i in range(target_rating_periods):
+            rating_periods.trigger_new_period(datetime.now() - timedelta(days=i))
+
+        logger.info(f&#34;Rating period extended to {len(rating_periods)} periods.&#34;)
+
+        game_database = GameDatabase()
+
+        # Create the game database
+        for i in range(target_n_games):
+            game = self.game_database.get_random()
+            # choose a random home and out player
+            home = player_matching[game.home][np.random.randint(0, len(player_matching[game.home]))]
+            out = player_matching[game.out][np.random.randint(0, len(player_matching[game.out]))]
+            # choose a random date:
+            date = rating_periods.get_last_period() - timedelta(days=np.random.randint(0, target_rating_periods))
+            new_game = Game(home, out, game.result, i, date.strftime(&#34;%d/%m/%Y&#34;))
+            game_database.add(new_game)
+
+        logger.info(f&#34;Game database extended to {len(game_database)} games.&#34;)
+        
+        self.game_database = game_database
+        self.player_database = player_database
+        self.rating_period = rating_periods
+
+    def store_param_history(self, file : str):
+        &#34;&#34;&#34;
+        Stores the parameter history as a CSV file.
+
+        Args:
+            - file (str): The file path to save the parameter history.
+        &#34;&#34;&#34;
+        param_history = pd.DataFrame(self.param_history)
+        param_history.to_csv(file, index=False)
+
+    def compute_game_differences(self, games : GameDatabase, players : PlayerDatabase, rating_system : RatingSystem) -&gt; float:
+        &#34;&#34;&#34;
+        Computes the accuracy of predictions for a given set of games, players, and rating system.
+
+        Args:
+            - games (GameDatabase): A list of game objects.
+            - players (PlayerDatabase): A list of player objects.
+            - rating_system (object): An instance of the rating system to be evaluated.
+
+        Returns:
+            - float: The computed game differences.
+
+        &#34;&#34;&#34;
+        if self.before:
+            delta = timedelta(seconds=1)
+        else:
+            delta = timedelta(seconds=-1)
+        log_loss = 0
+        accuracy = 0
+        accuracy_count = 0
+        log_loss_count = 0
+        for game in games.get_games_no_forfeit():
+            if self.games_to_not_count[game.id]:
+                continue
+            home = players[game.home]
+            out = players[game.out]
+            expected_score = rating_system.compute_expected_score(home, [game], players, game.get_date() - delta)
+            result = game.get_result()
+            log_loss += -result * np.log(expected_score + self.epsilon)
+            log_loss +=  - (1 - result) * np.log(1 - expected_score + self.epsilon)
+            log_loss_count += 1
+            if result == 1 and expected_score &gt;= 0.5:
+                accuracy += 1
+                accuracy_count += 1
+            elif result == 0 and expected_score &lt;= 0.5:
+                accuracy += 1
+                accuracy_count += 1
+            elif result in [0, 1]:
+                accuracy_count += 1
+
+        if np.isnan(log_loss):
+            return 10 ** 6
+
+        return log_loss / log_loss_count
+        # return - accuracy / accuracy_count
+    
+    def update_rating(self, rating_system : RatingSystem, **kwargs):
+        &#34;&#34;&#34;
+        Updates the rating of each player in the player database using the specified rating system.
+
+        Args:
+            - rating_system (RatingSystem): The rating system to use for updating the ratings.
+            - **kwargs: Additional keyword arguments that can be passed to the rating system.
+        &#34;&#34;&#34;
+        for player in self.player_database:
+            player.clear_rating_history()
+            player.get_rating().reset()
+        
+        for period_dates in self.rating_period.iterate_periods():
+            logger.info(f&#34;Updating ratings for period {period_dates[-1]}&#34;)
+            rating_system.period_update(self.player_database, self.game_database, period_dates)
+            for player in self.player_database:
+                player.store_rating(period_dates[-1])
+
+    def objective(self, params : dict) -&gt; float:
+        &#34;&#34;&#34;
+        Compute the objective value for the optimization problem.
+
+        Args:
+            - params (dict): A dictionary containing the parameters for the rating system.
+
+        Returns:
+            - float: The objective value representing the difference between predicted and actual game outcomes.
+        &#34;&#34;&#34;
+        logger.info(f&#34;Optimizing with params: {params}&#34;)
+        params_without_rating_class = {k: v for k, v in params.items() if k != &#39;rating_class&#39;}
+        if &#39;advantages&#39; in params_without_rating_class:
+            params_without_rating_class[&#39;advantages&#39;] = {Advantage.HOME_ADVANTAGE: DefaultRating(0, params_without_rating_class[&#39;advantages&#39;], 
+                                                                                                 id=Advantage.HOME_ADVANTAGE)}
+        if &#39;omegas_advantages&#39; in params_without_rating_class:
+            params_without_rating_class[&#39;omegas_advantages&#39;] = {Advantage.HOME_ADVANTAGE: params_without_rating_class[&#39;omegas_advantages&#39;]}
+        
+        advantages = dict()
+        omegas_advantages = dict() 
+        keys = list(params_without_rating_class.keys())
+        for param in keys:
+            if &#39;advantage&#39; in param and &#39;omega&#39; not in param:
+                advantages[param] = Rating(0, params_without_rating_class[param])
+                del params_without_rating_class[param]
+            if &#39;omega&#39; in param:
+                omegas_advantages[param.replace(&#39;omegas_&#39;, &#39;&#39;)] = params_without_rating_class[param]
+                del params_without_rating_class[param]
+
+        if len(advantages) &gt; 0:
+            params_without_rating_class[&#39;advantages&#39;] = advantages
+            params_without_rating_class[&#39;omegas_advantages&#39;] = omegas_advantages
+
+        rating_system = params[&#39;rating_class&#39;](**params_without_rating_class)
+        DEFAULT_RATING.set_default(params.get(&#39;default_rating&#39;), 
+                            params.get(&#39;default_deviation&#39;), 
+                            params.get(&#39;default_volatility&#39;))
+        try:
+            self.update_rating(rating_system)
+            difference = self.compute_game_differences(self.game_database, self.player_database, rating_system)
+        except Exception as e:
+            logger.error(f&#34;Error in optimization: {e}&#34;)
+            difference = 10 ** 6
+        logger.info(f&#34;Difference: {difference}&#34;)
+        self.param_history.append({**params, &#39;difference&#39;: difference})
+        return difference
+    
+    def time_vs_performance(self, save_file : str, max_max_iters : int = 100) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Computes the time taken and log loss for different rating classes and parameters.
+
+        Args:
+            - save_file (str): The file path to save the results as a CSV file.
+            - max_max_iters (int, optional): The maximum number of iterations. Defaults to 100.
+
+        Returns:
+            - pandas.DataFrame: A DataFrame containing the time taken and log loss for each rating class and parameter combination.
+        &#34;&#34;&#34;
+        updates = []
+        rating_classes = [PolyratingDavidson, PolyratingRao, PolyratingCrossEntropy]
+        a = time.time()
+        glicko = Glicko2()
+        self.update_rating(glicko)
+        b = time.time()
+        log_loss = self.compute_game_differences(self.game_database, self.player_database, glicko, before=True)
+        time_difference = b - a
+        updates.append({&#39;time&#39;: time_difference, &#39;log_loss&#39;: log_loss, &#39;rating_class&#39;: &#39;Glicko2&#39;})
+        logger.info(f&#34;Time: {time_difference}, Log Loss: {log_loss}, Rating Class: Glicko2&#34;)
+        for polyrating in rating_classes:
+            for linearized in [False, True]:
+                for max_iters in [1, 2, 5, 10, 20, 50, 100]:
+                    if max_iters &gt; max_max_iters:
+                        continue
+                    rating_system = polyrating(linearized=linearized, max_iterations=max_iters)
+                    a = time.time()
+                    self.update_rating(rating_system)
+                    b = time.time()
+                    log_loss = self.compute_game_differences(self.game_database, self.player_database,
+                                                             rating_system, before=True)
+                    time_difference = b - a
+                    updates.append({&#39;time&#39;: time_difference, 
+                                    &#39;log_loss&#39;: log_loss, 
+                                    &#39;rating_class&#39;: str(polyrating), 
+                                    &#39;linearized&#39;: linearized, 
+                                    &#39;max_iters&#39;: max_iters})
+                    logger.info(f&#34;Time: {time_difference}, Log Loss: {log_loss}, Rating Class: {polyrating}, Linearized: {linearized}, Max Iters: {max_iters}&#34;)
+
+        df = pd.DataFrame(updates)
+        df.to_csv(save_file, index=False)
+        return df
+    
+    def optimize_with_defined_space(self, space : dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Optimize the objective function over the defined space.
+
+        Args:
+            - space (dict): The search space for optimization.
+
+        Returns:
+            - dict: The best set of parameters found by the optimization algorithm.
+        &#34;&#34;&#34;
+        if not self.optimize_default_rating:
+            if &#39;default_deviation&#39; in space:
+                del space[&#39;default_deviation&#39;]
+            if &#39;default_volatility&#39; in space:
+                del space[&#39;default_volatility&#39;]
+            if &#39;sigma&#39; in space:
+                del space[&#39;sigma&#39;]
+        if self.no_omega:
+            if &#39;omega&#39; in space:
+                del space[&#39;omega&#39;]
+            if &#39;default_change&#39; in space:
+                del space[&#39;default_change&#39;]
+
+        # minimize the objective over the space
+        trials = Trials()
+        best = fmin(self.objective, space, algo=tpe.suggest, max_evals=self.max_evals, trials=trials)
+        
+        best_params = space_eval(space, best)
+        return best_params, min(trials.losses())
+
+    def optimize(self):
+        &#34;&#34;&#34;
+        Optimize the rating parameters using hyperparameter optimization.
+
+        This method defines different search spaces for various rating classes and performs hyperparameter optimization
+        using the defined spaces. The `optimize_with_defined_space` method is called for each search space.
+        &#34;&#34;&#34;
+        # define the search space
+        space_davidson = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [PolyratingDavidson]),
+            &#39;default_deviation&#39;: hp.uniform(&#39;default_deviation&#39;, 100, 1500),
+            &#39;theta&#39;: hp.uniform(&#39;theta&#39;, 0, 1),
+            &#39;epsilon&#39;: hp.loguniform(&#39;epsilon&#39;, -3, 0),
+            &#39;linearized&#39;: hp.choice(&#39;linearized&#39;, [None, 1]),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 100, 1500),
+            &#39;omega&#39;: hp.uniform(&#39;omega&#39;, 1, 100),
+            Advantage.HOME_ADVANTAGE: hp.uniform(Advantage.HOME_ADVANTAGE, 0, 100), 
+            &#39;omegas_&#39; + Advantage.HOME_ADVANTAGE: hp.uniform(&#39;omegas_home_advantage&#39;, 0, 50)
+        }
+        best_params_davidson, loss_davidson = self.optimize_with_defined_space(space_davidson)
+        space_rao = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [PolyratingRao]),
+            &#39;default_deviation&#39;: hp.uniform(&#39;default_deviation&#39;, 100, 1500),
+            &#39;theta&#39;: hp.uniform(&#39;theta&#39;, 1, 2),
+            &#39;epsilon&#39;: hp.loguniform(&#39;epsilon&#39;, -3, 0),
+            &#39;linearized&#39;: hp.choice(&#39;linearized&#39;, [None, 1]),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 100, 1500),
+            &#39;omega&#39;: hp.uniform(&#39;omega&#39;, 1, 100),
+            Advantage.HOME_ADVANTAGE: hp.uniform(Advantage.HOME_ADVANTAGE, 0, 100), 
+            &#39;omegas_&#39; + Advantage.HOME_ADVANTAGE: hp.uniform(&#39;omegas_home_advantage&#39;, 0, 50)
+        }
+        best_params_rao, loss_rao = self.optimize_with_defined_space(space_rao)
+        space_crossentropy = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [PolyratingCrossEntropy]),
+            &#39;default_deviation&#39;: hp.uniform(&#39;default_deviation&#39;, 100, 1500),
+            &#39;epsilon&#39;: hp.loguniform(&#39;epsilon&#39;, -3, 0),
+            &#39;linearized&#39;: hp.choice(&#39;linearized&#39;, [None, 1]),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 100, 1500),
+            Advantage.HOME_ADVANTAGE: hp.uniform(Advantage.HOME_ADVANTAGE, 0, 100), 
+            &#39;omegas_&#39; + Advantage.HOME_ADVANTAGE: hp.uniform(&#39;omegas_home_advantage&#39;, 0, 50)
+        }
+        best_params_cross, loss_cross = self.optimize_with_defined_space(space_crossentropy)
+        space_glicko2 = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [Glicko2]),
+            &#39;default_deviation&#39;: hp.uniform(&#39;default_deviation&#39;, 100, 1500),
+            &#39;default_volatility&#39;: hp.uniform(&#39;default_volatility&#39;, 0.01, 0.2),
+            &#39;tau&#39;: hp.uniform(&#39;tau&#39;, 0, 1),
+            &#39;conversion_constant&#39;: hp.uniform(&#39;conversion_constant&#39;, 50, 500),
+        }
+        best_params_glicko2, loss_glicko2 = self.optimize_with_defined_space(space_glicko2)
+
+        space_glicko = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [Glicko]),
+            &#39;default_deviation&#39;: hp.uniform(&#39;default_deviation&#39;, 100, 1500),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 100, 800),
+            &#39;C&#39;: hp.uniform(&#39;tau&#39;, 1, 200),
+        }
+        best_params_glicko, loss_glicko = self.optimize_with_defined_space(space_glicko)
+
+        space_elo = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [Elo]),
+            &#39;K&#39;: hp.uniform(&#39;K&#39;, 10, 500),
+        }
+        best_params_elo, loss_elo = self.optimize_with_defined_space(space_elo)
+        space_eloplusplus = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [EloPlusPlus]),
+            &#39;gamma&#39;: hp.uniform(&#39;gamma&#39;, 0, 1),
+            &#39;lambda_&#39;: hp.uniform(&#39;lambda_&#39;, 0, 1),
+            &#39;factor&#39;: hp.uniform(&#39;factor&#39;, 0, 1),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 100, 1500),
+            &#39;lr_change_coef&#39;: hp.uniform(&#39;lr_change_coef&#39;, 0, 1),
+        }
+        best_params_eloplusplus, loss_eloplusplus = self.optimize_with_defined_space(space_eloplusplus)
+        space_chessmetrics = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [ChessMetrics]),
+            &#39;default_change&#39;: hp.uniform(&#39;default_change&#39;, 500, 1500),
+            &#39;too_old&#39;: hp.uniform(&#39;too_old&#39;, 100, 2 * 365),
+            &#39;epsilon&#39;: hp.loguniform(&#39;epsilon&#39;, -3, 0),
+            &#39;home_advantage&#39;: hp.uniform(&#39;home_advantage&#39;, 0, 100),
+            &#39;delta_expected&#39;: hp.uniform(&#39;delta_expected&#39;, 0.1, 5),
+            &#39;weighted_average&#39;: hp.uniform(&#39;weighted_average&#39;, 0.5, 0.99999),
+        }
+        best_params_chessmetrics, loss_chessmetrics = self.optimize_with_defined_space(space_chessmetrics)
+
+        space_trueskill = {
+            &#39;rating_class&#39;: hp.choice(&#39;rating_class&#39;, [TrueSkillThroughTime]),
+            &#39;p_draw&#39;: hp.uniform(&#39;p_draw&#39;, 0.01, 0.2),
+            &#39;beta&#39;: hp.uniform(&#39;beta&#39;, 0.5, 1.5),
+            &#39;gamma&#39;: hp.uniform(&#39;gamma&#39;, 0, 0.1),
+            &#39;linearized&#39;: hp.choice(&#39;linearized&#39;, [None, 1, 3, 5]),
+            &#39;sigma&#39;: hp.uniform(&#39;sigma&#39;, 0.5, 12),
+        }
+        best_params_trueskill, loss_trueskill = self.optimize_with_defined_space(space_trueskill)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.optimization.Optimizer.compute_game_differences"><code class="name flex">
+<span>def <span class="ident">compute_game_differences</span></span>(<span>self, games: <a title="rating.databases.game_database.GameDatabase" href="databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, players: <a title="rating.databases.player_database.PlayerDatabase" href="databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a>) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the accuracy of predictions for a given set of games, players, and rating system.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>games (GameDatabase): A list of game objects.</li>
+<li>players (PlayerDatabase): A list of player objects.</li>
+<li>rating_system (object): An instance of the rating system to be evaluated.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The computed game differences.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.extend_database"><code class="name flex">
+<span>def <span class="ident">extend_database</span></span>(<span>self, target_n_games: int, target_n_players: int, target_rating_periods: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Randomly samples players and games to extend the game, player, and rating period databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>target_n_games (int): The target number of games to add to the database.</li>
+<li>target_n_players (int): The target number of players to add to the database.</li>
+<li>target_rating_periods (int): The target number of rating periods to add.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.objective"><code class="name flex">
+<span>def <span class="ident">objective</span></span>(<span>self, params: dict) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the objective value for the optimization problem.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>params (dict): A dictionary containing the parameters for the rating system.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The objective value representing the difference between predicted and actual game outcomes.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.optimize"><code class="name flex">
+<span>def <span class="ident">optimize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Optimize the rating parameters using hyperparameter optimization.</p>
+<p>This method defines different search spaces for various rating classes and performs hyperparameter optimization
+using the defined spaces. The <code>optimize_with_defined_space</code> method is called for each search space.</p></div>
+</dd>
+<dt id="rating.optimization.Optimizer.optimize_with_defined_space"><code class="name flex">
+<span>def <span class="ident">optimize_with_defined_space</span></span>(<span>self, space: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Optimize the objective function over the defined space.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>space (dict): The search space for optimization.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>dict: The best set of parameters found by the optimization algorithm.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.store_param_history"><code class="name flex">
+<span>def <span class="ident">store_param_history</span></span>(<span>self, file: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stores the parameter history as a CSV file.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>file (str): The file path to save the parameter history.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.time_vs_performance"><code class="name flex">
+<span>def <span class="ident">time_vs_performance</span></span>(<span>self, save_file: str, max_max_iters: int = 100) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the time taken and log loss for different rating classes and parameters.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>save_file (str): The file path to save the results as a CSV file.</li>
+<li>max_max_iters (int, optional): The maximum number of iterations. Defaults to 100.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>pandas.DataFrame: A DataFrame containing the time taken and log loss for each rating class and parameter combination.</li>
+</ul></div>
+</dd>
+<dt id="rating.optimization.Optimizer.update_rating"><code class="name flex">
+<span>def <span class="ident">update_rating</span></span>(<span>self, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a>, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the rating of each player in the player database using the specified rating system.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating_system (RatingSystem): The rating system to use for updating the ratings.</li>
+<li>**kwargs: Additional keyword arguments that can be passed to the rating system.</li>
+</ul></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating" href="index.html">rating</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.optimization.Optimizer" href="#rating.optimization.Optimizer">Optimizer</a></code></h4>
+<ul class="">
+<li><code><a title="rating.optimization.Optimizer.compute_game_differences" href="#rating.optimization.Optimizer.compute_game_differences">compute_game_differences</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.extend_database" href="#rating.optimization.Optimizer.extend_database">extend_database</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.objective" href="#rating.optimization.Optimizer.objective">objective</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.optimize" href="#rating.optimization.Optimizer.optimize">optimize</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.optimize_with_defined_space" href="#rating.optimization.Optimizer.optimize_with_defined_space">optimize_with_defined_space</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.store_param_history" href="#rating.optimization.Optimizer.store_param_history">store_param_history</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.time_vs_performance" href="#rating.optimization.Optimizer.time_vs_performance">time_vs_performance</a></code></li>
+<li><code><a title="rating.optimization.Optimizer.update_rating" href="#rating.optimization.Optimizer.update_rating">update_rating</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

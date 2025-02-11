@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.base API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.base</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.base.BaseClass"><code class="flex name class">
+<span>class <span class="ident">BaseClass</span></span>
+<span>(</span><span>**kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base class for providing a serialization and deserialization mechanism.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>kwargs (dict): Keyword arguments</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>kwargs (dict): Keyword arguments</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BaseClass:
+    def __init__(self, **kwargs) -&gt; &#39;BaseClass&#39;:
+        &#34;&#34;&#34;
+        Base class for providing a serialization and deserialization mechanism.
+
+        Attributes:
+            - kwargs (dict): Keyword arguments
+        
+        Args:
+            - kwargs (dict): Keyword arguments
+        &#34;&#34;&#34;
+        self.kwargs = kwargs
+        self.__dict__.update(kwargs)
+    
+    def add_kwargs(self, **kwargs) -&gt; None:
+        &#34;&#34;&#34;
+        Adds keyword arguments to the class object.
+
+        Args:
+            - kwargs (dict): Keyword arguments to be added.
+        &#34;&#34;&#34;
+        self.kwargs.update(kwargs)
+        self.__dict__.update(kwargs)
+
+    def generate_list_settings(self, list_ : List) -&gt; List:
+        &#34;&#34;&#34;
+        Converts provided list to a normalized list that can be stored as a json object to serialize.
+        
+        Args:
+            - list_ (List): List to be converted
+        Returns
+            - Transformed normal list
+        &#34;&#34;&#34;
+        normal_list = []
+        for item in list_:
+            if isinstance(item, BaseClass):
+                normal_list.append(item.generate_settings())
+            elif isinstance(item, dict):
+                normal_list.append(self.generate_kwarg_setting(item))
+            elif isinstance(item, (tuple, list)):
+                normal_list.append(self.generate_list_settings(item))
+            else:
+                normal_list.append(item)
+        return normal_list
+
+    def generate_kwarg_setting(self, kwargs) -&gt; dict:
+        &#34;&#34;&#34;
+        Converts provided keyword arguments to normal kwargs in terms of serialization.
+
+        Args:
+            - kwargs (dict): kwargs to be converted.
+        &#34;&#34;&#34;
+        normal_kwargs = dict()
+        for kwarg in kwargs:
+            if isinstance(kwargs[kwarg], BaseClass):
+                normal_kwargs[kwarg] = kwargs[kwarg].generate_settings()
+            elif isinstance(kwargs[kwarg], (list, tuple)):
+                normal_kwargs[kwarg] = self.generate_list_settings(kwargs[kwarg])
+            elif isinstance(kwargs[kwarg], dict):
+                normal_kwargs[kwarg] = self.generate_kwarg_setting(kwargs[kwarg])
+            else:
+                normal_kwargs[kwarg] = kwargs[kwarg]
+        
+        return normal_kwargs
+
+
+    def generate_settings(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Generates settings for the instance of the BaseClass.
+
+        Returns
+            - Settings in dictionary format.
+        &#34;&#34;&#34;
+        settings = {
+            &#34;class&#34;: self.__class__.__name__, 
+            **self.generate_kwarg_setting({kwarg: self.__dict__[kwarg] for kwarg in self.kwargs}), 
+        }
+        return settings
+    
+    def save(self, path : str, indent=False) -&gt; None:
+        &#34;&#34;&#34;
+        Saves the generated settings into a JSON file at a specified path.
+        
+        Args:
+            - path (string): The file path at which the settings have to be saved.
+            - indent (bool, optional): Whether to indent the JSON file. Defaults to False.
+        &#34;&#34;&#34;
+        settings = self.generate_settings()
+
+        if os.path.dirname(path) != &#34;&#34;:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+        
+        with open(path, &#34;w&#34;) as f:
+            if indent:
+                json.dump(settings, f, indent=2)
+            else:
+                json.dump(settings, f)
+
+    @classmethod
+    def get_all_subclasses(cls) -&gt; List:
+        &#34;&#34;&#34;
+        Returns all subclasses of the BaseClass.
+        &#34;&#34;&#34;
+        all_subclasses = []
+
+        for subclass in cls.__subclasses__():
+            all_subclasses.append(subclass)
+            all_subclasses.extend(subclass.get_all_subclasses())
+
+        return all_subclasses
+
+    @staticmethod
+    def find_class(cls_name : str):
+        &#34;&#34;&#34;
+        Searches for a class that matches the given class name.
+
+        Args:
+            - cls_name (string): Class name to be matched
+        &#34;&#34;&#34;
+        for possible_cls in BaseClass.get_all_subclasses():
+            if possible_cls.__name__ == cls_name:
+                return possible_cls
+        return None
+
+    @staticmethod
+    def load_from_list_settings(list_ : List) -&gt; List:
+        &#34;&#34;&#34;
+        Deserializes the list saved settings to instantiate the objects.
+
+        Args:
+            - list_ (List): List of saved settings
+        &#34;&#34;&#34;
+        output_list = []
+        for item in list_:
+            if isinstance(item, dict):
+                output_list.append(BaseClass.load_from_dict(item))
+            elif isinstance(item, (tuple, list)):
+                output_list.append(BaseClass.load_from_list_settings(item))
+            else:
+                output_list.append(item)
+
+        return output_list
+    
+    @staticmethod
+    def load_from_dict(dict_ : dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Deserializes the dictionary saved settings to instantiate the objects.
+
+        Args:
+            - dict_ (dict): Dictionary containing saved settings
+        &#34;&#34;&#34;
+        other_class = BaseClass.find_class(dict_.get(&#34;class&#34;, None))
+        if other_class is not None:
+            return other_class.load_from_settings(dict_)
+        
+        output_dict = dict()
+        for key in dict_:
+            if isinstance(dict_[key], dict):
+                output_dict[key] = BaseClass.load_from_dict(dict_[key])
+            elif isinstance(dict_[key], (tuple, list)):
+                output_dict[key] = BaseClass.load_from_list_settings(dict_[key])
+            else:
+                output_dict[key] = dict_[key]
+
+        return output_dict
+    
+    @staticmethod
+    def get_input_parameters(settings : dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Deserializes the saved settings to instantiate the object.
+
+        Args:
+            - settings (dict): Saved settings
+        &#34;&#34;&#34;
+        cls = BaseClass.find_class(settings[&#34;class&#34;])
+
+        if cls is None:
+            logger.error(f&#34;Could not find class {settings[&#39;class&#39;]} when loading class.&#34;)
+            return None
+
+        kwargs = dict()
+        for kwarg in settings:
+            if kwarg == &#34;class&#34;:
+                continue
+            if isinstance(settings[kwarg], dict):
+                kwargs[kwarg] = BaseClass.load_from_dict(settings[kwarg])
+            elif isinstance(settings[kwarg], (tuple, list)):
+                kwargs[kwarg] = BaseClass.load_from_list_settings(settings[kwarg])
+            else:
+                kwargs[kwarg] = settings[kwarg]
+
+        return kwargs
+
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;BaseClass&#39;:
+        &#34;&#34;&#34;
+        Deserializes the saved settings to instantiate the object.
+
+        Args:
+            - settings (dict): Saved settings
+        &#34;&#34;&#34;
+        cls = BaseClass.find_class(settings[&#34;class&#34;])
+        kwargs = BaseClass.get_input_parameters(settings)
+        return cls(**kwargs)
+
+    @classmethod
+    def _load(cls, path : str, **kwargs) -&gt; &#39;BaseClass&#39;:
+        &#34;&#34;&#34;
+        Loads the settings from the JSON file at the specified path.
+        
+        Args:
+            - path (string): The file path from which the settings have to be loaded.
+            - kwargs (dict): Additional keywords arguments
+        &#34;&#34;&#34;
+        with open(path, &#34;r&#34;) as f:
+            settings = json.load(f)
+        for kwarg in kwargs:
+            settings[kwarg] = kwargs[kwarg]
+        return cls.load_from_settings(settings)
+
+    @staticmethod
+    def load(path : str, **kwargs) -&gt; &#39;BaseClass&#39;:
+        &#34;&#34;&#34;
+        Loads the settings of the class from the JSON file.
+
+        Args:
+            - path (string): The file path from which the class settings have to be loaded.
+            - kwargs (dict): Additional keywords arguments
+        &#34;&#34;&#34;
+        with open(path, &#34;r&#34;) as f:
+            settings = json.load(f)
+        cls = BaseClass.find_class(settings[&#34;class&#34;])
+        return cls._load(path, **kwargs)
+
+    def __str__(self) -&gt; str:
+        &#34;&#34;&#34;
+        Returns a string representation of the class object.
+        &#34;&#34;&#34;
+        return f&#34;{self.__class__.__name__}({self.kwargs})&#34;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.databases.database.Database" href="databases/database.html#rating.databases.database.Database">Database</a></li>
+<li><a title="rating.manager.Manager" href="manager.html#rating.manager.Manager">Manager</a></li>
+<li><a title="rating.objects.advantage.Advantage" href="objects/advantage.html#rating.objects.advantage.Advantage">Advantage</a></li>
+<li><a title="rating.objects.matching.Matching" href="objects/matching.html#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.objects.object.Object" href="objects/object.html#rating.objects.object.Object">Object</a></li>
+<li><a title="rating.objects.rating.BaseRating" href="objects/rating.html#rating.objects.rating.BaseRating">BaseRating</a></li>
+<li><a title="rating.objects.rating.DefaultRating" href="objects/rating.html#rating.objects.rating.DefaultRating">DefaultRating</a></li>
+<li><a title="rating.objects.rating_history.RatingHistory" href="objects/rating_history.html#rating.objects.rating_history.RatingHistory">RatingHistory</a></li>
+<li><a title="rating.objects.rating_period.RatingPeriod" href="objects/rating_period.html#rating.objects.rating_period.RatingPeriod">RatingPeriod</a></li>
+<li><a title="rating.rating.rating_system.RatingSystem" href="rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a></li>
+<li><a title="rating.statistics.stat_manager.StatManager" href="statistics/stat_manager.html#rating.statistics.stat_manager.StatManager">StatManager</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.base.BaseClass.find_class"><code class="name flex">
+<span>def <span class="ident">find_class</span></span>(<span>cls_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Searches for a class that matches the given class name.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>cls_name (string): Class name to be matched</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.get_all_subclasses"><code class="name flex">
+<span>def <span class="ident">get_all_subclasses</span></span>(<span>) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns all subclasses of the BaseClass.</p></div>
+</dd>
+<dt id="rating.base.BaseClass.get_input_parameters"><code class="name flex">
+<span>def <span class="ident">get_input_parameters</span></span>(<span>settings: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deserializes the saved settings to instantiate the object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>settings (dict): Saved settings</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>path: str, **kwargs) ‑> <a title="rating.base.BaseClass" href="#rating.base.BaseClass">BaseClass</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads the settings of the class from the JSON file.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>path (string): The file path from which the class settings have to be loaded.</li>
+<li>kwargs (dict): Additional keywords arguments</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.load_from_dict"><code class="name flex">
+<span>def <span class="ident">load_from_dict</span></span>(<span>dict_: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deserializes the dictionary saved settings to instantiate the objects.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>dict_ (dict): Dictionary containing saved settings</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.load_from_list_settings"><code class="name flex">
+<span>def <span class="ident">load_from_list_settings</span></span>(<span>list_: List) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deserializes the list saved settings to instantiate the objects.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>list_ (List): List of saved settings</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.load_from_settings"><code class="name flex">
+<span>def <span class="ident">load_from_settings</span></span>(<span>settings: dict) ‑> <a title="rating.base.BaseClass" href="#rating.base.BaseClass">BaseClass</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deserializes the saved settings to instantiate the object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>settings (dict): Saved settings</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.base.BaseClass.add_kwargs"><code class="name flex">
+<span>def <span class="ident">add_kwargs</span></span>(<span>self, **kwargs) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds keyword arguments to the class object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>kwargs (dict): Keyword arguments to be added.</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.generate_kwarg_setting"><code class="name flex">
+<span>def <span class="ident">generate_kwarg_setting</span></span>(<span>self, kwargs) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts provided keyword arguments to normal kwargs in terms of serialization.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>kwargs (dict): kwargs to be converted.</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.generate_list_settings"><code class="name flex">
+<span>def <span class="ident">generate_list_settings</span></span>(<span>self, list_: List) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts provided list to a normalized list that can be stored as a json object to serialize.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>list_ (List): List to be converted
+Returns<ul>
+<li>Transformed normal list</li>
+</ul>
+</li>
+</ul></div>
+</dd>
+<dt id="rating.base.BaseClass.generate_settings"><code class="name flex">
+<span>def <span class="ident">generate_settings</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates settings for the instance of the BaseClass.</p>
+<p>Returns
+- Settings in dictionary format.</p></div>
+</dd>
+<dt id="rating.base.BaseClass.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self, path: str, indent=False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves the generated settings into a JSON file at a specified path.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>path (string): The file path at which the settings have to be saved.</li>
+<li>indent (bool, optional): Whether to indent the JSON file. Defaults to False.</li>
+</ul></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating" href="index.html">rating</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.base.BaseClass" href="#rating.base.BaseClass">BaseClass</a></code></h4>
+<ul class="">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_settings" href="#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_settings" href="#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

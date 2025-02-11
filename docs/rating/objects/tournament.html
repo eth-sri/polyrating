@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.objects.tournament API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.objects.tournament</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.objects.tournament.Tournament"><code class="flex name class">
+<span>class <span class="ident">Tournament</span></span>
+<span>(</span><span>name: str, date: datetime.datetime, rounds: int = None, time_control: str = None, id: int = None, results: dict = None, byes: List = None, performance_diff: float = 400, tie_breaks=None, tie_break_names=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a chess tournament.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>name (str): The name of the tournament.</li>
+<li>date (datetime): The date of the tournament.</li>
+<li>rounds (int): The number of rounds in the tournament.</li>
+<li>time_control (str): The time control used in the tournament.</li>
+<li>id (str): The ID of the tournament (optional).</li>
+<li>results (dict): A list of results for each player (optional).</li>
+<li>byes (list): A list of tuples representing players who received a bye in a specific round (optional).</li>
+<li>performance_diff (float): The difference in performance between players used to compute tournament performance.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>name (str): The name of the tournament.</li>
+<li>date (datetime): The date of the tournament in the format "dd/mm/YYYY".</li>
+<li>rounds (int): The number of rounds in the tournament.</li>
+<li>time_control (str): The time control used in the tournament.</li>
+<li>id (int, optional): The ID of the tournament. Defaults to None.</li>
+<li>results (dict, optional): The results of the tournament. Defaults to an empty dictionary.</li>
+<li>byes (List, optional): The list of players who received a bye in the tournament. Defaults to an empty list.</li>
+<li>performance_diff (float, optional): The difference in performance between players used to compute tournament performance. Defaults to 400.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Tournament(Object):
+    def __init__(self, name: str, date: datetime, rounds: int = None, time_control: str = None, 
+                 id: int = None, results: dict = None, byes: List = None, 
+                 performance_diff : float = 400, tie_breaks=None, tie_break_names=None) -&gt; &#39;Tournament&#39;:
+        &#34;&#34;&#34;
+        Represents a chess tournament.
+
+        Attributes:
+            - name (str): The name of the tournament.
+            - date (datetime): The date of the tournament.
+            - rounds (int): The number of rounds in the tournament.
+            - time_control (str): The time control used in the tournament.
+            - id (str): The ID of the tournament (optional).
+            - results (dict): A list of results for each player (optional).
+            - byes (list): A list of tuples representing players who received a bye in a specific round (optional).
+            - performance_diff (float): The difference in performance between players used to compute tournament performance.
+
+        Args:
+            - name (str): The name of the tournament.
+            - date (datetime): The date of the tournament in the format &#34;dd/mm/YYYY&#34;.
+            - rounds (int): The number of rounds in the tournament.
+            - time_control (str): The time control used in the tournament.
+            - id (int, optional): The ID of the tournament. Defaults to None.
+            - results (dict, optional): The results of the tournament. Defaults to an empty dictionary.
+            - byes (List, optional): The list of players who received a bye in the tournament. Defaults to an empty list.
+            - performance_diff (float, optional): The difference in performance between players used to compute tournament performance. Defaults to 400.
+        &#34;&#34;&#34;
+        if results is None:
+            results = dict()
+        if byes is None:
+            byes = []
+        
+        if tie_breaks is None:
+            tie_breaks = dict()
+        self.set_tie_breaks(tie_breaks, tie_break_names)
+        super().__init__(id, name=name, date=date, rounds=rounds, 
+                         time_control=time_control, results=results, 
+                         byes=byes, performance_diff=performance_diff, tie_breaks=tie_breaks, 
+                         tie_break_names=self.tie_break_names)
+        self.results = {int(key): value for key, value in results.items()} if results else None
+
+    def generate_settings(self) -&gt; dict:
+        settings = super().generate_settings()
+        settings[&#39;date&#39;] = self.date.strftime(&#34;%d/%m/%Y - %H:%M:%S&#34;)
+        return settings
+    
+    def set_tie_breaks(self, tie_breaks : dict, tie_break_names : List[str] = None):
+        self.tie_breaks = tie_breaks
+        if tie_break_names is not None:
+            self.tie_break_names = tie_break_names
+        else:
+            self.tie_break_names = set()
+            for player in tie_breaks:
+                self.tie_break_names = self.tie_break_names.union(set(tie_breaks[player].keys()))
+            self.tie_break_names = list(self.tie_break_names)
+    
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;Tournament&#39;:
+        settings = super().get_input_parameters(settings)
+        settings[&#39;date&#39;] = datetime.strptime(settings[&#39;date&#39;], &#34;%d/%m/%Y - %H:%M:%S&#34;)
+        return cls(**settings)
+
+    def get_date(self) -&gt; datetime:
+        &#34;&#34;&#34;
+        Get the date of the tournament.
+
+        Returns:
+            - datetime: The date of the tournament.
+        &#34;&#34;&#34;
+        return self.date
+
+    def add_bye(self, player : int, round : int):
+        &#34;&#34;&#34;
+        Add a bye for a player in a specific round.
+
+        Args:
+            - player (int): The ID of the player who received the bye.
+            - round (int): The round number in which the bye is received.
+        &#34;&#34;&#34;
+        self.byes.append((player, round))
+
+    def get_string_date(self) -&gt; str:
+        &#34;&#34;&#34;
+        Get the date of the tournament as a string in the format &#34;dd/mm/YYYY&#34;.
+
+        Returns:
+            - str: The date of the tournament as a string.
+        &#34;&#34;&#34;
+        return self.date
+    
+    def compute_tournament_results(self, game_database : GameDatabase, 
+                                   player_database : PlayerDatabase, 
+                                   rating_system : RatingSystem):
+        &#34;&#34;&#34;
+        Compute the results for the tournament.
+
+        Args:
+            - game_database (GameDatabase): The game database containing the game objects.
+            - player_database (PlayerDatabase): The player database containing the player objects.
+            - rating_system (RatingSystem): The rating system used to compute the results.
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Computing results for tournament {self.name}...&#34;)
+        results = self.init_results(game_database)
+
+        # Basic statistics
+        for player in results:
+            results[player][&#39;was_bye&#39;] = sum([int(player == bye[0]) for bye in self.byes])
+            results[player][&#39;score&#39;] = sum(results[player][&#39;scores&#39;]) + results[player][&#39;was_bye&#39;]
+            results[player][&#39;player&#39;] = player_database[player]
+            results[player][&#39;n_games&#39;] = len(results[player][&#39;scores&#39;])
+            for tie_break in self.tie_break_names:
+                results[player][tie_break] = self.tie_breaks.get(player, dict()).get(tie_break, 0)
+        
+        # More advanced statistics
+        for player in results:
+            performance = self.compute_performance(results, player)
+            if len(performance) == 0:
+                results[player][&#39;performance&#39;] = 0
+                results[player][&#39;rating_performance&#39;] = Rating(0)
+            else:
+                results[player][&#39;performance&#39;] = sum(performance) / len(performance)
+                results[player][&#39;rating_performance&#39;] = rating_system.compute_tournament_performance(results[player][&#39;player&#39;], 
+                                                                                                 self.id, self.get_date(),
+                                                                                                 game_database, 
+                                                                                                 player_database, 
+                                                                                                 next=False)
+            games = []
+            for forfeit, game in zip(results[player][&#39;forfeit&#39;], results[player][&#39;games&#39;]):
+                if not forfeit:
+                    games.append(game)
+
+            if len(games) == 0:
+                results[player][&#39;expected_score&#39;] = 0
+            else:
+                expected_score = rating_system.compute_expected_score(results[player][&#39;player&#39;], games, player_database,
+                                                                    self.get_date(), next=True)
+                results[player][&#39;expected_score&#39;] = expected_score + results[player][&#39;was_bye&#39;]
+
+    
+        for player_id in results:
+            results[player_id][&#39;tournament&#39;] = self.id
+            results[player_id][&#39;player&#39;] = results[player_id][&#39;player&#39;].id
+            del results[player_id][&#39;scores&#39;], results[player_id][&#39;opponents&#39;]
+
+        self.results = results
+
+    def init_results(self, game_database : GameDatabase) -&gt; dict:
+        &#34;&#34;&#34;
+        Initializes and returns a dictionary containing the results of the tournament.
+
+        Args:
+            - game_database: An instance of the game database containing the games played in the tournament.
+
+        Returns:
+            - results: A dictionary containing the results of the tournament. The keys are player names, and the values are dictionaries with two keys:
+                - &#39;scores&#39;: A list of game results for the player.
+                - &#39;opponents&#39;: A list of opponent names for the player.
+
+        &#34;&#34;&#34;
+        results = dict()
+        for game in game_database.get_games_per_tournament(self.id, allow_forfeit=True):
+            if game.home not in results:
+                results[game.home] = {&#39;scores&#39;: [], &#39;opponents&#39;: [], &#39;games&#39;: [], &#39;forfeit&#39;: []}
+            if game.out not in results:
+                results[game.out] = {&#39;scores&#39;: [], &#39;opponents&#39;: [], &#39;games&#39;: [], &#39;forfeit&#39;: []}
+
+            home_points, out_points = game.get_points(home=True), game.get_points(home=False)
+            results[game.out][&#39;opponents&#39;].append(game.home)
+            results[game.out][&#39;scores&#39;].append(out_points)
+            results[game.out][&#39;games&#39;].append(game)
+            results[game.out][&#39;forfeit&#39;].append(game.is_forfeit)
+            results[game.home][&#39;opponents&#39;].append(game.out)
+            results[game.home][&#39;scores&#39;].append(home_points)
+            results[game.home][&#39;games&#39;].append(game)
+            results[game.home][&#39;forfeit&#39;].append(game.is_forfeit)
+        return results
+
+    def compute_performance(self, results : dict, player : Player) -&gt; List[float]:
+        &#34;&#34;&#34;
+        Compute the performance of a player based on the results of their games using the old-fashioned system.
+        For each game, the performance is computed as the rating of the opponent plus or minus the default deviation (depending on result).
+
+        Args:
+            - results (dict): A dictionary containing the results of all players&#39; games.
+            - player (Player): The name of the player for whom to compute the performance.
+
+        Returns:
+            - list: A list of performance values for each game played by the player.
+
+        &#34;&#34;&#34;
+        performance = []
+        for game in range(len(results[player][&#39;scores&#39;])):
+            if results[player][&#39;forfeit&#39;][game]:
+                continue
+            opponent = results[results[player][&#39;opponents&#39;][game]][&#39;player&#39;]
+            opponent_rating = opponent.get_rating_at_date(self.get_date(), next=True)
+            if results[player][&#39;scores&#39;][game] == 1:
+                performance.append(opponent_rating.rating + self.performance_diff)
+            elif results[player][&#39;scores&#39;][game] == 0:
+                performance.append(opponent_rating.rating - self.performance_diff)
+            else:
+                performance.append(opponent_rating.rating)
+        return performance
+
+    def get_results(self, game_database : GameDatabase = None, 
+                    player_database : PlayerDatabase = None, 
+                    rating_system : RatingSystem = None) -&gt; Generator[dict, None, None]:
+        &#34;&#34;&#34;
+        Compute the results for the tournament.
+
+        Args:
+            - game_database (GameDatabase): The game database containing the game objects.
+            - player_database (PlayerDatabase): The player database containing the player objects.
+
+        Returns:
+            - iterator: An iterator of dictionaries representing the results for each player in the tournament.
+        &#34;&#34;&#34;
+        if not self.result_is_computed():
+            self.compute_tournament_results(game_database, player_database, rating_system)
+        
+        for player_id in self.results:
+            yield self.results[player_id]
+    
+    def get_player_performance(self, player_id : int, 
+                               game_database : GameDatabase = None, 
+                               player_database : PlayerDatabase = None, 
+                               rating_system : RatingSystem = None) -&gt; dict:
+        &#34;&#34;&#34;
+        Get the results for a specific player in the tournament.
+
+        Args:
+            - player_id (str): The ID of the player.
+            - game_database (GameDatabase): The game database containing the game objects.
+            - player_database (PlayerDatabase): The player database containing the player objects.
+
+        Returns:
+            - dict: A dictionary representing the results for the player in the tournament.
+        &#34;&#34;&#34;
+        if not self.result_is_computed():
+            self.compute_tournament_results(game_database, player_database, rating_system)
+        
+        return self.results.get(player_id, None)
+    
+    def get_players(self, player_database : PlayerDatabase,
+                    game_database : GameDatabase = None,
+                    rating_system : RatingSystem = None) -&gt; Generator[Player, None, None]:
+        &#34;&#34;&#34;
+        Get the players in the tournament.
+
+        Args:
+            - player_database (PlayerDatabase): The player database containing the player objects.
+            - game_database (GameDatabase): The game database containing the game objects.
+            - rating_system (RatingSystem): The rating system used to compute the results.
+        
+        Returns:
+            - iterator: An iterator of players in the tournament.
+        &#34;&#34;&#34;
+        if not self.result_is_computed():
+            self.compute_tournament_results(game_database, player_database, rating_system)
+        
+        for player_id in self.results:
+            yield player_database[player_id]
+    
+    def result_is_computed(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if the results for the tournament have been computed.
+
+        Returns:
+            - bool: True if the results have been computed, False otherwise.
+        &#34;&#34;&#34;
+        return self.results is not None
+
+    def __str__(self) -&gt; str:
+        &#34;&#34;&#34;
+        Get a string representation of the tournament.
+
+        Returns:
+            - str: A string representation of the tournament.
+        &#34;&#34;&#34;
+        return f&#34;{self.name} - {self.get_string_date()}&#34;
+
+    def __eq__(self, __value: object) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if the tournament is equal to another tournament.
+
+        Args:
+            - __value (object): The object to compare with.
+
+        Returns:
+            - bool: True if the tournaments are equal, False otherwise.
+        &#34;&#34;&#34;
+        if isinstance(__value, Tournament):
+            if self.name != __value.name:
+                return False
+            if self.date != __value.date:
+                return False
+            if self.rounds != __value.rounds:
+                return False
+            if self.time_control != __value.time_control:
+                return False
+            return True
+        return False</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.object.Object" href="object.html#rating.objects.object.Object">Object</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="rating.objects.tournament.Tournament.id_counter"><code class="name">var <span class="ident">id_counter</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.tournament.Tournament.add_bye"><code class="name flex">
+<span>def <span class="ident">add_bye</span></span>(<span>self, player: int, round: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a bye for a player in a specific round.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player (int): The ID of the player who received the bye.</li>
+<li>round (int): The round number in which the bye is received.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.compute_performance"><code class="name flex">
+<span>def <span class="ident">compute_performance</span></span>(<span>self, results: dict, player: <a title="rating.objects.player.Player" href="player.html#rating.objects.player.Player">Player</a>) ‑> List[float]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the performance of a player based on the results of their games using the old-fashioned system.
+For each game, the performance is computed as the rating of the opponent plus or minus the default deviation (depending on result).</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>results (dict): A dictionary containing the results of all players' games.</li>
+<li>player (Player): The name of the player for whom to compute the performance.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>list: A list of performance values for each game played by the player.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.compute_tournament_results"><code class="name flex">
+<span>def <span class="ident">compute_tournament_results</span></span>(<span>self, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the results for the tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_database (GameDatabase): The game database containing the game objects.</li>
+<li>player_database (PlayerDatabase): The player database containing the player objects.</li>
+<li>rating_system (RatingSystem): The rating system used to compute the results.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.get_date"><code class="name flex">
+<span>def <span class="ident">get_date</span></span>(<span>self) ‑> datetime.datetime</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the date of the tournament.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>datetime: The date of the tournament.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.get_player_performance"><code class="name flex">
+<span>def <span class="ident">get_player_performance</span></span>(<span>self, player_id: int, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the results for a specific player in the tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_id (str): The ID of the player.</li>
+<li>game_database (GameDatabase): The game database containing the game objects.</li>
+<li>player_database (PlayerDatabase): The player database containing the player objects.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>dict: A dictionary representing the results for the player in the tournament.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.get_players"><code class="name flex">
+<span>def <span class="ident">get_players</span></span>(<span>self, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a>, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None) ‑> Generator[<a title="rating.objects.player.Player" href="player.html#rating.objects.player.Player">Player</a>, None, None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the players in the tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_database (PlayerDatabase): The player database containing the player objects.</li>
+<li>game_database (GameDatabase): The game database containing the game objects.</li>
+<li>rating_system (RatingSystem): The rating system used to compute the results.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>iterator: An iterator of players in the tournament.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.get_results"><code class="name flex">
+<span>def <span class="ident">get_results</span></span>(<span>self, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="../databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="../rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None) ‑> Generator[dict, None, None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the results for the tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_database (GameDatabase): The game database containing the game objects.</li>
+<li>player_database (PlayerDatabase): The player database containing the player objects.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>iterator: An iterator of dictionaries representing the results for each player in the tournament.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.get_string_date"><code class="name flex">
+<span>def <span class="ident">get_string_date</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the date of the tournament as a string in the format "dd/mm/YYYY".</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>str: The date of the tournament as a string.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.init_results"><code class="name flex">
+<span>def <span class="ident">init_results</span></span>(<span>self, game_database: <a title="rating.databases.game_database.GameDatabase" href="../databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a>) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes and returns a dictionary containing the results of the tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_database: An instance of the game database containing the games played in the tournament.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>results: A dictionary containing the results of the tournament. The keys are player names, and the values are dictionaries with two keys:<ul>
+<li>'scores': A list of game results for the player.</li>
+<li>'opponents': A list of opponent names for the player.</li>
+</ul>
+</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.result_is_computed"><code class="name flex">
+<span>def <span class="ident">result_is_computed</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if the results for the tournament have been computed.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>bool: True if the results have been computed, False otherwise.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.tournament.Tournament.set_tie_breaks"><code class="name flex">
+<span>def <span class="ident">set_tie_breaks</span></span>(<span>self, tie_breaks: dict, tie_break_names: List[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.object.Object" href="object.html#rating.objects.object.Object">Object</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.object.Object.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.object.Object.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.object.Object.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.object.Object.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.object.Object.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.object.Object.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.object.Object.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.object.Object.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.object.Object.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.object.Object.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.object.Object.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.object.Object.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.objects" href="index.html">rating.objects</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.objects.tournament.Tournament" href="#rating.objects.tournament.Tournament">Tournament</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.tournament.Tournament.add_bye" href="#rating.objects.tournament.Tournament.add_bye">add_bye</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.compute_performance" href="#rating.objects.tournament.Tournament.compute_performance">compute_performance</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.compute_tournament_results" href="#rating.objects.tournament.Tournament.compute_tournament_results">compute_tournament_results</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.get_date" href="#rating.objects.tournament.Tournament.get_date">get_date</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.get_player_performance" href="#rating.objects.tournament.Tournament.get_player_performance">get_player_performance</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.get_players" href="#rating.objects.tournament.Tournament.get_players">get_players</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.get_results" href="#rating.objects.tournament.Tournament.get_results">get_results</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.get_string_date" href="#rating.objects.tournament.Tournament.get_string_date">get_string_date</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.id_counter" href="#rating.objects.tournament.Tournament.id_counter">id_counter</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.init_results" href="#rating.objects.tournament.Tournament.init_results">init_results</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.result_is_computed" href="#rating.objects.tournament.Tournament.result_is_computed">result_is_computed</a></code></li>
+<li><code><a title="rating.objects.tournament.Tournament.set_tie_breaks" href="#rating.objects.tournament.Tournament.set_tie_breaks">set_tie_breaks</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

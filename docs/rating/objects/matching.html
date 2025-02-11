@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.objects.matching API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.objects.matching</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.objects.matching.And"><code class="flex name class">
+<span>class <span class="ident">And</span></span>
+<span>(</span><span>matchings: List[<a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the And object. This object matches a dictionary if all of the given matchings match.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>matchings</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of matchings.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class And(Matching):
+    def __init__(self, matchings : List[Matching]):
+        &#34;&#34;&#34;
+        Initializes the And object. This object matches a dictionary if all of the given matchings match.
+
+        Args:
+            matchings (list): A list of matchings.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        super().__init__(matchings=matchings)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return all(matching.match(dict_) for matching in self.matchings)
+    
+    def __str__(self):
+        return &#34;(&#34; + &#34; and &#34;.join(str(matching) for matching in self.matchings) + &#34;)&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.Equal"><code class="flex name class">
+<span>class <span class="ident">Equal</span></span>
+<span>(</span><span>attribute: str, should_equal: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the EqualMatching object. This object matches a dictionary if the value of the
+given attribute is equal to the given value.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attribute</code></strong> :&ensp;<code>str</code></dt>
+<dd>The attribute to match.</dd>
+</dl>
+<p>should_equal (Union(str, float)): The value that the attribute should be equal to.</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Equal(Matching):
+    def __init__(self, attribute : str, should_equal : str):
+        &#34;&#34;&#34;
+        Initializes the EqualMatching object. This object matches a dictionary if the value of the
+        given attribute is equal to the given value.
+
+        Args:
+            attribute (str): The attribute to match.
+            should_equal (Union(str, float)): The value that the attribute should be equal to.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        super().__init__(attribute=attribute, should_equal=should_equal)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return dict_.get(self.attribute) == self.should_equal
+    
+    def __str__(self):
+        return f&#34;{self.attribute} == {self.should_equal}&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.GreaterThan"><code class="flex name class">
+<span>class <span class="ident">GreaterThan</span></span>
+<span>(</span><span>attribute, should_be_greater_than, equal=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the Matching object. This object is used to match a dictionary with a set of conditions.
+This superclass matches any dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional keyword arguments.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GreaterThan(Matching):
+    def __init__(self, attribute : str, should_be_greater_than : float, equal : bool = False):
+        &#34;&#34;&#34;
+        Initializes the GreaterThanMatching object. This object matches a dictionary if the value of the
+        given attribute is greater than the given value.
+
+        Args:
+            attribute (str): The attribute to match against.
+            should_be_greater_than (float): The value that the attribute should be greater than.
+            equal (bool, optional): Whether the attribute can be equal to the given value. Defaults to False.
+        &#34;&#34;&#34;
+        super().__init__(attribute=attribute, should_be_greater_than=should_be_greater_than, equal=equal)
+    def __init__(self, attribute, should_be_greater_than, equal=False):
+        super().__init__(attribute=attribute, should_be_greater_than=should_be_greater_than, 
+                         equal=equal)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        if self.equal:
+            return dict_.get(self.attribute) &gt;= self.should_be_greater_than
+        return dict_.get(self.attribute) &gt; self.should_be_greater_than
+    
+    def __str__(self):
+        if self.equal:
+            return f&#34;({self.attribute} &gt;= {self.should_be_greater_than})&#34;
+        return f&#34;{self.attribute} &gt; {self.should_be_greater_than}&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.IsIn"><code class="flex name class">
+<span>class <span class="ident">IsIn</span></span>
+<span>(</span><span>attribute: str, should_be_in: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the InMatching object. This object matches a dictionary if the value of the
+given attribute is in the given list.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attribute</code></strong> :&ensp;<code>str</code></dt>
+<dd>The attribute to match.</dd>
+<dt><strong><code>should_be_in</code></strong> :&ensp;<code>list</code></dt>
+<dd>The list of values that the attribute should be in.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IsIn(Matching):
+    def __init__(self, attribute : str, should_be_in : list):
+        &#34;&#34;&#34;
+        Initializes the InMatching object. This object matches a dictionary if the value of the
+        given attribute is in the given list.
+
+        Args:
+            attribute (str): The attribute to match.
+            should_be_in (list): The list of values that the attribute should be in.
+        &#34;&#34;&#34;
+        super().__init__(attribute=attribute, should_be_in=should_be_in)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return dict_.get(self.attribute) in self.should_be_in
+    
+    def __str__(self):
+        return f&#34;({self.attribute} in {self.should_be_in})&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.LessThan"><code class="flex name class">
+<span>class <span class="ident">LessThan</span></span>
+<span>(</span><span>attribute: str, should_be_less_than: float, equal: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the Matching object. This object is used to match a dictionary with a set of conditions.
+This superclass matches any dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional keyword arguments.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LessThan(Matching):
+    def __init__(self, attribute: str, should_be_less_than: float, equal: bool = False):
+        &#34;&#34;&#34;
+        Initializes the LessThanMatching object. This object matches a dictionary if the value of the
+        given attribute is less than the given value. 
+
+        Args:
+            attribute (str): The attribute to match against.
+            should_be_less_than (float): The value that the attribute should be less than.
+            equal (bool, optional): Whether the attribute can be equal to the given value. Defaults to False.
+        &#34;&#34;&#34;
+        super().__init__(attribute=attribute, should_be_less_than=should_be_less_than, equal=equal)
+    def __init__(self, attribute : str, should_be_less_than : float, equal : bool = False):
+        super().__init__(attribute=attribute, should_be_less_than=should_be_less_than, 
+                         equal=equal)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        if self.equal:
+            return dict_.get(self.attribute) &lt;= self.should_be_less_than
+        return dict_.get(self.attribute) &lt; self.should_be_less_than
+    
+    def __str__(self):
+        if self.equal:
+            return f&#34;({self.attribute} &lt;= {self.should_be_less_than})&#34;
+        return f&#34;({self.attribute} &lt; {self.should_be_less_than})&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.Matching"><code class="flex name class">
+<span>class <span class="ident">Matching</span></span>
+<span>(</span><span>**kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the Matching object. This object is used to match a dictionary with a set of conditions.
+This superclass matches any dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional keyword arguments.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Matching(BaseClass):
+    def __init__(self, **kwargs):
+            &#34;&#34;&#34;
+            Initializes the Matching object. This object is used to match a dictionary with a set of conditions.
+            This superclass matches any dictionary.
+
+            Args:
+                **kwargs: Additional keyword arguments.
+
+            Returns:
+                None
+            &#34;&#34;&#34;
+            super().__init__(**kwargs)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        &#34;&#34;&#34;
+        Matches the object with the given dictionary.
+
+        Args:
+            - dict_ (dict): The dictionary to match with.
+
+        Returns:
+            - bool: True if the dictionary matches the conditions given by the object, False otherwise.
+        &#34;&#34;&#34;
+        return True
+    
+    def __str__(self) -&gt; str:
+        return &#39;True&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.And" href="#rating.objects.matching.And">And</a></li>
+<li><a title="rating.objects.matching.Equal" href="#rating.objects.matching.Equal">Equal</a></li>
+<li><a title="rating.objects.matching.GreaterThan" href="#rating.objects.matching.GreaterThan">GreaterThan</a></li>
+<li><a title="rating.objects.matching.IsIn" href="#rating.objects.matching.IsIn">IsIn</a></li>
+<li><a title="rating.objects.matching.LessThan" href="#rating.objects.matching.LessThan">LessThan</a></li>
+<li><a title="rating.objects.matching.Not" href="#rating.objects.matching.Not">Not</a></li>
+<li><a title="rating.objects.matching.Or" href="#rating.objects.matching.Or">Or</a></li>
+<li><a title="rating.objects.matching.Regex" href="#rating.objects.matching.Regex">Regex</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.matching.Matching.match"><code class="name flex">
+<span>def <span class="ident">match</span></span>(<span>self, dict_: dict) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Matches the object with the given dictionary.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>dict_ (dict): The dictionary to match with.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>bool: True if the dictionary matches the conditions given by the object, False otherwise.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.Not"><code class="flex name class">
+<span>class <span class="ident">Not</span></span>
+<span>(</span><span>matching: <a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the Not object. This object matches a dictionary if the given matching does not match.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>matching</code></strong> :&ensp;<code><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></code></dt>
+<dd>The matching value for the object.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Not(Matching):
+    def __init__(self, matching : Matching):
+        &#34;&#34;&#34;
+        Initializes the Not object. This object matches a dictionary if the given matching does not match.
+
+        Args:
+            matching (Matching): The matching value for the object.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        super().__init__(matching=matching)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return not self.matching.match(dict_)
+    
+    def __str__(self):
+        return f&#34;not {self.matching}&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.Or"><code class="flex name class">
+<span>class <span class="ident">Or</span></span>
+<span>(</span><span>matchings: List[<a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the Or object. This object matches a dictionary if any of the given matchings match.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>matchings</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of matchings.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Or(Matching):
+    def __init__(self, matchings : List[Matching]):
+        &#34;&#34;&#34;
+        Initializes the Or object. This object matches a dictionary if any of the given matchings match.
+
+        Args:
+            matchings (list): A list of matchings.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        super().__init__(matchings=matchings)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return any(matching.match(dict_) for matching in self.matchings)
+    
+    def __str__(self):
+        return &#34;(&#34; + &#34; or &#34;.join(str(matching) for matching in self.matchings) + &#34;)&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.matching.Regex"><code class="flex name class">
+<span>class <span class="ident">Regex</span></span>
+<span>(</span><span>attribute: str, regex: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes the RegexMatching object. This object matches a dictionary if the value of the
+given attribute matches the given regular expression pattern.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>attribute</code></strong> :&ensp;<code>str</code></dt>
+<dd>The attribute to match against.</dd>
+<dt><strong><code>regex</code></strong> :&ensp;<code>str</code></dt>
+<dd>The regular expression pattern to match.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Regex(Matching):
+    def __init__(self, attribute : str, regex : str):
+        &#34;&#34;&#34;
+        Initializes the RegexMatching object. This object matches a dictionary if the value of the
+        given attribute matches the given regular expression pattern.
+
+        Args:
+            attribute (str): The attribute to match against.
+            regex (str): The regular expression pattern to match.
+
+        Returns:
+            None
+        &#34;&#34;&#34;
+        super().__init__(attribute=attribute, regex=regex)
+
+    def match(self, dict_ : dict) -&gt; bool:
+        return re.match(self.regex, dict_.get(self.attribute)) is not None
+    
+    def __str__(self):
+        return f&#34;({self.attribute} matches {self.regex})&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.matching.Matching.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+<li><code><a title="rating.objects.matching.Matching.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.objects" href="index.html">rating.objects</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.objects.matching.And" href="#rating.objects.matching.And">And</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.Equal" href="#rating.objects.matching.Equal">Equal</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.GreaterThan" href="#rating.objects.matching.GreaterThan">GreaterThan</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.IsIn" href="#rating.objects.matching.IsIn">IsIn</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.LessThan" href="#rating.objects.matching.LessThan">LessThan</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.Matching" href="#rating.objects.matching.Matching">Matching</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.matching.Matching.match" href="#rating.objects.matching.Matching.match">match</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.Not" href="#rating.objects.matching.Not">Not</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.Or" href="#rating.objects.matching.Or">Or</a></code></h4>
+</li>
+<li>
+<h4><code><a title="rating.objects.matching.Regex" href="#rating.objects.matching.Regex">Regex</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

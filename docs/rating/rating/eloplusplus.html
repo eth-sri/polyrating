@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.rating.eloplusplus API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.rating.eloplusplus</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.rating.eloplusplus.EloPlusPlus"><code class="flex name class">
+<span>class <span class="ident">EloPlusPlus</span></span>
+<span>(</span><span>gamma=0.2, lambda_=0.77, iterations=50, factor=0.602, default_change=np.float64(460.51701859880916), lr_change_coef=0.1, linearized: int = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>EloPlusPlus algorithm based on <a href="https://arxiv.org/abs/1012.4571,">https://arxiv.org/abs/1012.4571,</a> the winner of the Kaggle chess rating competition.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>gamma (float): The extra value associated to playing home for the EloPlusPlus algorithm.</li>
+<li>lambda_ (float): The regularization parameter for the EloPlusPlus algorithm.</li>
+<li>iterations (int): The number of iterations to run the SGD for.</li>
+<li>factor (float): The factor that is used in updating the learning rate.</li>
+<li>default_change (float): The default standard unit of change in ratings.</li>
+<li>lr_change_coef (float): The learning rate change coefficient used in updated the learning rate.</li>
+<li>linearized (int): The number of periods to linearize the ratings for. If None, the ratings are not linearized.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>gamma (float): The extra value associated to playing home for the EloPlusPlus algorithm. Default is 0.2.</li>
+<li>lambda_ (float): The regularization parameter for the EloPlusPlus algorithm. Default is 0.77.</li>
+<li>iterations (int): The number of iterations to run the SGD for. Default is 50.</li>
+<li>factor (float): The factor that is used in updating the learning rate. Default is 0.602.</li>
+<li>default_change (float): The default standard unit of change in ratings. Default is 200 * np.log(10).</li>
+<li>lr_change_coef (float): The learning rate change coefficient used in updated the learning rate. Default is 0.1.</li>
+<li>linearized (int): The number of periods to linearize the ratings for. If None, the ratings are not linearized. Default is None.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EloPlusPlus(RatingSystem):
+    def __init__(self, gamma=0.2, lambda_=0.77, iterations=50,
+                 factor=0.602, default_change=200 * np.log(10), lr_change_coef=0.1, 
+                 linearized : int = None):
+        &#34;&#34;&#34;
+        EloPlusPlus algorithm based on https://arxiv.org/abs/1012.4571, the winner of the Kaggle chess rating competition.
+
+        Attributes:
+            - gamma (float): The extra value associated to playing home for the EloPlusPlus algorithm.
+            - lambda_ (float): The regularization parameter for the EloPlusPlus algorithm.
+            - iterations (int): The number of iterations to run the SGD for.
+            - factor (float): The factor that is used in updating the learning rate.
+            - default_change (float): The default standard unit of change in ratings.
+            - lr_change_coef (float): The learning rate change coefficient used in updated the learning rate.
+            - linearized (int): The number of periods to linearize the ratings for. If None, the ratings are not linearized.
+
+        Args:
+            - gamma (float): The extra value associated to playing home for the EloPlusPlus algorithm. Default is 0.2.
+            - lambda_ (float): The regularization parameter for the EloPlusPlus algorithm. Default is 0.77.
+            - iterations (int): The number of iterations to run the SGD for. Default is 50.
+            - factor (float): The factor that is used in updating the learning rate. Default is 0.602.
+            - default_change (float): The default standard unit of change in ratings. Default is 200 * np.log(10).
+            - lr_change_coef (float): The learning rate change coefficient used in updated the learning rate. Default is 0.1.
+            - linearized (int): The number of periods to linearize the ratings for. If None, the ratings are not linearized. Default is None.
+        &#34;&#34;&#34;
+        super().__init__(gamma=gamma, lambda_=lambda_, iterations=iterations,
+                         factor=factor, default_change=default_change, lr_change_coef=lr_change_coef, 
+                         linearized=linearized)
+        
+    def compute_weights(self, games : List[Game], period_dates : List[datetime]):
+        &#34;&#34;&#34;
+        Computes the weights of the games.
+
+        Args:
+            - games (list): A list of game objects.
+            - period_dates (list): A list of dates for each period.
+        
+        Returns:
+            - list: A list of weights for the games.
+        &#34;&#34;&#34;
+        periods = [np.argmax([date &gt;= game.get_date() for date in period_dates]) for game in games]
+        min_period = min(periods)
+        max_period = max(periods)
+        weights = []
+        for game, period in zip(games, periods):
+            weight = (1 + period - min_period) / (1 + max_period - min_period)
+            weights.append(weight ** 2)
+        return weights
+        
+    def period_update(self, player_database : PlayerDatabase, 
+                      game_database : GameDatabase, 
+                      period_dates : List[datetime], **kwargs):
+        &#34;&#34;&#34;
+        Updates the ratings of the players for a specific period.
+
+        Args:
+            - player_database (PlayerDatabase): The player database object.
+            - game_database (GameDatabase): The game database object.
+            - period_dates (list): The list of dates for each period.
+        &#34;&#34;&#34;
+        period_dates_last = None
+        if len(period_dates) &gt; 1 and self.linearized is not None:
+            period_dates_last = period_dates[max(0, len(period_dates) - self.linearized - 1)]
+        games = list(game_database.get_games_between_dates(period_dates[-1], period_dates_last))
+        weights = self.compute_weights(games, period_dates)
+        ratings = []
+        for id in range(player_database.get_max_id() + 1):
+            player = player_database[id]
+            if player is None:
+                ratings.append(0)
+            else:
+                ratings.append(player.get_rating().rating)
+
+        for iteration in range(self.iterations):
+            player_averages = [(0, 0, 0) for _ in range(player_database.get_max_id() + 1)]
+            # shuffle games
+            indices = np.random.permutation(len(games))
+            games = [games[i] for i in indices]
+            weights = [weights[i] for i in indices]
+            for game, weight in zip(games, weights):
+                player_averages[game.home] = (player_averages[game.home][0] + game.weight * weight * ratings[game.out], 
+                                               player_averages[game.home][1] + game.weight * weight, 
+                                               player_averages[game.home][2] + game.weight)
+                player_averages[game.out] = (player_averages[game.out][0] + game.weight * weight * ratings[game.home], 
+                                               player_averages[game.out][1] + game.weight * weight,
+                                               player_averages[game.out][2] + game.weight)
+            for i in range(len(player_averages)):
+                if player_averages[i][2] &gt; 0:
+                    player_averages[i] = (player_averages[i][0] / player_averages[i][1], player_averages[i][2])
+                else:
+                    player_averages[i] = (0, 0)
+
+            lr = (1 + self.lr_change_coef * self.iterations) / (1 + iteration + self.lr_change_coef * self.iterations)
+            lr = lr ** self.factor
+
+            for game, weight in zip(games, weights):
+                expected_outcome = self.compute_expected_score_float_rating(ratings[game.home], ratings[game.out])
+                ratings[game.home] -= lr * weight * (expected_outcome - game.get_result()) * expected_outcome * (1 - expected_outcome) * self.default_change
+                ratings[game.out] += lr * weight * (expected_outcome - game.get_result()) * expected_outcome * (1 - expected_outcome) * self.default_change
+                ratings[game.home] -= lr * self.lambda_ / player_averages[game.home][1] * (ratings[game.home] - player_averages[game.home][0])
+                ratings[game.out] -= lr * self.lambda_ / player_averages[game.out][1] * (ratings[game.out] - player_averages[game.out][0])
+        
+        for player in player_database:
+            player.get_rating().update(ratings[player.id])
+
+    def compute_expected_score_float_rating(self, rating1 : float, rating2 : float, rating_1_is_home : bool = True) -&gt; float:
+        &#34;&#34;&#34;
+        Computes the expected score of a player against an opponent.
+
+        Args:
+            - rating1 (float): The rating of the first player.
+            - rating2 (float): The rating of the second player.
+            - rating_1_is_home (bool, optional): If True, the first player is home. If False, the second player is home. Defaults to True.
+
+        Returns:
+            - float: The expected score of the first player against the second player.
+        &#34;&#34;&#34;
+        if rating_1_is_home:
+            return 1 / (1 + np.exp((rating2 - rating1) / self.default_change - self.gamma))
+        else:
+            return 1 / (1 + np.exp((rating2 - rating1) / self.default_change + self.gamma))
+
+    def compute_expected_score_rating(self, rating1 : Rating, rating2 : Rating, rating_1_is_home : bool = True) -&gt; float:
+        &#34;&#34;&#34;
+        Computes the expected score of a player against an opponent.
+
+        Args:
+            - rating1 (Rating): The rating of the first player.
+            - rating2 (Rating): The rating of the second player.
+            - rating_1_is_home (bool, optional): If True, the first player is home. If False, the second player is home. Defaults to True.
+
+        Returns:
+            - float: The expected score of the first player against the second player.
+        &#34;&#34;&#34;
+        return self.compute_expected_score_float_rating(rating1.rating, rating2.rating, rating_1_is_home)
+
+    def compute_expected_score(self, player : Player, 
+                               games : List[Game], 
+                               player_database : PlayerDatabase,
+                               date : datetime, 
+                               next : bool = False) -&gt; float:
+        opponents = [game.home if game.home != player.id else game.out for game in games]
+        opponents = [player_database[opponent] for opponent in opponents]
+        is_home = [game.home == player.id for game in games]
+        ratings = [opponent.get_rating_at_date(date, next=next) for opponent in opponents]
+        player_rating = player.get_rating_at_date(date, next=next)
+        expected_scores = []
+        for i, rating in enumerate(ratings):
+            expected_scores.append(games[i].weight * self.compute_expected_score_rating(player_rating, rating, is_home[i]))
+        return np.sum(expected_scores)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.rating.rating_system.RatingSystem" href="rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_float_rating"><code class="name flex">
+<span>def <span class="ident">compute_expected_score_float_rating</span></span>(<span>self, rating1: float, rating2: float, rating_1_is_home: bool = True) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the expected score of a player against an opponent.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating1 (float): The rating of the first player.</li>
+<li>rating2 (float): The rating of the second player.</li>
+<li>rating_1_is_home (bool, optional): If True, the first player is home. If False, the second player is home. Defaults to True.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The expected score of the first player against the second player.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_rating"><code class="name flex">
+<span>def <span class="ident">compute_expected_score_rating</span></span>(<span>self, rating1: <a title="rating.objects.rating.Rating" href="../objects/rating.html#rating.objects.rating.Rating">Rating</a>, rating2: <a title="rating.objects.rating.Rating" href="../objects/rating.html#rating.objects.rating.Rating">Rating</a>, rating_1_is_home: bool = True) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the expected score of a player against an opponent.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating1 (Rating): The rating of the first player.</li>
+<li>rating2 (Rating): The rating of the second player.</li>
+<li>rating_1_is_home (bool, optional): If True, the first player is home. If False, the second player is home. Defaults to True.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The expected score of the first player against the second player.</li>
+</ul></div>
+</dd>
+<dt id="rating.rating.eloplusplus.EloPlusPlus.compute_weights"><code class="name flex">
+<span>def <span class="ident">compute_weights</span></span>(<span>self, games: List[<a title="rating.objects.game.Game" href="../objects/game.html#rating.objects.game.Game">Game</a>], period_dates: List[datetime.datetime])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the weights of the games.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>games (list): A list of game objects.</li>
+<li>period_dates (list): A list of dates for each period.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>list: A list of weights for the games.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.rating.rating_system.RatingSystem" href="rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.rating.rating_system.RatingSystem.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.compute_expected_score" href="rating_system.html#rating.rating.rating_system.RatingSystem.compute_expected_score">compute_expected_score</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.compute_tournament_performance" href="rating_system.html#rating.rating.rating_system.RatingSystem.compute_tournament_performance">compute_tournament_performance</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.period_update" href="rating_system.html#rating.rating.rating_system.RatingSystem.period_update">period_update</a></code></li>
+<li><code><a title="rating.rating.rating_system.RatingSystem.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.rating" href="index.html">rating.rating</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.rating.eloplusplus.EloPlusPlus" href="#rating.rating.eloplusplus.EloPlusPlus">EloPlusPlus</a></code></h4>
+<ul class="">
+<li><code><a title="rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_float_rating" href="#rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_float_rating">compute_expected_score_float_rating</a></code></li>
+<li><code><a title="rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_rating" href="#rating.rating.eloplusplus.EloPlusPlus.compute_expected_score_rating">compute_expected_score_rating</a></code></li>
+<li><code><a title="rating.rating.eloplusplus.EloPlusPlus.compute_weights" href="#rating.rating.eloplusplus.EloPlusPlus.compute_weights">compute_weights</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

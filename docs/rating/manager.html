@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.manager API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.manager</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.manager.Manager"><code class="flex name class">
+<span>class <span class="ident">Manager</span></span>
+<span>(</span><span>rating_system: <a title="rating.rating.rating_system.RatingSystem" href="rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None, player_database: <a title="rating.databases.player_database.PlayerDatabase" href="databases/player_database.html#rating.databases.player_database.PlayerDatabase">PlayerDatabase</a> = None, game_database: <a title="rating.databases.game_database.GameDatabase" href="databases/game_database.html#rating.databases.game_database.GameDatabase">GameDatabase</a> = None, tournament_database: <a title="rating.databases.tournament_database.TournamentDatabase" href="databases/tournament_database.html#rating.databases.tournament_database.TournamentDatabase">TournamentDatabase</a> = None, stat_manager: <a title="rating.statistics.stat_manager.StatManager" href="statistics/stat_manager.html#rating.statistics.stat_manager.StatManager">StatManager</a> = None, rating_period: <a title="rating.objects.rating_period.RatingPeriod" href="objects/rating_period.html#rating.objects.rating_period.RatingPeriod">RatingPeriod</a> = None, rating_period_type: int = 0, custom_timedelta: datetime.timedelta = datetime.timedelta(days=7), last_date_update: datetime.datetime = None, do_recompute: bool = True, recompute: bool = False, add_home_advantage: bool = True, forfeit_keep_points: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The Manager class is responsible for managing the player database, game database, tournament database,
+rating system, and the statistics manager.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>rating_system (RatingSystem): The rating system to use.</li>
+<li>player_database (PlayerDatabase): The player database.</li>
+<li>game_database (GameDatabase): The game database.</li>
+<li>tournament_database (TournamentDatabase): The tournament database.</li>
+<li>stat_manager (StatManager): The statistics manager.</li>
+<li>rating_period (RatingPeriod): The rating period.</li>
+<li>rating_period_type (RatingPeriodEnum): The rating period type.</li>
+<li>custom_timedelta (timedelta): The custom time delta for rating periods.</li>
+<li>last_date_update (datetime): The last date of rating update.</li>
+<li>do_recompute (bool): Whether to recompute ratings if games/players/tournaments are removed/added before the last update.</li>
+<li>recompute (bool): Whether to recompute ratings.</li>
+<li>add_home_advantage (bool): Whether to add a home advantage to the games when added.</li>
+<li>forfeit_keep_points (bool, optional): If True, points associated with each player are counted as the given points in case of a forfeit. This allows for custom match results that do not fit the normal points system.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating_system (RatingSystem, optional): The rating system to use. Defaults to PolyratingCrossEntropy().</li>
+<li>player_database (PlayerDatabase, optional): The player database. Defaults to PlayerDatabase().</li>
+<li>game_database (GameDatabase, optional): The game database. Defaults to GameDatabase().</li>
+<li>tournament_database (TournamentDatabase, optional): The tournament database. Defaults to TournamentDatabase().</li>
+<li>stat_manager (StatManager, optional): The statistics manager. Defaults to StatManager().</li>
+<li>rating_period (RatingPeriod, optional): The rating period. Defaults to RatingPeriod().</li>
+<li>rating_period_type (RatingPeriodEnum, optional): The rating period type. Defaults to RatingPeriodEnum.TOURNAMENT.</li>
+<li>custom_timedelta (timedelta, optional): The custom time delta for rating periods. Defaults to timedelta(days=7).</li>
+<li>last_date_update (datetime, optional): The last date of rating update. Defaults to None.</li>
+<li>recompute (bool, optional): Whether to recompute ratings. Defaults to False.</li>
+<li>do_recompute (bool): Whether to recompute ratings if games/players/tournaments are removed/added before the last update.</li>
+<li>add_home_advantage (bool, optional): Whether to add a home advantage to the games when added. Defaults to True.</li>
+<li>forfeit_keep_points (bool, optional): If True, points associated with each player are counted as the given points in case of a forfeit. This allows for custom match results that do not fit the normal points system.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Manager(BaseClass):
+    def __init__(self, rating_system : RatingSystem = None, 
+                 player_database : PlayerDatabase = None, 
+                 game_database : GameDatabase = None, 
+                 tournament_database : TournamentDatabase = None, 
+                 stat_manager : StatManager = None, 
+                 rating_period : RatingPeriod = None, 
+                 rating_period_type : int = RatingPeriodEnum.TOURNAMENT, 
+                 custom_timedelta : timedelta = timedelta(days=7), 
+                 last_date_update : datetime = None, do_recompute : bool = True, 
+                 recompute : bool = False, 
+                 add_home_advantage : bool = True, 
+                 forfeit_keep_points : bool = True) -&gt; &#39;Manager&#39;:
+        &#34;&#34;&#34;
+        The Manager class is responsible for managing the player database, game database, tournament database,
+        rating system, and the statistics manager.
+
+        Attributes:
+            - rating_system (RatingSystem): The rating system to use.
+            - player_database (PlayerDatabase): The player database.
+            - game_database (GameDatabase): The game database.
+            - tournament_database (TournamentDatabase): The tournament database.
+            - stat_manager (StatManager): The statistics manager.
+            - rating_period (RatingPeriod): The rating period.
+            - rating_period_type (RatingPeriodEnum): The rating period type.
+            - custom_timedelta (timedelta): The custom time delta for rating periods.
+            - last_date_update (datetime): The last date of rating update.
+            - do_recompute (bool): Whether to recompute ratings if games/players/tournaments are removed/added before the last update.
+            - recompute (bool): Whether to recompute ratings.
+            - add_home_advantage (bool): Whether to add a home advantage to the games when added.
+            - forfeit_keep_points (bool, optional): If True, points associated with each player are counted as the given points in case of a forfeit. This allows for custom match results that do not fit the normal points system.
+
+        Args:
+            - rating_system (RatingSystem, optional): The rating system to use. Defaults to PolyratingCrossEntropy().
+            - player_database (PlayerDatabase, optional): The player database. Defaults to PlayerDatabase().
+            - game_database (GameDatabase, optional): The game database. Defaults to GameDatabase().
+            - tournament_database (TournamentDatabase, optional): The tournament database. Defaults to TournamentDatabase().
+            - stat_manager (StatManager, optional): The statistics manager. Defaults to StatManager().
+            - rating_period (RatingPeriod, optional): The rating period. Defaults to RatingPeriod().
+            - rating_period_type (RatingPeriodEnum, optional): The rating period type. Defaults to RatingPeriodEnum.TOURNAMENT.
+            - custom_timedelta (timedelta, optional): The custom time delta for rating periods. Defaults to timedelta(days=7).
+            - last_date_update (datetime, optional): The last date of rating update. Defaults to None.
+            - recompute (bool, optional): Whether to recompute ratings. Defaults to False.
+            - do_recompute (bool): Whether to recompute ratings if games/players/tournaments are removed/added before the last update.
+            - add_home_advantage (bool, optional): Whether to add a home advantage to the games when added. Defaults to True.
+            - forfeit_keep_points (bool, optional): If True, points associated with each player are counted as the given points in case of a forfeit. This allows for custom match results that do not fit the normal points system.
+        &#34;&#34;&#34;
+        if rating_system is None:
+            rating_system = PolyratingCrossEntropy(
+                linearized=10,
+                epsilon=1e-2
+            )
+        if player_database is None:
+            player_database = PlayerDatabase()
+        if game_database is None:
+            game_database = GameDatabase()
+        if tournament_database is None:
+            tournament_database = TournamentDatabase()
+        if stat_manager is None:
+            stat_manager = StatManager()
+        if rating_period is None:
+            rating_period = RatingPeriod()
+
+        super().__init__(rating_system=rating_system, player_database=player_database,
+                         game_database=game_database, tournament_database=tournament_database, 
+                         stat_manager=stat_manager, rating_period=rating_period,
+                         rating_period_type=rating_period_type, custom_timedelta=custom_timedelta, 
+                         last_date_update=last_date_update, recompute=recompute, do_recompute=do_recompute, 
+                         add_home_advantage=add_home_advantage, forfeit_keep_points=forfeit_keep_points)
+        
+    def generate_settings(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Generate the settings dictionary for the manager.
+
+        Returns:
+            - dict: The generated settings dictionary.
+        &#34;&#34;&#34;
+        settings = super().generate_settings()
+        settings[&#39;custom_timedelta&#39;] = self.custom_timedelta.total_seconds()
+        settings[&#39;last_date_update&#39;] = None
+        if self.last_date_update is not None:
+            settings[&#39;last_date_update&#39;] = self.last_date_update.strftime(&#34;%Y-%m-%d - %H:%M:%S&#34;)
+        return settings
+    
+    def clone(self) -&gt; &#39;Manager&#39;:
+        &#34;&#34;&#34;
+        Clone the manager.
+
+        Returns:
+            - Manager: The cloned manager.
+        &#34;&#34;&#34;
+        return Manager.load_from_settings(self.generate_settings())
+    
+    def reset_and_recompute(self, rating_system : RatingSystem = None, rating_period_type : int = None, custom_timedelta : timedelta = None):
+        &#34;&#34;&#34;
+        Reset the manager and recompute the ratings.
+
+        Args:
+            - rating_system (RatingSystem): The rating system to use. Defaults to None.
+            - rating_period_type (int, optional): The rating period type. Defaults to None.
+            - custom_timedelta (timedelta, optional): The custom time delta for rating periods. Defaults to None.
+        &#34;&#34;&#34;
+        if rating_system is not None:
+            self.rating_system = rating_system
+        if custom_timedelta is not None:
+            self.custom_timedelta = custom_timedelta
+        if rating_period_type is not None:
+            self.rating_period_type = rating_period_type
+            if self.rating_period_type == RatingPeriodEnum.TOURNAMENT:
+                self.rating_period = RatingPeriod()
+                for tournament in self.tournament_database:
+                    self.rating_period.trigger_new_period(tournament.get_date())
+            elif self.rating_period_type == RatingPeriodEnum.TIMEDELTA:
+                self.rating_period = RatingPeriod()
+                self.rating_period.trigger_new_period(self.game_database.get_earliest_date())
+        
+        self.recompute = True
+        self.update_rating()
+    
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;Manager&#39;:
+        &#34;&#34;&#34;
+        Load the chess rating manager from the given settings.
+
+        Args:
+            - cls (class): The class of the chess rating manager.
+            - settings (dict): The settings to load from.
+
+        Returns:
+            - Manager: An instance of the chess rating manager.
+
+        &#34;&#34;&#34;
+        kwargs = super().get_input_parameters(settings)
+        kwargs[&#39;custom_timedelta&#39;] = timedelta(seconds=kwargs[&#39;custom_timedelta&#39;])
+        if kwargs[&#39;last_date_update&#39;] is not None:
+            kwargs[&#39;last_date_update&#39;] = datetime.strptime(kwargs[&#39;last_date_update&#39;], &#34;%Y-%m-%d - %H:%M:%S&#34;)
+        return cls(**kwargs)
+        
+    def trigger_new_period(self, tournament : Tournament = None):
+        &#34;&#34;&#34;
+        Triggers a new rating period based on the specified tournament or timedelta.
+
+        Args:
+            - tournament (Tournament, optional): The tournament object representing the new period. Defaults to None.
+        &#34;&#34;&#34;
+        if self.rating_period_type == RatingPeriodEnum.TOURNAMENT and tournament is not None:
+            self.rating_period.trigger_new_period(tournament.get_date())
+        elif self.rating_period_type == RatingPeriodEnum.TIMEDELTA:
+            if self.last_date_update is None or len(self.rating_period) == 0:
+                self.rating_period.trigger_new_period(self.game_database.get_earliest_date() + self.custom_timedelta)
+            
+            while self.rating_period.get_last_period() &lt; self.game_database.get_latest_date():
+                self.rating_period.trigger_new_period(self.rating_period.get_last_period() + self.custom_timedelta)
+        else:
+            self.rating_period.trigger_new_period(datetime.now())
+
+    def compute_statistics(self, tournament : Tournament = None, 
+                           data_folder : str = &#34;data&#34;, 
+                           history_folder : str = &#34;history&#34;, 
+                           tournament_folder : str = &#34;tournaments&#34;):
+        &#34;&#34;&#34;
+        Computes tournament results and statistics.
+
+        Args:
+            - tournament (Tournament): The tournament object.
+            - data_folder (str, optional): The folder where the data is stored. Defaults to &#34;data&#34;.
+            - history_folder (str, optional): The folder where the historical tournament data is stored. Defaults to &#34;history&#34;.
+            - tournament_folder (str, optional): The folder where the tournament data is stored. Defaults to &#34;tournaments&#34;.
+        &#34;&#34;&#34;
+        logger.info(&#34;Computing tournament results...&#34;)
+        if tournament is not None:
+            tournament.compute_tournament_results(self.game_database, self.player_database, self.rating_system)
+
+        logger.info(&#34;Computing statistics...&#34;)
+        latest_date_str = self.last_date_update.strftime(&#34;%Y_%m_%d&#34;) if self.last_date_update is not None else &#34;no_date&#34;
+        self.stat_manager.run(self.player_database, self.game_database, self.tournament_database, self.rating_system,
+                              data_folder, history_folder, tournament_folder, latest_date_str)
+
+    def update_rating(self):
+        &#34;&#34;&#34;
+        Perform one iteration of the rating update process.
+        &#34;&#34;&#34;
+        logger.info(&#34;Updating ratings...&#34;)
+        
+        if len(self.rating_period) == 0:
+            logger.info(&#34;No rating period set. Automatically triggering a new period.&#34;)
+            self.trigger_new_period()
+        if self.recompute:
+            for player in self.player_database:
+                player.clear_rating_history()
+                player.get_rating().reset()
+                self.last_date_update = None
+            self.recompute = False
+        for period_dates in self.rating_period.iterate_periods(self.last_date_update):
+            logger.info(f&#34;Updating ratings for period {period_dates[-1]}...&#34;)
+            if (len(period_dates) == 1 and self.game_database.get_n_games_between_dates(period_dates[0]) == 0):
+                continue
+            elif len(period_dates) &gt; 1 and self.game_database.get_n_games_between_dates(period_dates[-1], period_dates[-2]) == 0:
+                continue
+            self.rating_system.period_update(self.player_database, self.game_database, period_dates)
+            for player in self.player_database:
+                player.store_rating(period_dates[-1])
+        self.last_date_update = self.rating_period[-1]
+
+    def add_tournament(self, tournament_path : str = None, tournament_name : str = None, force : bool = False, tournament : Tournament = None) -&gt; Tournament:
+        &#34;&#34;&#34;
+        Adds a tournament to the chess rating manager. Also computes updated ratings and statistics.
+
+        Args:
+            - tournament_path (str): The path to the tournament file. Defaults to None.
+            - tournament_name (str, optional): The name of the tournament. If not provided, the name will be extracted from the file.
+            - force (bool, optional): If set to True, allows adding a tournament with the same name as an existing one. Defaults to False.
+            - tournament (Tournament, optional): The tournament object to add. Defaults to None.
+        &#34;&#34;&#34;
+        logger.info(f&#34;Adding tournament from {tournament_path}...&#34;)
+        if tournament is None:
+            tournament = extract_tournament(tournament_path)
+            if tournament_name is not None:
+                tournament.name = tournament_name
+        if tournament is None:
+            raise ValueError(f&#34;No tournament found in {tournament_path}.&#34;)
+        
+        if self.tournament_database.check_duplicate(tournament) and not force:
+            raise ValueError(f&#34;Tournament {tournament.name} already exists in the database. If you think this is a mistake, use the force option to add as a new tournament.&#34;)
+        
+        self.tournament_database.add(tournament)
+
+        if tournament_path is not None:
+            logger.info(f&#34;Extracting players from {tournament_path}&#34;)
+            players, tie_breaks, tie_break_names = extract_players(tournament_path)
+            for player in players:
+                existing_player = self.player_database.get_player_by_name(player.name)
+                if existing_player is None:
+                    self.player_database.add(player)
+                else:
+                    tie_breaks[existing_player.id] = tie_breaks[player.id]
+
+            tournament.set_tie_breaks(tie_breaks, tie_break_names)
+
+            logger.info(f&#34;Extracting games from {tournament_path}&#34;)
+            extract_games(tournament_path, tournament, self.game_database, self.player_database, 
+                          add_home_advantage=self.add_home_advantage)
+        self.player_database.clear_empty(self.game_database)
+        self.trigger_new_period(tournament)
+        was_false = not self.recompute
+        self.recompute = self.last_date_update is not None and tournament.get_date() &lt;= self.last_date_update and self.do_recompute
+        if self.recompute and was_false:
+            logger.warning(f&#34;You have added a tournament from {tournament.get_date()} which is earlier than the last tournament in the rating period. Next recomputation of the ratings will need a full recompute.&#34;)
+        return tournament
+    
+    def remove_tournament(self, tournament_name : str = None, tournament : Tournament = None):
+        &#34;&#34;&#34;
+        Remove a tournament from the chess rating manager. Also removes all games associated with the tournament, and players that only have played in that tournament.
+
+        Args:
+            - tournament_name (str): The name of the tournament to remove. Defaults to None.
+            - tournament (Tournament, optional): The tournament object to remove. Defaults to None.
+        &#34;&#34;&#34;
+        if tournament is None:
+            tournament = self.tournament_database.get_tournament_by_name(tournament_name)
+        if tournament is None:
+            raise ValueError(f&#34;Tournament {tournament_name} not found in the database.&#34;)
+        for game in self.game_database.get_games_per_tournament(tournament.id):
+            if self.last_date_update is not None and game.get_date() &lt; self.last_date_update and self.do_recompute:
+                self.recompute = True
+                logger.warning(f&#34;You have removed a game from {game.get_date()} which is earlier than the last game in the rating period. Next recomputation of the ratings will need a full recompute.&#34;)
+            self.game_database.remove(game)
+        self.tournament_database.remove(tournament)
+        self.player_database.clear_empty(self.game_database)
+
+    def remove_player(self, player_name : str = None, player : Player = None):
+        &#34;&#34;&#34;
+        Remove a player from the player database. Also removes all games associated with the player.
+
+        Args:
+            - player_name (str): The name of the player to remove. Defaults to None.
+            - player (Player, optional): The player object to remove. Defaults to None.
+        &#34;&#34;&#34;
+        if player is None:
+            player = self.player_database.get_player_by_name(player_name)
+        if player is None:
+            raise ValueError(f&#34;Player {player_name} not found in the database.&#34;)
+        for game in self.game_database.get_games_per_player(player.id):
+            if self.last_date_update is not None and game.get_date() &lt; self.last_date_update and self.do_recompute:
+                self.recompute = True
+                logger.warning(f&#34;You have removed a game from {game.get_date()} which is earlier than the last game in the rating period. Next recomputation of the ratings will need a full recompute.&#34;)
+            self.game_database.remove(self.game_database[game.id])
+        self.player_database.remove(player)
+
+    def add_player(self, player_name : str = None, player : Player = None) -&gt; Player:
+        &#34;&#34;&#34;
+        Add a player to the player database.
+
+        Args:
+            - player_name (str): The name of the player to add.
+            - player (Player, optional): The player object to add. Defaults to None.
+
+        Returns:
+            - Player: The player object.
+        &#34;&#34;&#34;
+        if player is None:
+            player = self.player_database.get_player_by_name(player_name)
+            if player is None:
+                player = Player(player_name)
+                self.player_database.add(player)
+        else:
+            self.player_database.add(player)
+        return player
+
+    def remove_game(self, game_id : int = None, game : Game = None):
+        &#34;&#34;&#34;
+        Remove a game from the game database.
+
+        Args:
+            - game_id (int): The ID of the game to remove. Defaults to None.
+            - game (Game, optional): The game object to remove. Defaults to None.
+        &#34;&#34;&#34;
+        if game is None:
+            game = self.game_database[game_id]
+        if game is None:
+            raise ValueError(f&#34;Game {game_id} not found in the database.&#34;)
+        if self.last_date_update is not None and game.get_date() &lt; self.last_date_update and self.do_recompute:
+            self.recompute = True
+            logger.warning(f&#34;You have removed a game from {game.get_date()} which is earlier than the last game in the rating period. Next recomputation of the ratings will need a full recompute.&#34;)
+        self.game_database.remove(game)
+
+    def add_game(self, home_name : str = None, out_name : str = None, result_str : str = None, 
+                 date : datetime = None, tournament_id : int = None, 
+                 allow_new_players : bool = True, force_new_players : bool = False, 
+                 game : Game = None) -&gt; Game:
+        &#34;&#34;&#34;
+        Adds a game to the manager&#39;s databases.
+
+        Args:
+            - home_name (str): The name of the home player.
+            - out_name (str): The name of the out player.
+            - result_str (str): The result of the game. Either 1-0, 0-1, 1/2-1/2, 1F-0, 0-1F, 0F-0F.
+            - date (datetime, optional): The date of the game. Defaults to None.
+            - tournament_id (int, optional): The ID of the tournament. Defaults to None.
+            - allow_new_players (bool, optional): If set to True, allows adding new players to the database. Defaults to True.
+            - force_new_players (bool, optional): If set to True, forces that the players are new players. Defaults to False.
+            - game (Game, optional): The game object to add. Defaults to None.
+        Returns:
+            - Game: The game object.
+        &#34;&#34;&#34;
+        if game is not None:
+            self.game_database.add(game)
+            return game
+        logger.debug(f&#34;Adding game {home_name} vs {out_name} with result {result_str}...&#34;)
+        home = self.player_database.get_player_by_name(home_name)
+        out = self.player_database.get_player_by_name(out_name)
+        if home is None:
+            if self.player_database.get_player_by_name(home_name) is None:
+                if not allow_new_players:
+                    raise ValueError(f&#34;Player {home_name} not found in the database.&#34;)
+                home = Player(home_name)
+                self.player_database.add(home)
+            elif force_new_players:
+                raise ValueError(f&#34;Player {home_name} found in the database.&#34;)
+        if out is None:
+            if self.player_database.get_player_by_name(out_name) is None:
+                if not allow_new_players:
+                    raise ValueError(f&#34;Player {out_name} not found in the database.&#34;)
+                out = Player(out_name)
+                self.player_database.add(out)
+            elif force_new_players:
+                raise ValueError(f&#34;Player {out_name} found in the database.&#34;)
+        game = Game(home=home.id, out=out.id, result=result_str, date=date, tournament_id=tournament_id,
+                    add_home_advantage=self.add_home_advantage, forfeit_keep_points=self.forfeit_keep_points)
+        self.game_database.add(game)
+        was_false = not self.recompute
+        self.recompute = self.last_date_update is not None and game.get_date() &lt;= self.last_date_update and self.do_recompute
+        if self.recompute and was_false:
+            logger.warning(f&#34;You have added a game from {game.get_date()} which is earlier than the last game in the rating period. Next recomputation of the ratings will need a full recompute.&#34;)
+        return game</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.manager.Manager.load_from_settings"><code class="name flex">
+<span>def <span class="ident">load_from_settings</span></span>(<span>settings: dict) ‑> <a title="rating.manager.Manager" href="#rating.manager.Manager">Manager</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load the chess rating manager from the given settings.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>cls (class): The class of the chess rating manager.</li>
+<li>settings (dict): The settings to load from.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Manager: An instance of the chess rating manager.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.manager.Manager.add_game"><code class="name flex">
+<span>def <span class="ident">add_game</span></span>(<span>self, home_name: str = None, out_name: str = None, result_str: str = None, date: datetime.datetime = None, tournament_id: int = None, allow_new_players: bool = True, force_new_players: bool = False, game: <a title="rating.objects.game.Game" href="objects/game.html#rating.objects.game.Game">Game</a> = None) ‑> <a title="rating.objects.game.Game" href="objects/game.html#rating.objects.game.Game">Game</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a game to the manager's databases.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>home_name (str): The name of the home player.</li>
+<li>out_name (str): The name of the out player.</li>
+<li>result_str (str): The result of the game. Either 1-0, 0-1, 1/2-1/2, 1F-0, 0-1F, 0F-0F.</li>
+<li>date (datetime, optional): The date of the game. Defaults to None.</li>
+<li>tournament_id (int, optional): The ID of the tournament. Defaults to None.</li>
+<li>allow_new_players (bool, optional): If set to True, allows adding new players to the database. Defaults to True.</li>
+<li>force_new_players (bool, optional): If set to True, forces that the players are new players. Defaults to False.</li>
+<li>game (Game, optional): The game object to add. Defaults to None.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Game: The game object.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.add_player"><code class="name flex">
+<span>def <span class="ident">add_player</span></span>(<span>self, player_name: str = None, player: <a title="rating.objects.player.Player" href="objects/player.html#rating.objects.player.Player">Player</a> = None) ‑> <a title="rating.objects.player.Player" href="objects/player.html#rating.objects.player.Player">Player</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a player to the player database.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_name (str): The name of the player to add.</li>
+<li>player (Player, optional): The player object to add. Defaults to None.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Player: The player object.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.add_tournament"><code class="name flex">
+<span>def <span class="ident">add_tournament</span></span>(<span>self, tournament_path: str = None, tournament_name: str = None, force: bool = False, tournament: <a title="rating.objects.tournament.Tournament" href="objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a> = None) ‑> <a title="rating.objects.tournament.Tournament" href="objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a tournament to the chess rating manager. Also computes updated ratings and statistics.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>tournament_path (str): The path to the tournament file. Defaults to None.</li>
+<li>tournament_name (str, optional): The name of the tournament. If not provided, the name will be extracted from the file.</li>
+<li>force (bool, optional): If set to True, allows adding a tournament with the same name as an existing one. Defaults to False.</li>
+<li>tournament (Tournament, optional): The tournament object to add. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.clone"><code class="name flex">
+<span>def <span class="ident">clone</span></span>(<span>self) ‑> <a title="rating.manager.Manager" href="#rating.manager.Manager">Manager</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clone the manager.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Manager: The cloned manager.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.compute_statistics"><code class="name flex">
+<span>def <span class="ident">compute_statistics</span></span>(<span>self, tournament: <a title="rating.objects.tournament.Tournament" href="objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a> = None, data_folder: str = 'data', history_folder: str = 'history', tournament_folder: str = 'tournaments')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes tournament results and statistics.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>tournament (Tournament): The tournament object.</li>
+<li>data_folder (str, optional): The folder where the data is stored. Defaults to "data".</li>
+<li>history_folder (str, optional): The folder where the historical tournament data is stored. Defaults to "history".</li>
+<li>tournament_folder (str, optional): The folder where the tournament data is stored. Defaults to "tournaments".</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.generate_settings"><code class="name flex">
+<span>def <span class="ident">generate_settings</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate the settings dictionary for the manager.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>dict: The generated settings dictionary.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.remove_game"><code class="name flex">
+<span>def <span class="ident">remove_game</span></span>(<span>self, game_id: int = None, game: <a title="rating.objects.game.Game" href="objects/game.html#rating.objects.game.Game">Game</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a game from the game database.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>game_id (int): The ID of the game to remove. Defaults to None.</li>
+<li>game (Game, optional): The game object to remove. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.remove_player"><code class="name flex">
+<span>def <span class="ident">remove_player</span></span>(<span>self, player_name: str = None, player: <a title="rating.objects.player.Player" href="objects/player.html#rating.objects.player.Player">Player</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a player from the player database. Also removes all games associated with the player.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>player_name (str): The name of the player to remove. Defaults to None.</li>
+<li>player (Player, optional): The player object to remove. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.remove_tournament"><code class="name flex">
+<span>def <span class="ident">remove_tournament</span></span>(<span>self, tournament_name: str = None, tournament: <a title="rating.objects.tournament.Tournament" href="objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove a tournament from the chess rating manager. Also removes all games associated with the tournament, and players that only have played in that tournament.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>tournament_name (str): The name of the tournament to remove. Defaults to None.</li>
+<li>tournament (Tournament, optional): The tournament object to remove. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.reset_and_recompute"><code class="name flex">
+<span>def <span class="ident">reset_and_recompute</span></span>(<span>self, rating_system: <a title="rating.rating.rating_system.RatingSystem" href="rating/rating_system.html#rating.rating.rating_system.RatingSystem">RatingSystem</a> = None, rating_period_type: int = None, custom_timedelta: datetime.timedelta = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reset the manager and recompute the ratings.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating_system (RatingSystem): The rating system to use. Defaults to None.</li>
+<li>rating_period_type (int, optional): The rating period type. Defaults to None.</li>
+<li>custom_timedelta (timedelta, optional): The custom time delta for rating periods. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.trigger_new_period"><code class="name flex">
+<span>def <span class="ident">trigger_new_period</span></span>(<span>self, tournament: <a title="rating.objects.tournament.Tournament" href="objects/tournament.html#rating.objects.tournament.Tournament">Tournament</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Triggers a new rating period based on the specified tournament or timedelta.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>tournament (Tournament, optional): The tournament object representing the new period. Defaults to None.</li>
+</ul></div>
+</dd>
+<dt id="rating.manager.Manager.update_rating"><code class="name flex">
+<span>def <span class="ident">update_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform one iteration of the rating update process.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating" href="index.html">rating</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.manager.Manager" href="#rating.manager.Manager">Manager</a></code></h4>
+<ul class="two-column">
+<li><code><a title="rating.manager.Manager.add_game" href="#rating.manager.Manager.add_game">add_game</a></code></li>
+<li><code><a title="rating.manager.Manager.add_player" href="#rating.manager.Manager.add_player">add_player</a></code></li>
+<li><code><a title="rating.manager.Manager.add_tournament" href="#rating.manager.Manager.add_tournament">add_tournament</a></code></li>
+<li><code><a title="rating.manager.Manager.clone" href="#rating.manager.Manager.clone">clone</a></code></li>
+<li><code><a title="rating.manager.Manager.compute_statistics" href="#rating.manager.Manager.compute_statistics">compute_statistics</a></code></li>
+<li><code><a title="rating.manager.Manager.generate_settings" href="#rating.manager.Manager.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.manager.Manager.load_from_settings" href="#rating.manager.Manager.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.manager.Manager.remove_game" href="#rating.manager.Manager.remove_game">remove_game</a></code></li>
+<li><code><a title="rating.manager.Manager.remove_player" href="#rating.manager.Manager.remove_player">remove_player</a></code></li>
+<li><code><a title="rating.manager.Manager.remove_tournament" href="#rating.manager.Manager.remove_tournament">remove_tournament</a></code></li>
+<li><code><a title="rating.manager.Manager.reset_and_recompute" href="#rating.manager.Manager.reset_and_recompute">reset_and_recompute</a></code></li>
+<li><code><a title="rating.manager.Manager.trigger_new_period" href="#rating.manager.Manager.trigger_new_period">trigger_new_period</a></code></li>
+<li><code><a title="rating.manager.Manager.update_rating" href="#rating.manager.Manager.update_rating">update_rating</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

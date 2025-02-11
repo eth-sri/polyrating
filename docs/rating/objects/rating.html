@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>rating.objects.rating API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>rating.objects.rating</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="rating.objects.rating.BaseRating"><code class="flex name class">
+<span>class <span class="ident">BaseRating</span></span>
+<span>(</span><span>rating: float = None, deviation: float = None, volatility: float = None, default_rating: <a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a rating object for a player in a chess game.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>rating (float): The rating of the player.</li>
+<li>deviation (float): The deviation of the player's rating.</li>
+<li>volatility (float): The volatility of the player's rating.</li>
+<li>default_rating (DefaultRating): The default rating values.</li>
+</ul>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The initial rating value. If not provided, the default rating will be used.</li>
+<li>deviation (float): The initial deviation value. If not provided, the default deviation will be used.</li>
+<li>volatility (float): The initial volatility value. If not provided, the default volatility will be used.</li>
+<li>default_rating (DefaultRating): The default rating values. If not provided, the DEFAULT_RATING will be used.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BaseRating(BaseClass):
+    def __init__(self, rating : float = None, deviation : float = None, volatility : float = None, 
+                 default_rating : DefaultRating = None) -&gt; &#39;Rating&#39;:
+        &#34;&#34;&#34;
+        Represents a rating object for a player in a chess game.
+
+        Attributes:
+            - rating (float): The rating of the player.
+            - deviation (float): The deviation of the player&#39;s rating.
+            - volatility (float): The volatility of the player&#39;s rating.
+            - default_rating (DefaultRating): The default rating values.
+
+        Args:
+            - rating (float): The initial rating value. If not provided, the default rating will be used.
+            - deviation (float): The initial deviation value. If not provided, the default deviation will be used.
+            - volatility (float): The initial volatility value. If not provided, the default volatility will be used.
+            - default_rating (DefaultRating): The default rating values. If not provided, the DEFAULT_RATING will be used.
+        &#34;&#34;&#34;
+        if default_rating is None:
+            default_rating = DEFAULT_RATING
+
+        if rating is None:
+            rating = default_rating.rating
+        if deviation is None:
+            deviation = default_rating.deviation
+        if volatility is None:
+            volatility = default_rating.volatility
+        super().__init__(rating=rating, deviation=deviation, 
+                         volatility=volatility, default_rating=default_rating)
+
+    def set_default(self, rating : float = None, deviation : float = None, volatility : float = None):
+        &#34;&#34;&#34;
+        Sets the default values for the rating, deviation, and volatility.
+
+        Args:
+            - rating (float): The default rating value.
+            - deviation (float): The default deviation value.
+            - volatility (float): The default volatility value.
+        &#34;&#34;&#34;
+        self.default_rating.set_default(rating, deviation, volatility)
+        
+    def copy(self) -&gt; &#39;BaseRating&#39;:
+        &#34;&#34;&#34;
+        Creates a copy of the Rating object.
+
+        Returns:
+            - Rating: A new Rating object with the same attribute values as the original.
+        &#34;&#34;&#34;
+        return BaseRating(rating=self.rating, deviation=self.deviation, volatility=self.volatility,
+                          default_rating=self.default_rating)
+
+    def update(self, new_rating : float, new_deviation : float = None, new_volatility : float = None):
+        &#34;&#34;&#34;
+        Updates the player&#39;s rating, deviation, and volatility.
+
+        Args:
+            - new_rating (float): The new rating value.
+            - new_deviation (float): The new deviation value.
+            - new_volatility (float): The new volatility value.
+        &#34;&#34;&#34;
+        self.rating = new_rating
+        if new_deviation:
+            self.deviation = new_deviation
+        if new_volatility:
+            self.volatility = new_volatility
+
+    def reset(self):
+        &#34;&#34;&#34;
+        Resets the rating, deviation, and volatility to their default values.
+        &#34;&#34;&#34;
+        self.rating = self.default_rating.rating
+        self.deviation = self.default_rating.deviation
+        self.volatility = self.default_rating.volatility
+
+    def set(self, rating : &#39;BaseRating&#39;):
+        &#34;&#34;&#34;
+        Sets the rating, deviation, and volatility of the object.
+
+        Args:
+            - rating (Rating): The Rating object containing the new rating, deviation, and volatility.
+        &#34;&#34;&#34;
+        self.rating = rating.rating
+        self.deviation = min(rating.deviation, self.default_rating.deviation)
+        self.volatility = rating.volatility
+
+    def __eq__(self, o: object) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if two Rating objects are equal.
+
+        Args:
+            - o (object): The object to compare with.
+
+        Returns:
+            - bool: True if the objects are equal, False otherwise.
+        &#34;&#34;&#34;
+        if isinstance(o, BaseRating):
+            if self.rating != o.rating:
+                return False
+            if self.deviation != o.deviation:
+                return False
+            if self.volatility != o.volatility:
+                return False
+            return True
+        return False
+    
+    def __str__(self) -&gt; str:
+        &#34;&#34;&#34;
+        Returns a string representation of the Rating object.
+        
+        The string is formatted as &#34;{rating} ± {deviation}&#34;.
+        
+        Returns:
+            - str: The string representation of the Rating object.
+        &#34;&#34;&#34;
+        return f&#34;{self.rating} ± {self.deviation}&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="rating.objects.rating.Rating" href="#rating.objects.rating.Rating">Rating</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.rating.BaseRating.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self) ‑> <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a copy of the Rating object.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Rating: A new Rating object with the same attribute values as the original.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.BaseRating.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resets the rating, deviation, and volatility to their default values.</p></div>
+</dd>
+<dt id="rating.objects.rating.BaseRating.set"><code class="name flex">
+<span>def <span class="ident">set</span></span>(<span>self, rating: <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the rating, deviation, and volatility of the object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (Rating): The Rating object containing the new rating, deviation, and volatility.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.BaseRating.set_default"><code class="name flex">
+<span>def <span class="ident">set_default</span></span>(<span>self, rating: float = None, deviation: float = None, volatility: float = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the default values for the rating, deviation, and volatility.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The default rating value.</li>
+<li>deviation (float): The default deviation value.</li>
+<li>volatility (float): The default volatility value.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.BaseRating.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, new_rating: float, new_deviation: float = None, new_volatility: float = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the player's rating, deviation, and volatility.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>new_rating (float): The new rating value.</li>
+<li>new_deviation (float): The new deviation value.</li>
+<li>new_volatility (float): The new volatility value.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.rating.DefaultRating"><code class="flex name class">
+<span>class <span class="ident">DefaultRating</span></span>
+<span>(</span><span>rating: float = 1500, deviation: float = 500, volatility: float = 0.09, id: int = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initialize a Rating object.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>rating</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial rating value. Defaults to 1500.</dd>
+<dt><strong><code>deviation</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial deviation value. Defaults to 500.</dd>
+<dt><strong><code>volatility</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial volatility value. Defaults to 0.09.</dd>
+<dt><strong><code>id</code></strong> :&ensp;<code>int</code></dt>
+<dd>The ID of the rating object. Defaults to None.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DefaultRating(BaseClass):
+    all_instances = []
+    current_id = 0
+
+    @staticmethod
+    def create_or_get_default(rating : float = 1500, deviation : float = 500, volatility : float = 0.09, 
+                              id : int = None) -&gt; &#39;DefaultRating&#39;:
+        &#34;&#34;&#34;
+        Creates a new DefaultRating object or returns an existing one with the same rating, deviation, and volatility.
+
+        Args:
+            - rating (float): The default rating value.
+            - deviation (float): The default deviation value.
+            - volatility (float): The default volatility value.
+            - id (int): The ID of the DefaultRating object.
+
+        Returns:
+            - DefaultRating: The DefaultRating object.
+        &#34;&#34;&#34;
+        default = DefaultRating.check_instances(rating, deviation, volatility, id)
+        if default:
+            return default
+        return DefaultRating(rating, deviation, volatility, id)
+
+    def __init__(self, rating : float = 1500, deviation : float = 500, volatility : float = 0.09, id : int = None):
+        &#34;&#34;&#34;
+        Initialize a Rating object.
+
+        Args:
+            rating (float): The initial rating value. Defaults to 1500.
+            deviation (float): The initial deviation value. Defaults to 500.
+            volatility (float): The initial volatility value. Defaults to 0.09.
+            id (int): The ID of the rating object. Defaults to None.
+        &#34;&#34;&#34;
+        self.rating = rating
+        self.deviation = deviation
+        self.volatility = volatility
+        if id is None:
+            id = DefaultRating.current_id            
+        DefaultRating.current_id = max(DefaultRating.current_id, id + 1)
+        self.id = id
+        super().__init__(rating=rating, deviation=deviation, volatility=volatility, id=id)
+        self.all_instances.append(self)
+
+    @classmethod
+    def load_from_settings(cls, settings : dict) -&gt; &#39;DefaultRating&#39;:
+        &#34;&#34;&#34;
+        Loads a DefaultRating object from settings.
+
+        Args:
+            - settings (dict): The settings to load from.
+
+        Returns:
+            - DefaultRating: The loaded DefaultRating object.
+        &#34;&#34;&#34;
+        settings = super().get_input_parameters(settings)
+        return DefaultRating.create_or_get_default(**settings)
+
+    @staticmethod
+    def check_instances(rating, deviation, volatility, id):
+        &#34;&#34;&#34;
+        Check if there is an instance in the list of DefaultRating objects that matches the given rating, deviation, volatility, and id.
+
+        Args:
+            - rating (float): The rating value to match.
+            - deviation (float): The deviation value to match.
+            - volatility (float): The volatility value to match.
+            - id (str): The id value to match.
+
+        Returns:
+            - DefaultRating or None: The matching instance if found, otherwise None.
+        &#34;&#34;&#34;
+        for instance in DefaultRating.all_instances:
+            if instance.rating == rating and instance.deviation == deviation and instance.volatility == volatility and instance.id == id:
+                return instance
+        return None
+
+    def set_default(self, rating : float = None, deviation : float = None, volatility : float = None):
+        &#34;&#34;&#34;
+        Sets the default values for the rating, deviation, and volatility.
+
+        Args:
+            - rating (float): The default rating value.
+            - deviation (float): The default deviation value.
+            - volatility (float): The default volatility value.
+        &#34;&#34;&#34;
+        instance = DefaultRating.check_instances(rating, deviation, volatility, self.id)
+        if instance and instance != self:
+            instance.set_default(rating, deviation, volatility)
+        if rating:
+            self.rating = rating
+        if deviation:
+            self.deviation = deviation
+        if volatility:
+            self.volatility = volatility</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="rating.objects.rating.DefaultRating.all_instances"><code class="name">var <span class="ident">all_instances</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="rating.objects.rating.DefaultRating.current_id"><code class="name">var <span class="ident">current_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="rating.objects.rating.DefaultRating.check_instances"><code class="name flex">
+<span>def <span class="ident">check_instances</span></span>(<span>rating, deviation, volatility, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if there is an instance in the list of DefaultRating objects that matches the given rating, deviation, volatility, and id.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The rating value to match.</li>
+<li>deviation (float): The deviation value to match.</li>
+<li>volatility (float): The volatility value to match.</li>
+<li>id (str): The id value to match.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>DefaultRating or None: The matching instance if found, otherwise None.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.DefaultRating.create_or_get_default"><code class="name flex">
+<span>def <span class="ident">create_or_get_default</span></span>(<span>rating: float = 1500, deviation: float = 500, volatility: float = 0.09, id: int = None) ‑> <a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new DefaultRating object or returns an existing one with the same rating, deviation, and volatility.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The default rating value.</li>
+<li>deviation (float): The default deviation value.</li>
+<li>volatility (float): The default volatility value.</li>
+<li>id (int): The ID of the DefaultRating object.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>DefaultRating: The DefaultRating object.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.DefaultRating.load_from_settings"><code class="name flex">
+<span>def <span class="ident">load_from_settings</span></span>(<span>settings: dict) ‑> <a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads a DefaultRating object from settings.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>settings (dict): The settings to load from.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>DefaultRating: The loaded DefaultRating object.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.rating.DefaultRating.set_default"><code class="name flex">
+<span>def <span class="ident">set_default</span></span>(<span>self, rating: float = None, deviation: float = None, volatility: float = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the default values for the rating, deviation, and volatility.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (float): The default rating value.</li>
+<li>deviation (float): The default deviation value.</li>
+<li>volatility (float): The default volatility value.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.base.BaseClass.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.base.BaseClass.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.base.BaseClass.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.base.BaseClass.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.base.BaseClass.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.base.BaseClass.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="rating.objects.rating.Rating"><code class="flex name class">
+<span>class <span class="ident">Rating</span></span>
+<span>(</span><span>rating: float = None, deviation: float = None, volatility: float = None, advantages: Dict[str, <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a>] = None, default_rating: <a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A rating object for a player in a chess game. This object can have ratings for different advantages.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>rating (float): The rating of the player.</li>
+<li>deviation (float): The deviation of the player's rating.</li>
+<li>volatility (float): The volatility of the player's rating.</li>
+<li>advantages (Dict[str, BaseRating]): A dictionary of advantages. The keys are the names of the advantages.</li>
+</ul>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>rating</code></strong> :&ensp;<code>float</code></dt>
+<dd>The rating value.</dd>
+<dt><strong><code>deviation</code></strong> :&ensp;<code>float</code></dt>
+<dd>The deviation value.</dd>
+<dt><strong><code>volatility</code></strong> :&ensp;<code>float</code></dt>
+<dd>The volatility value.</dd>
+<dt><strong><code>advantages</code></strong> :&ensp;<code>Dict[str, <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a>]</code></dt>
+<dd>A dictionary of advantages. The keys are the names of the advantages.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Rating(BaseRating):
+    def __init__(self, rating: float = None, deviation: float = None, volatility: float = None,
+                 advantages: Dict[str, BaseRating] = None, default_rating: DefaultRating = None):
+        &#34;&#34;&#34;
+        A rating object for a player in a chess game. This object can have ratings for different advantages.
+
+        Attributes:
+            - rating (float): The rating of the player.
+            - deviation (float): The deviation of the player&#39;s rating.
+            - volatility (float): The volatility of the player&#39;s rating.
+            - advantages (Dict[str, BaseRating]): A dictionary of advantages. The keys are the names of the advantages.
+
+        Args:
+            rating (float): The rating value.
+            deviation (float): The deviation value.
+            volatility (float): The volatility value.
+            advantages (Dict[str, BaseRating]): A dictionary of advantages. The keys are the names of the advantages.
+
+        &#34;&#34;&#34;
+        if advantages is None:
+            advantages = dict()
+        super().__init__(rating=rating, deviation=deviation, volatility=volatility, 
+                         default_rating=default_rating)
+        self.add_kwargs(advantages=advantages)
+
+    def copy(self) -&gt; &#39;Rating&#39;:
+        &#34;&#34;&#34;
+        Create a deep copy of the Rating object.
+
+        Returns:
+            - Rating: A new Rating object with the same attribute values as the original.
+        &#34;&#34;&#34;
+        advantages = {
+            key: value.copy() for key, value in self.advantages.items()
+        }
+        return Rating(rating=self.rating, deviation=self.deviation, volatility=self.volatility, 
+                      advantages=advantages, default_rating=self.default_rating)
+    
+    def add_advantage(self, key : str, rating : BaseRating):
+        &#34;&#34;&#34;
+        Adds an advantage to the rating object.
+
+        Args:
+            - key (str): The key to identify the advantage.
+            - rating (BaseRating): The rating object representing the advantage.
+        &#34;&#34;&#34;
+        self.advantages[key] = rating
+
+    def remove_advantage(self, key: str):
+        &#34;&#34;&#34;
+        Removes the advantage associated with the given key.
+
+        Args:
+            - key (str): The key of the advantage to be removed.
+        &#34;&#34;&#34;
+        if key in self.advantages:
+            del self.advantages[key]
+
+    def update_advantage(self, advantage : str, new_rating : float, 
+                         new_deviation : float = None, new_volatility : float = None, 
+                         default_rating : DefaultRating = None):
+        &#34;&#34;&#34;
+        Updates the player&#39;s rating, deviation, and volatility for a specific advantage.
+
+        Args:
+            - advantage (str): The advantage to update.
+            - new_rating (float): The new rating value.
+            - new_deviation (float): The new deviation value.
+            - new_volatility (float): The new volatility value.
+            - default_rating (DefaultRating): The default rating values.
+        &#34;&#34;&#34;
+        if advantage in self.advantages:
+            self.advantages[advantage].update(new_rating, new_deviation, new_volatility)
+        else:
+            if default_rating is None:
+                default_rating = DefaultRating()
+            self.advantages[advantage] = BaseRating(new_rating, new_deviation, new_volatility, default_rating)
+
+    def reset_advantage(self, key : str):
+        &#34;&#34;&#34;
+        Resets the advantage associated with the given key.
+
+        Args:
+            - key (str): The key representing the advantage to be reset.
+        &#34;&#34;&#34;
+        if key in self.advantages:
+            self.advantages[key].reset()
+
+    def get_advantage(self, key: str) -&gt; BaseRating:
+        &#34;&#34;&#34;
+        Retrieve the advantage associated with the given key.
+
+        Args:
+            - key (str): The key to look up the advantage.
+
+        Returns:
+            - BaseRating: The advantage associated with the given key, or None if the key is not found.
+        &#34;&#34;&#34;
+        return self.advantages.get(key, None)
+    
+    def has_advantage(self, key : str) -&gt; bool:
+        &#34;&#34;&#34;
+        Checks if the given key is present in the advantages dictionary.
+
+        Args:
+            - key (str): The key to check for in the advantages dictionary.
+
+        Returns:
+            - bool: True if the key is present in the advantages dictionary, False otherwise.
+        &#34;&#34;&#34;
+        return key in self.advantages
+    
+    def get_advantage_names(self) -&gt; List[str]:
+        &#34;&#34;&#34;
+        Returns a list of names of all the advantages.
+
+        Returns:
+            - List[str]: A list of advantage names.
+        &#34;&#34;&#34;
+        return list(self.advantages.keys())
+
+    def get_rating(self, advantages : Dict[str, float] = None) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the overall rating of the player, taking into account the advantages.
+
+        Args:
+            - advantages (Dict[str, float], optional): A dictionary of advantages and their corresponding weights. Defaults to None.
+
+        Returns:
+            - float: The calculated overall rating of the player.
+        &#34;&#34;&#34;
+        rating = self.rating
+        for key, value in self.advantages.items():
+            rating += value.rating * advantages.get(key, 0)
+        return rating
+
+    def reset(self):
+        &#34;&#34;&#34;
+        Resets the rating object by calling the reset method of the base class
+        and resetting all the advantages.
+        &#34;&#34;&#34;
+        super().reset()
+        for key in self.advantages:
+            self.advantages[key].reset()
+
+    def set(self, rating : &#39;Rating&#39;):
+        &#34;&#34;&#34;
+        Sets the rating object with the values from another rating object.
+
+        Args:
+            - rating (Rating): The rating object to set values from.
+        &#34;&#34;&#34;
+        super().set(rating)
+        for key in self.advantages:
+            if key in rating.advantages:
+                self.advantages[key].set(rating.advantages[key])
+        
+    def __eq__(self, o: object) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if two Rating objects are equal.
+
+        Args:
+            - o (object): The object to compare with.
+
+        Returns:
+            - bool: True if the objects are equal, False otherwise.
+        &#34;&#34;&#34;
+        if isinstance(o, Rating):
+            if not super().__eq__(o):
+                return False
+            if self.advantages != o.advantages:
+                return False
+            return True
+        return False
+    
+    def equal_rating_and_advantages(self, rating : &#39;Rating&#39;) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if the rating and advantages of two Rating objects are equal.
+
+        Args:
+            - rating (Rating): The Rating object to compare with.
+
+        Returns:
+            - bool: True if the rating and advantages are equal, False otherwise.
+        &#34;&#34;&#34;
+        if self.rating != rating.rating:
+            return False
+        if self.deviation != rating.deviation:
+            return False
+        if self.volatility != rating.volatility:
+            return False
+        if self.advantages != rating.advantages:
+            return False
+        return True
+    
+    def __str__(self) -&gt; str:
+        &#34;&#34;&#34;
+        Returns a string representation of the Rating object.
+
+        The string includes the superclass string representation and the advantages of the rating.
+
+        Returns:
+            - str: The string representation of the Rating object.
+        &#34;&#34;&#34;
+        return f&#34;{super().__str__()} {&#39;, &#39;.join([f&#39;{key}: {value}&#39; for key, value in self.advantages.items()])}&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a></li>
+<li><a title="rating.base.BaseClass" href="../base.html#rating.base.BaseClass">BaseClass</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="rating.objects.rating.Rating.add_advantage"><code class="name flex">
+<span>def <span class="ident">add_advantage</span></span>(<span>self, key: str, rating: <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds an advantage to the rating object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>key (str): The key to identify the advantage.</li>
+<li>rating (BaseRating): The rating object representing the advantage.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self) ‑> <a title="rating.objects.rating.Rating" href="#rating.objects.rating.Rating">Rating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a deep copy of the Rating object.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>Rating: A new Rating object with the same attribute values as the original.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.equal_rating_and_advantages"><code class="name flex">
+<span>def <span class="ident">equal_rating_and_advantages</span></span>(<span>self, rating: <a title="rating.objects.rating.Rating" href="#rating.objects.rating.Rating">Rating</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if the rating and advantages of two Rating objects are equal.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (Rating): The Rating object to compare with.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>bool: True if the rating and advantages are equal, False otherwise.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.get_advantage"><code class="name flex">
+<span>def <span class="ident">get_advantage</span></span>(<span>self, key: str) ‑> <a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieve the advantage associated with the given key.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>key (str): The key to look up the advantage.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>BaseRating: The advantage associated with the given key, or None if the key is not found.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.get_advantage_names"><code class="name flex">
+<span>def <span class="ident">get_advantage_names</span></span>(<span>self) ‑> List[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a list of names of all the advantages.</p>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>List[str]: A list of advantage names.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.get_rating"><code class="name flex">
+<span>def <span class="ident">get_rating</span></span>(<span>self, advantages: Dict[str, float] = None) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the overall rating of the player, taking into account the advantages.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>advantages (Dict[str, float], optional): A dictionary of advantages and their corresponding weights. Defaults to None.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>float: The calculated overall rating of the player.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.has_advantage"><code class="name flex">
+<span>def <span class="ident">has_advantage</span></span>(<span>self, key: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if the given key is present in the advantages dictionary.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>key (str): The key to check for in the advantages dictionary.</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<ul>
+<li>bool: True if the key is present in the advantages dictionary, False otherwise.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.remove_advantage"><code class="name flex">
+<span>def <span class="ident">remove_advantage</span></span>(<span>self, key: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes the advantage associated with the given key.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>key (str): The key of the advantage to be removed.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resets the rating object by calling the reset method of the base class
+and resetting all the advantages.</p></div>
+</dd>
+<dt id="rating.objects.rating.Rating.reset_advantage"><code class="name flex">
+<span>def <span class="ident">reset_advantage</span></span>(<span>self, key: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resets the advantage associated with the given key.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>key (str): The key representing the advantage to be reset.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.set"><code class="name flex">
+<span>def <span class="ident">set</span></span>(<span>self, rating: <a title="rating.objects.rating.Rating" href="#rating.objects.rating.Rating">Rating</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the rating object with the values from another rating object.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>rating (Rating): The rating object to set values from.</li>
+</ul></div>
+</dd>
+<dt id="rating.objects.rating.Rating.update_advantage"><code class="name flex">
+<span>def <span class="ident">update_advantage</span></span>(<span>self, advantage: str, new_rating: float, new_deviation: float = None, new_volatility: float = None, default_rating: <a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the player's rating, deviation, and volatility for a specific advantage.</p>
+<h2 id="args">Args</h2>
+<ul>
+<li>advantage (str): The advantage to update.</li>
+<li>new_rating (float): The new rating value.</li>
+<li>new_deviation (float): The new deviation value.</li>
+<li>new_volatility (float): The new volatility value.</li>
+<li>default_rating (DefaultRating): The default rating values.</li>
+</ul></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a></b></code>:
+<ul class="hlist">
+<li><code><a title="rating.objects.rating.BaseRating.add_kwargs" href="../base.html#rating.base.BaseClass.add_kwargs">add_kwargs</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.find_class" href="../base.html#rating.base.BaseClass.find_class">find_class</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.generate_kwarg_setting" href="../base.html#rating.base.BaseClass.generate_kwarg_setting">generate_kwarg_setting</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.generate_list_settings" href="../base.html#rating.base.BaseClass.generate_list_settings">generate_list_settings</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.generate_settings" href="../base.html#rating.base.BaseClass.generate_settings">generate_settings</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.get_all_subclasses" href="../base.html#rating.base.BaseClass.get_all_subclasses">get_all_subclasses</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.get_input_parameters" href="../base.html#rating.base.BaseClass.get_input_parameters">get_input_parameters</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.load" href="../base.html#rating.base.BaseClass.load">load</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.load_from_dict" href="../base.html#rating.base.BaseClass.load_from_dict">load_from_dict</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.load_from_list_settings" href="../base.html#rating.base.BaseClass.load_from_list_settings">load_from_list_settings</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.load_from_settings" href="../base.html#rating.base.BaseClass.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.save" href="../base.html#rating.base.BaseClass.save">save</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.set_default" href="#rating.objects.rating.BaseRating.set_default">set_default</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.update" href="#rating.objects.rating.BaseRating.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="rating.objects" href="index.html">rating.objects</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="rating.objects.rating.BaseRating" href="#rating.objects.rating.BaseRating">BaseRating</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating.BaseRating.copy" href="#rating.objects.rating.BaseRating.copy">copy</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.reset" href="#rating.objects.rating.BaseRating.reset">reset</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.set" href="#rating.objects.rating.BaseRating.set">set</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.set_default" href="#rating.objects.rating.BaseRating.set_default">set_default</a></code></li>
+<li><code><a title="rating.objects.rating.BaseRating.update" href="#rating.objects.rating.BaseRating.update">update</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.objects.rating.DefaultRating" href="#rating.objects.rating.DefaultRating">DefaultRating</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating.DefaultRating.all_instances" href="#rating.objects.rating.DefaultRating.all_instances">all_instances</a></code></li>
+<li><code><a title="rating.objects.rating.DefaultRating.check_instances" href="#rating.objects.rating.DefaultRating.check_instances">check_instances</a></code></li>
+<li><code><a title="rating.objects.rating.DefaultRating.create_or_get_default" href="#rating.objects.rating.DefaultRating.create_or_get_default">create_or_get_default</a></code></li>
+<li><code><a title="rating.objects.rating.DefaultRating.current_id" href="#rating.objects.rating.DefaultRating.current_id">current_id</a></code></li>
+<li><code><a title="rating.objects.rating.DefaultRating.load_from_settings" href="#rating.objects.rating.DefaultRating.load_from_settings">load_from_settings</a></code></li>
+<li><code><a title="rating.objects.rating.DefaultRating.set_default" href="#rating.objects.rating.DefaultRating.set_default">set_default</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="rating.objects.rating.Rating" href="#rating.objects.rating.Rating">Rating</a></code></h4>
+<ul class="">
+<li><code><a title="rating.objects.rating.Rating.add_advantage" href="#rating.objects.rating.Rating.add_advantage">add_advantage</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.copy" href="#rating.objects.rating.Rating.copy">copy</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.equal_rating_and_advantages" href="#rating.objects.rating.Rating.equal_rating_and_advantages">equal_rating_and_advantages</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.get_advantage" href="#rating.objects.rating.Rating.get_advantage">get_advantage</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.get_advantage_names" href="#rating.objects.rating.Rating.get_advantage_names">get_advantage_names</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.get_rating" href="#rating.objects.rating.Rating.get_rating">get_rating</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.has_advantage" href="#rating.objects.rating.Rating.has_advantage">has_advantage</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.remove_advantage" href="#rating.objects.rating.Rating.remove_advantage">remove_advantage</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.reset" href="#rating.objects.rating.Rating.reset">reset</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.reset_advantage" href="#rating.objects.rating.Rating.reset_advantage">reset_advantage</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.set" href="#rating.objects.rating.Rating.set">set</a></code></li>
+<li><code><a title="rating.objects.rating.Rating.update_advantage" href="#rating.objects.rating.Rating.update_advantage">update_advantage</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
