@@ -208,6 +208,7 @@ This will download all datasets and run the code. We note that each file in this
 
 ## Citation
 
+```
 @article{dekoninck2024polyrating,
       title={Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation}, 
       author={Jasper Dekoninck and Maximilian Baader and Martin Vechev},
@@ -215,3 +216,4 @@ This will download all datasets and run the code. We note that each file in this
       archivePrefix={arXiv},
       primaryClass={cs.AI}
 }
+```
