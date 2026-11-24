@@ -437,7 +437,7 @@ def do_mixeval(data, max_cores):
         'Claude 3 Opus': 'claude-3-opus-20240229',
         'GPT-4-Turbo-2024-04-09': 'gpt-4-turbo-2024-04-09',
         'Gemini 1.5 Pro-API-0409': 'gemini-1.5-pro-api-0409-preview',
-        'Gemini 1.5 Pro-API-0514': 'gemini-1.5-flash-api-0514',
+        'Gemini 1.5 Pro-API-0514': 'gemini-1.5-pro-api-0514',
         'Yi-Large-preview': 'yi-large-preview',
         'LLaMA-3-70B-Instruct': 'llama-3-70b-instruct',
         'Qwen-Max-0428': 'qwen-max-0428',
